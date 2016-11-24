@@ -5,12 +5,12 @@
 import {ReportBase} from './report-base';
 
 export class Report extends ReportBase {
-    typereport;
+    typeReport;
     usage;
-    pagelayout;
-    purposeofreport;
-    reporttitle
-    formattingrequirements;
+    pageLayout;
+    purposeOfReport;
+    reportTitle
+    formattingRequirements;
 
     saveToHtml() {
         // todo: return real html

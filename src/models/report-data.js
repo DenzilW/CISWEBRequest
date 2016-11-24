@@ -6,8 +6,13 @@ import {ReportBase} from './report-base';
 
 export class ReportData extends ReportBase {
     reportDataTitle;
-    reportGrouped;
-    onKeyFieldToUsed;
+    reportGroupedScreen;
+    reportGroupedFieldInOnKey;
+    reportGroupedSortOrder
+    onKeyFieldToUsedScreen;
+    onKeyFieldToUsedFieldInOnKey;
+    onKeyFieldToUsedFieldTitle;
+    onKeyFieldToUsedSortOrder;
     reportIncludeTotals;
     additionalReportData;
 
