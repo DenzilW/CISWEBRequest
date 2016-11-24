@@ -1,6 +1,6 @@
 import {expect} from 'chai';
 import 'aurelia-polyfills';
-import {ReportData} from './../../src/models/reportdata';
+import {ReportData} from './../../src/models/report-data';
 
 describe('Reportdata Tests', function() {
     var reportData;

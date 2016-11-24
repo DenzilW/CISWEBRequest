@@ -11,4 +11,9 @@ export class Report extends ReportBase {
     purposeofreport;
     reporttitle
     formattingrequirements;
+
+    saveToHtml() {
+        // todo: return real html
+        return "html";
+    }
 }

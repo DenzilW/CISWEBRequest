@@ -1,16 +1,17 @@
-export class CisProject {
-         projectnumber;
-         requester;
-         typeofrequest;
-         databaselocation;
+/*
+    Denzil Williams:
+    Model for holding information about the project
+*/
+import {ReportBase} from './report-base';
 
-         constructor(projectnumber,
-         requester,
-         typeofrequest,
-         databaselocation) {
-             this.projectnumber = projectnumber;
-             this.requester = requester;
-             this.typeofrequest = typeofrequest;
-             this.databaselocation = databaselocation
-         }
- }
+export class CisProject {
+    projectnumber;
+    requester;
+    typeofrequest;
+    databaselocation;
+
+    saveToHtml() {
+        // todo: return real html
+        return "html";
+    }
+}
