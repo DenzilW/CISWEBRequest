@@ -4,7 +4,7 @@
 */
 import {ReportBase} from './report-base';
 
-export class CisProject {
+export class CisProject extends ReportBase{
     projectnumber;
     requester;
     typeofrequest;

@@ -15,5 +15,13 @@ describe('Cisproject Tests', function() {
     
     it('not constructor', function() {
         expect(() => CisProject()).to.throw("Cannot call a class as a function");
-    });    
+    });
+
+    it('saveToHtml', function() {
+        // Act
+        const html = cisproject.saveToHtml();
+
+        // Assert
+        expect(html).to.equal("html", "result of saveToHtml should be 'html'");
+    })    
 })
