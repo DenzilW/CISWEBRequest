@@ -24,4 +24,5 @@ describe('Report Tests', function() {
         // Assert
         expect(html).to.equal("html", "result of saveToHtml should be 'html'");
     })
+
 })

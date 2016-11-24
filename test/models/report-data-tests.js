@@ -17,7 +17,7 @@ describe('Reportdata Tests', function() {
         expect(() => ReportData()).to.throw("Cannot call a class as a function");
     });  
 
-        it('saveToHtml', function() {
+    it('saveToHtml', function() {
         // Act
         const html = reportData.saveToHtml();
 
