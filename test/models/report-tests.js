@@ -3,7 +3,7 @@ import 'aurelia-polyfills';
 import {Report} from './../../src/models/report';
 
 describe('Report Tests', function() {
-    var report;
+    let report;
 
     beforeEach(function() {
         report = new Report ();

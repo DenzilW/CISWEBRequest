@@ -3,7 +3,7 @@ import 'aurelia-polyfills';
 import {CisReport} from './../../src/models/cis-report';
 
 describe('CisReport Tests', function() {
-    var cisReport;
+    let cisReport;
 
     beforeEach(function() {
         cisReport = new CisReport ();

@@ -3,7 +3,7 @@ import 'aurelia-polyfills';
 import {ReportBase} from './../../src/models/report-base';
 
 describe('ReportBase Tests', function() {
-    var reportBase;
+    let reportBase;
 
     beforeEach(function() {
         reportBase = new ReportBase ();
