@@ -15,5 +15,13 @@ describe('Reportdata Tests', function() {
     
     it('not constructor', function() {
         expect(() => ReportData()).to.throw("Cannot call a class as a function");
-    });    
+    });  
+
+        it('saveToHtml', function() {
+        // Act
+        const html = reportData.saveToHtml();
+
+        // Assert
+        expect(html).to.equal("html", "result of saveToHtml should be 'html'");
+    })  
 })
