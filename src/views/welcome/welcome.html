@@ -1,0 +1,30 @@
+
+<template>
+        <h1>Custom report or interface specification</h1>
+     <h2>Projects information></h2>
+        <p><label class="labelClass"><span>Project number:	</span><input name="projectName" id="projectName"  required></label></p>
+        <p><label><span>Requester:	</span><br/><input name="requester" id="requester"  required></label></p>
+        <p><label><span>Type of request:</span><br/> <input  name="typeOfRequest" id="typeOfRequest"  list=typerequestlist required></label></p>
+        <p><label><span>Database backup location:</span><br/><input type=email name="dbBackupLocation" id="dbBackupLocation" list=databasebackupLocationList></label></p>
+        <p><label>Please provide as much supporting information as possible</label</p>
+ <p><label>Such as sample data, examples, or scenarios to test against different parameters</label</p>
+     <section>
+         <div>
+             <p>
+                <label>Parameter</label>
+                <label class="labelClass">Parameterghghfgv</label>
+            </p>
+        </div>
+        <template repeat.for="param of model.formData.parameters">
+            <div>
+                <input value.bind="param.value"></input>
+                <input type="checkbox" checked.bind="param.showOnReport"></input>
+            </div>
+        </template>
+
+        <button click.delegate="addParameter($event)">Add Parameter</button>
+    </section>
+
+        <button ng-href="">Continue</button>
+    
+</template>
