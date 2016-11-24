@@ -1,6 +1,6 @@
 import {expect} from 'chai';
 import 'aurelia-polyfills';
-import {CisProject} from './../../src/models/cisproject';
+import {CisProject} from './../../src/models/cis-project';
 
 describe('Cisproject Tests', function() {
     var cisproject;

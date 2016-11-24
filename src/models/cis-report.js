@@ -1,5 +1,6 @@
 import {ReportData} from './report-data';
 import {ReportBase} from './report-base';
+import {CisProject} from './cis-project';
 
 export class CisReport extends ReportBase {
     project;
@@ -9,6 +10,7 @@ export class CisReport extends ReportBase {
 
     constructor() {
         super();
+        this.project = new  CisProject();
         this.reportData = new ReportData();
     }
 
