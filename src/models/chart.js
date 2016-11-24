@@ -9,27 +9,27 @@ export class Chart extends ReportBase {
     chartType;
     chartTitle;
     xaxsTitle;
-    yaxisTitle;  // todo: fix rest below this
-    yaxistitleprimary;
-    yaxistitlesecondary;
-    axisscreen;
-    axisfieldinonkey;
-    axisadddatalabels;
-    axistrendlinerequired;
-    fieldtogroupfieldinonkey;
-    fieldtogroupadddatalabels;
-    fieldtogrouptendlinerequired;
-    yaxisprimaryscreen;
-    yaxisprimaryfieldinonkey;
-    yaxisprimaryadddatalabels;
-    yaxisprimarytrendlinerequired;
-    yaxissecondaryscreen;
-    yaxissecondaryfieldinonkey;
-    yaxissecondaryadddatalabels;
-    yaxissecondarytrendlinerequired;
+    yaxisTitle; 
+    yaxisTitleprimary;
+    yaxisTitlesecondary;
+    axisScreen;
+    axisFieldInOnkey;
+    axisAddDataLabels;
+    axisTrendlineRequired;
+    fieldToGroupFieldInOnkey;
+    fieldToGroupAddDataLabels;
+    fieldToGroupTrendlineRequired;
+    yaxisPrimaryScreen;
+    yaxisPrimaryFieldInOnkey;
+    yaxisPrimaryAddDataLabels;
+    yaxisPrimaryTrendlineRequired;
+    yaxisSecondaryScreen;
+    yaxisSecondaryFieldInOnkey;
+    yaxisSecondaryAddDataLabels;
+    yaxisSecondaryTrendlineRequired;
     totals;
     sortorder;
-    additionalrequirements;
+    additionalRequirements;
 
     saveToHtml() {
         // todo: return real html
