@@ -6,4 +6,12 @@ export class Welcome {
     constructor() {
         this.model = new CisReport();
     }
+
+    gotoNextTab() {
+
+    }
+
+    gotoPreviousTab() {
+
+    }
 }
