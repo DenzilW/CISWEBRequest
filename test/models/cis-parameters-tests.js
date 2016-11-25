@@ -42,10 +42,11 @@ describe('CisParameters Tests', function() {
         param3.value = "param3";
 
         // Act 
-        cisParameters.removeAt(1);
+        const removedItem = cisParameters.removeAt(1);
 
         // Assert
-        expect(cisParameters.items[1].value).to.be.not.equal(param2.value, "Expected that param2 must be removed")
+        expect(cisParameters.items.indexOf(removedItem)).to.be.equal(-1,"Expect item not be included")
+        expect(removedItem).to.be.not.equal(param2.value, "Expected that param2 must be removed")
     })
 
    it("remove", function() {

@@ -14,13 +14,13 @@ export class CisParameters {
     remove(parameter) {
         // 1. Get index of item using indexOf e.g. this.items.indexOf(myParameter);
         // 2. call this.removeAt with that index
-        var index = this.items.indexOf(parameter)
+        const index = this.items.indexOf(parameter)
         this.removeAt(index)
     }
 
     removeAt(index) {
         // splice the array
-        var removedItem = this.items.splice(index, 1); 
+        return this.items.splice(index, 1); 
     }
 }
 
