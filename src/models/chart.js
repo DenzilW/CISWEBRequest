@@ -18,6 +18,16 @@ export class Charts {
         return newCharts
     }
 
+    remove(chart) {
+        const index = this.items.indexOf(chart)
+        this.removeAt(index)
+    }
+
+    removeAt(index) {
+        // splice the array
+        return this.items.splice(index, 1); 
+    }
+
     saveToEmail() {
         // todo: return real html
         return "html";
