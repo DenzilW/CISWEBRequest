@@ -6,13 +6,13 @@ import {ReportBase} from './report-base';
 import {CisParameters} from './cis-parameters';
 
 export class Report extends ReportBase {
-    typeReport;
-    usage;
-    pageLayout;
-    purposeOfReport;
-    reportTitle
-    formattingRequirements;
-    parameters;
+    typeReport = null;
+    usage = null;
+    pageLayout = null;
+    purposeOfReport = null;
+    reportTitle = null;
+    formattingRequirements = null;
+    parameters = null;
 
     saveToHtml() {
         // todo: return real html

@@ -5,10 +5,10 @@ import {Report} from './report';
 import {Chart} from './chart';
 
 export class CisReport extends ReportBase {
-    project;
-    report;
-    chart;
-    reportData;
+    project = null;
+    report = null;
+    chart = null;
+    reportData = null;
 
     constructor() {
         super();
