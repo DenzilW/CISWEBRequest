@@ -20,14 +20,17 @@ describe('Cisproject Tests', function() {
     it('saveToEmail', function() {
         // Arrange
         const cisProject = new CisProject();
-     //   cisProject.projectNumber = "0009"; 
-     //  cisProject.request = "DREW";
-      //  cisProject.databaseLocation = "DB"
+        cisProject.projectNumber = "0009";
+        cisProject.requester = "DREW";
+        cisProject.databaseLocation = "DB";
 
         // Act
-        const emailTemplate = cisproject.saveToEmail();
+        const emailTemplate = cisProject.saveToEmail();
 
         // Assert
-       // expect(this.emailTemplate.projectNumber).to.equal("0009", "result of saveToEmail should be 'html'");
-    })    
-})
+        expect(emailTemplate.length).to.be.above(0, "emailtemplate should have some length");
+        expect(emailTemplate.indexOf('Project Number: 0009')).to.be.above(-1, "project number text not set correctly");
+        expect(emailTemplate.indexOf('Requester: DREW')).to.be.above(-1, "requester text not set correctly");
+        expect(emailTemplate.indexOf('Type Of Request: DB')).to.be.above(-1, "db text not set correctly");
+    })
+});
