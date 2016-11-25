@@ -1,30 +1,25 @@
-
 <template>
-        <h1>Custom report or interface specification</h1>
-     <h2>Projects information></h2>
-        <p><label class="labelClass"><span>Project number:	</span><input name="projectName" id="projectName"  required></label></p>
-        <p><label><span>Requester:	</span><br/><input name="requester" id="requester"  required></label></p>
-        <p><label><span>Type of request:</span><br/> <input  name="typeOfRequest" id="typeOfRequest"  list=typerequestlist required></label></p>
-        <p><label><span>Database backup location:</span><br/><input type=email name="dbBackupLocation" id="dbBackupLocation" list=databasebackupLocationList></label></p>
-        <p><label>Please provide as much supporting information as possible</label</p>
- <p><label>Such as sample data, examples, or scenarios to test against different parameters</label</p>
-     <section>
-         <div>
-             <p>
-                <label>Parameter</label>
-                <label class="labelClass">Parameterghghfgv</label>
-            </p>
+    <require from="pragma-tabsheet/pragma-tabsheet"></require>
+    <require from="./tab-project.html"></require>
+    <require from="./tab-parameters.html"></require>
+    <require from="./tab-charts.html"></require>
+    <require from="./tab-data.html"></require>
+
+    <pragma-tabsheet>
+        <div id="tab-project" data-tab="Project">
+            <tab-project></tab-project>
         </div>
-        <template repeat.for="param of model.formData.parameters">
-            <div>
-                <input value.bind="param.value"></input>
-                <input type="checkbox" checked.bind="param.showOnReport"></input>
-            </div>
-        </template>
 
-        <button click.delegate="addParameter($event)">Add Parameter</button>
-    </section>
+        <div id="tab-parameters" data-tab="Parameters">
+            <tab-parameters></tab-parameters>
+        </div>
 
-        <button ng-href="">Continue</button>
-    
+        <div id="tab-charts" data-tab="Charts">
+            <tab-charts></tab-charts>
+        </div>
+
+        <div id="tab-data" data-tab="Report Data">
+            <tab-data></tab-data>
+        </div>
+    </pragma-tabsheet>
 </template>

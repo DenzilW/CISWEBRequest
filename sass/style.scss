@@ -1,12 +1,61 @@
 @import './normalize';
+@import './colors.scss';
+@import './layout.scss';
 
-.parameters-section {
-    label {
-        display: inline-block;
-        width: 150px;
+pragma-tabsheet {
+    flex: 1;
+}
+
+[aria-hidden="true"] {
+    display:none;
+}
+
+[aria-hidden="false"] {
+    display:block;
+}
+
+body {
+    font-size: 16px;
+    background: $toolbar-color;
+}
+
+h1 {
+    padding: 0;
+    margin: 0;
+    font-size: 2rem;
+}
+
+header {
+    background: $toolbar-color;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $header-height;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+
+    h1 {
+        line-height: $header-height;
+        text-align: center;
     }
+}
 
-    .labelClass{
-    width: 1300px;
-  }
+footer {
+    background: $toolbar-color;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: $footer-height;
+    line-height: $footer-height;
+    text-align: center;
+}
+
+router-view {
+    background: $primary-background;
+    position: absolute;
+    top: $header-height + 0.5;
+    bottom: $footer-height;
+    left: 0;
+    right: 0;
 }

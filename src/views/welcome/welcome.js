@@ -1,13 +1,9 @@
-import {CISWebRequestModel} from './../../models/cis-web-request-model';
+import {CisReport} from './../../models/cis-report';
 
 export class Welcome {
-    model;
+    model = null;
     
     constructor() {
-        this.model = new CISWebRequestModel();
-    }
-
-    addParameter(event) {
-        this.model.formData.addParameter("", true);
+        this.model = new CisReport();
     }
 }
