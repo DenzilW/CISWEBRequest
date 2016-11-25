@@ -18,7 +18,7 @@ export class CisReport extends ReportBase {
         this.reportData = new ReportData();
     }
 
-    saveToHtml() {
+    saveToEmail() {
         // todo: return real html
         return "html";
     }

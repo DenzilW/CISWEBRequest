@@ -10,7 +10,7 @@ export class CisProject extends ReportBase{
     typeofrequest;
     databaselocation;
 
-    saveToHtml() {
+    saveToEmail() {
         // todo: return real html
         return "html";
     }

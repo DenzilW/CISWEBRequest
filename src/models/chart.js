@@ -31,7 +31,7 @@ export class Chart extends ReportBase {
     sortorder;
     additionalRequirements;
 
-    saveToHtml() {
+    saveToEmail() {
         // todo: return real html
         return "html";
     }

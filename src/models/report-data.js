@@ -16,7 +16,7 @@ export class ReportData extends ReportBase {
     reportIncludeTotals;
     additionalReportData;
 
-    saveToHtml() {
+    saveToEmail() {
         // todo: return real html
         return "html";
     }
