@@ -3,27 +3,18 @@
     Model for holding information about the project
 */
 import {ReportBase} from './report-base';
+import {projectEmailTemplate} from './templates';
 
 export class CisProject extends ReportBase{
-    projectNumber;
-    requester;
-    typeOfRequest;
-    databaseLocation;
+    projectNumber = null;
+    requester = null;
+    typeOfRequest = null;
+    databaseLocation = null;
 
     saveToEmail() {
-        const emailTemplate = 		
-            `
-                Project
-                ---------------------------------------------
-                        Project Number: ${projectNumber}
-                        Requester: ${requester}
-                        Type Of Request: ${databaseLocation}
-            `;
-
-		return emailTemplate		
-	            .replace('${projectNumber}', this.projectNumber)
-                .replace('${requester}', this.requester)
-                .replace('${typeOfRequest}', this.typeOfRequest)
-                .replace('${databaseLocation}', this.databaseLocation) ;               
+        return projectEmailTemplate
+            .replace("{projectNumber}", this.projectNumber)
+            .replace("{requester}", this.requester)
+            .replace("{databaseLocation}", this.databaseLocation)
     }
 }
