@@ -4,6 +4,26 @@
 */
 import {ReportBase} from './report-base';
 
+
+export class Charts {
+    items;
+
+    constructor() {
+        this.items = [];
+    }
+
+    add() {
+        const newCharts = new Chart();
+        this.items.push(newCharts);
+        return newCharts
+    }
+
+    saveToEmail() {
+        // todo: return real html
+        return "html";
+    }
+}
+
 export class Chart extends ReportBase {
     whatAchieve;
     chartType;
@@ -31,8 +51,5 @@ export class Chart extends ReportBase {
     sortorder;
     additionalRequirements;
 
-    saveToEmail() {
-        // todo: return real html
-        return "html";
-    }
+
 }

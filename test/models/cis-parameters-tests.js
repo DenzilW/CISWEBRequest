@@ -3,7 +3,7 @@ import 'aurelia-polyfills';
 import {CisParameters} from './../../src/models/cis-parameters';
 
 describe('CisParameters Tests', function() {
-    var cisParameters;
+    let cisParameters;
 
     beforeEach(function() {
         cisParameters = new CisParameters ();
@@ -18,7 +18,7 @@ describe('CisParameters Tests', function() {
         expect(() => CisParameters()).to.throw("Cannot call a class as a function");
     });
 
-    it('addParameter', function() {
+    it('add', function() {
         //Arrange
         const count = cisParameters.items.length;
 
