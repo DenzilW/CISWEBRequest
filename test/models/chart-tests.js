@@ -34,7 +34,7 @@ describe('Chart Tests', function() {
         const newCount = charts.items.length;  
         
         // Assert
-        expect(newCount).to.be.equal(count + 1,"Expect count to be greater than 0")
+        expect(newCount).to.be.equal(count + 1,"Expect count to be greater than 0");
     });
 
     it("removeAt", function() {
@@ -52,8 +52,8 @@ describe('Chart Tests', function() {
         const removedItem = charts.removeAt(1);
 
         // Assert
-        expect(charts.items.indexOf(removedItem)).to.be.equal(-1,"Expect item not be included")
-        expect(removedItem).to.be.not.equal(chart2.value, "Expected that chart2 must be removed")
+        expect(charts.items.indexOf(removedItem)).to.be.equal(-1,"Expect item not be included");
+        expect(removedItem).to.be.not.equal(chart2.value, "Expected that chart2 must be removed");
     })
 
    it("remove", function() {
@@ -71,7 +71,7 @@ describe('Chart Tests', function() {
         charts.remove(chart1);
 
         // Assert
-        expect(charts.items[0].value).to.be.not.equal(chart1.value, "Expected that chart1 must be removed")
+        expect(charts.items[0].value).to.be.not.equal(chart1.value, "Expected that chart1 must be removed");
     })
     
 })

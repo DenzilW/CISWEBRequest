@@ -2,7 +2,7 @@ import {ReportData} from './report-data';
 import {ReportBase} from './report-base';
 import {CisProject} from './cis-project';
 import {Report} from './report';
-import {Chart} from './chart';
+import {Charts} from './chart';
 
 export class CisReport extends ReportBase {
     project;
@@ -14,12 +14,11 @@ export class CisReport extends ReportBase {
         super();
         this.project = new  CisProject();
         this.report = new Report();
-        this.chart = new Chart();
+        this.chart = new Charts();
         this.reportData = new ReportData();
     }
 
     saveToEmail() {
-        // todo: return real html
-        return "html";
+        return "html";        
     }
 }

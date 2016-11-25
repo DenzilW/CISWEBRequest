@@ -15,12 +15,12 @@ export class Charts {
     add() {
         const newCharts = new Chart();
         this.items.push(newCharts);
-        return newCharts
+        return newCharts;
     }
 
     remove(chart) {
-        const index = this.items.indexOf(chart)
-        this.removeAt(index)
+        const index = this.items.indexOf(chart);
+        this.removeAt(index);
     }
 
     removeAt(index) {

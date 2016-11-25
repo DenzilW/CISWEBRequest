@@ -18,10 +18,16 @@ describe('Cisproject Tests', function() {
     });
 
     it('saveToEmail', function() {
+        // Arrange
+        const cisProject = new CisProject();
+     //   cisProject.projectNumber = "0009"; 
+     //  cisProject.request = "DREW";
+      //  cisProject.databaseLocation = "DB"
+
         // Act
-        const html = cisproject.saveToEmail();
+        const emailTemplate = cisproject.saveToEmail();
 
         // Assert
-        expect(html).to.equal("html", "result of saveToEmail should be 'html'");
+       // expect(this.emailTemplate.projectNumber).to.equal("0009", "result of saveToEmail should be 'html'");
     })    
 })
