@@ -1,12 +1,13 @@
-<template>
+<template bindable="model,actions">
     <div class="flex-body">
         <div class="flex-body-main">
             <h2>Project Template</h2>
+            <div innerHTML.bind="test"></div>
         </div>
 
 
         <div class="bottom-toolbar">
-            <button click.delegate="gotoNextTab()" class="tab-nav-button next-button">Next</button>
+            <button click.delegate="actions.gotoNextTab()" class="tab-nav-button next-button">Next</button>
         </div>
     </div>
 </template>

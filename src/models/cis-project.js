@@ -5,10 +5,10 @@
 import {ReportBase} from './report-base';
 
 export class CisProject extends ReportBase{
-    projectnumber = null;
+    projectNumber = null;
     requester = null;
-    typeofrequest = null;
-    databaselocation = null;
+    typeOfRequest = null;
+    databaseLocation = null;
 
     saveToHtml() {
         // todo: return real html

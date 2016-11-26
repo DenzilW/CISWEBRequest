@@ -6,9 +6,10 @@
     <require from="./tab-data.html"></require>
 
     <div class="body">
+        <div innerHTML.bind="test"></div>
         <pragma-tabsheet>
             <div id="tab-project" data-tab="Project">
-                <tab-project class="tab-body"></tab-project>
+                <tab-project class="tab-body" model.bind="test" actions.bind="actions"></tab-project>
             </div>
 
             <div id="tab-parameters" data-tab="Parameters">
