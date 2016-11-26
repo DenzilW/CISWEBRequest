@@ -82,8 +82,34 @@ router-view {
 
 .flex-body-main {
     flex: 1;
+    padding: 1rem;
 }
 
 .bottom-toolbar {
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
     height: $bottom-toolbar-height;
+}
+
+.tab-nav-button {
+    width: 7rem;
+    height: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    display: block;
+    border-width: 0;
+    color: $button-text-color;
+}
+
+.next-button {
+    background: $next-button-background;
+}
+
+.previous-button {
+    background: $previous-button-background;
+}
+
+.add-button {
+    background: $add-button-background;
 }

@@ -8,10 +8,10 @@ export class Welcome {
     }
 
     gotoNextTab() {
-
+        console.log("go to next tab");
     }
 
     gotoPreviousTab() {
-
+        console.log("go to previous tab");
     }
 }
