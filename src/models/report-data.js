@@ -5,16 +5,16 @@
 import {ReportBase} from './report-base';
 
 export class ReportData extends ReportBase {
-    reportDataTitle;
-    reportGroupedScreen;
-    reportGroupedFieldInOnKey;
-    reportGroupedSortOrder
-    onKeyFieldToUsedScreen;
-    onKeyFieldToUsedFieldInOnKey;
-    onKeyFieldToUsedFieldTitle;
-    onKeyFieldToUsedSortOrder;
-    reportIncludeTotals;
-    additionalReportData;
+    reportDataTitle = null;
+    reportGroupedScreen = null;
+    reportGroupedFieldInOnKey = null;
+    reportGroupedSortOrder = null;
+    onKeyFieldToUsedScreen = null;
+    onKeyFieldToUsedFieldInOnKey = null;
+    onKeyFieldToUsedFieldTitle = null;
+    onKeyFieldToUsedSortOrder = null;
+    reportIncludeTotals = null;
+    additionalReportData = null;
 
     saveToEmail() {
         // todo: return real html

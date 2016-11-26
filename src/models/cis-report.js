@@ -5,10 +5,10 @@ import {Report} from './report';
 import {Charts} from './chart';
 
 export class CisReport extends ReportBase {
-    project;
-    report;
-    chart;
-    reportData;
+    project = null;
+    report = null;
+    chart = null;
+    reportData = null;
 
     constructor() {
         super();
@@ -16,6 +16,8 @@ export class CisReport extends ReportBase {
         this.report = new Report();
         this.chart = new Charts();
         this.reportData = new ReportData();
+
+        this.project.projectNumber = "pn 1";
     }
 
     saveToEmail() {

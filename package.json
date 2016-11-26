@@ -21,7 +21,8 @@
   "jspm": {
     "dependencies": {
       "aurelia-bootstrapper": "npm:aurelia-bootstrapper@^1.0.0",
-      "aurelia-framework": "npm:aurelia-framework@^1.0.1"
+      "aurelia-framework": "npm:aurelia-framework@^1.0.1",
+      "pragma-tabsheet": "npm:pragma-tabsheet@^1.0.21"
     },
     "devDependencies": {}
   }
