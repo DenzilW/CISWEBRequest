@@ -63,6 +63,16 @@ router-view {
     right: 0;
 }
 
+label {
+    display: inline-block;
+    width: 10rem;
+    margin-left: 1rem;
+}
+
+input[type="text"] {
+    width: 20rem;
+}
+
 .body {
     position: relative;
     display:block;
@@ -112,4 +122,8 @@ router-view {
 
 .add-button {
     background: $add-button-background;
+}
+
+.descriptor {
+    color: $descriptor-color;
 }

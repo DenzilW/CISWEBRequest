@@ -1,10 +1,14 @@
 <template bindable="model,actions">
     <div class="flex-body">
         <div class="flex-body-main">
-            <h2>Project Template</h2>
-            <div innerHTML.bind="test"></div>
-        </div>
+            <label id="pn-label" for="pn-input">Project Number</label>
+            <input id="pn-input" type="text" value.bind="model.project.projectNumber" aria-labelledby="pn-label" aria-describedby="pn-descriptor" />
+            <label id="pn-descriptor" class="descriptor">Required</label>
 
+            <label id="req-label" for="req-input">Requester</label>
+            <input id="req-input" type="text" value.bind="model.project.requester" aria-labelledby="req-label" aria-describedby="req-descriptor" />
+            <label id="req-descriptor" class="descriptor">Required</label>
+        </div>
 
         <div class="bottom-toolbar">
             <button click.delegate="actions.gotoNextTab()" class="tab-nav-button next-button">Next</button>

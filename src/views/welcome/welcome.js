@@ -22,7 +22,7 @@ export class Welcome {
     }
 
     gotoNextTab() {
-        console.log("go to next tab");
+        console.log(this.model);
     }
 
     gotoPreviousTab() {

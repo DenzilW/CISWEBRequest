@@ -16,6 +16,8 @@ export class CisReport extends ReportBase {
         this.report = new Report();
         this.chart = new Chart();
         this.reportData = new ReportData();
+
+        this.project.projectNumber = "pn 1";
     }
 
     saveToHtml() {
