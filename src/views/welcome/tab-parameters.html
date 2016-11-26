@@ -1,7 +1,19 @@
 <template bindable="model,actions">
+    <require from="./tab-parameters.css"></require>
     <div class="flex-body">
         <div class="flex-body-main">
-            <h2>Parameters Template</h2>
+            <div class="parameters-heading">
+                <button click.delegate="actions.addParameter()" title="add parameter">+</button>
+                <label class="column1">Parameters</label>
+                <label class="column2">Show On Report</label>    
+            </div>
+            <ol>
+                <li repeat.for="parameter of model.parameters.items">
+                    <input type="text" class="column1" value.bind="parameter.value" />
+                    <input type="checkbox" class="column2" checked.bind="parameter.showOnReport" />
+                    <button click.delegate="model.parameters.remove(parameter)" class="remove-button" title="remove parameter">-</button>
+                </li>
+            </ol>
         </div>
 
         <div class="bottom-toolbar">
