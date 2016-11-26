@@ -1,7 +1,12 @@
-<template>
+<template bindable="model,actions">
     <div class="flex-body">
         <div class="flex-body-main">
             <h2>Charts Template</h2>
+        </div>
+
+        <div class="bottom-toolbar">
+            <button click.delegate="actions.gotoPreviousTab()" class="tab-nav-button previous-button">Prior</button>
+            <button click.delegate="actions.gotoNextTab()" class="tab-nav-button next-button">Next</button>
         </div>
     </div>
 </template>
