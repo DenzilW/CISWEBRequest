@@ -17,11 +17,11 @@ describe('Reportdata Tests', function() {
         expect(() => ReportData()).to.throw("Cannot call a class as a function");
     });  
 
-    it('saveToHtml', function() {
+    it('saveToEmail', function() {
         // Act
-        const html = reportData.saveToHtml();
+        const html = reportData.saveToEmail();
 
         // Assert
-        expect(html).to.equal("html", "result of saveToHtml should be 'html'");
+        expect(html).to.equal("html", "result of saveToEmail should be 'html'");
     })  
 })
