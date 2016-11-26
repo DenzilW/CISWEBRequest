@@ -1,0 +1,12 @@
+<template bindable="model,actions">
+    <div class="flex-body">
+        <div class="flex-body-main">
+            <h2>Data Template</h2>
+        </div>
+
+        <div class="bottom-toolbar">
+            <button click.delegate="actions.gotoPreviousTab()" class="tab-nav-button previous-button">Prior</button>
+            <button click.delegate="actions.sendEmail()" class="tab-nav-button next-button">Send</button>
+        </div>
+    </div>
+</template>
