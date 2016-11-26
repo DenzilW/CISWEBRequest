@@ -17,11 +17,11 @@ describe('CisReport Tests', function() {
         expect(() => CisReport()).to.throw("Cannot call a class as a function");
     }); 
 
-    it('saveToHtml', function() {
+    it('saveToEmail', function() {
         // Act
-        const html = cisReport.saveToHtml();
+        const html = cisReport.saveToEmail();
 
         // Assert
-        expect(html).to.equal("html", "result of saveToHtml should be 'html'");
+        expect(html).to.equal("html", "result of saveToEmail should be 'html'");
     })   
 })

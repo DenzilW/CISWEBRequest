@@ -3,6 +3,7 @@
     Model for holding information about the project
 */
 import {ReportBase} from './report-base';
+import {projectEmailTemplate} from './templates';
 
 export class CisProject extends ReportBase{
     projectNumber = null;
@@ -10,8 +11,10 @@ export class CisProject extends ReportBase{
     typeOfRequest = null;
     databaseLocation = null;
 
-    saveToHtml() {
-        // todo: return real html
-        return "html";
+    saveToEmail() {
+        return projectEmailTemplate
+            .replace("{projectNumber}", this.projectNumber)
+            .replace("{requester}", this.requester)
+            .replace("{databaseLocation}", this.databaseLocation)
     }
 }

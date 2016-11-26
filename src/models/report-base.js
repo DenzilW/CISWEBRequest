@@ -1,5 +1,5 @@
 export class ReportBase {
-    saveToHtml() {
+    saveToEmail() {
         throw new Error("override saveToTemplate");
     }    
 }

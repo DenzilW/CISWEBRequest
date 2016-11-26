@@ -17,11 +17,20 @@ describe('Cisproject Tests', function() {
         expect(() => CisProject()).to.throw("Cannot call a class as a function");
     });
 
-    it('saveToHtml', function() {
+    it('saveToEmail', function() {
+        // Arrange
+        const cisProject = new CisProject();
+        cisProject.projectNumber = "0009";
+        cisProject.requester = "DREW";
+        cisProject.databaseLocation = "DB";
+
         // Act
-        const html = cisproject.saveToHtml();
+        const emailTemplate = cisProject.saveToEmail();
 
         // Assert
-        expect(html).to.equal("html", "result of saveToHtml should be 'html'");
-    })    
-})
+        expect(emailTemplate.length).to.be.above(0, "emailtemplate should have some length");
+        expect(emailTemplate.indexOf('Project Number: 0009')).to.be.above(-1, "project number text not set correctly");
+        expect(emailTemplate.indexOf('Requester: DREW')).to.be.above(-1, "requester text not set correctly");
+        expect(emailTemplate.indexOf('Type Of Request: DB')).to.be.above(-1, "db text not set correctly");
+    })
+});
