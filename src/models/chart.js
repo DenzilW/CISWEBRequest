@@ -3,7 +3,7 @@
     Model for holding chart data
 */
 import {ReportBase} from './report-base';
-
+import {inject} from 'aurelia-framework';
 
 export class Charts {
     items;
@@ -12,9 +12,18 @@ export class Charts {
         this.items = [];
     }
 
+    dispose() {
+        this.items.clear();
+        this.items = null;
+    }
+
     add() {
         const newCharts = new Chart();
+        newCharts.chartTitle = `chart ${this.items.length + 1}`;
         this.items.push(newCharts);
+
+        dispatchEvent(new CustomEvent('new:chart', {detail: newCharts}));
+
         return newCharts;
     }
 
@@ -38,10 +47,10 @@ export class Chart extends ReportBase {
     whatAchieve = null;
     chartType = null;
     chartTitle = null;
-    xaxsTitle = null;
-    yaxisTitle = null;
-    yaxisTitleprimary = null;
-    yaxisTitlesecondary = null;
+    xAxisTitle = null;
+    yAxisTitle = null;
+    yAxisTitleprimary = null;
+    yAxisTitlesecondary = null;
     axisScreen = null;
     axisFieldInOnkey = null;
     axisAddDataLabels = null;
@@ -49,17 +58,15 @@ export class Chart extends ReportBase {
     fieldToGroupFieldInOnkey = null;
     fieldToGroupAddDataLabels = null;
     fieldToGroupTrendlineRequired = null;
-    yaxisPrimaryScreen = null;
-    yaxisPrimaryFieldInOnkey = null;
-    yaxisPrimaryAddDataLabels = null;
-    yaxisPrimaryTrendlineRequired = null;
-    yaxisSecondaryScreen = null;
-    yaxisSecondaryFieldInOnkey = null;
-    yaxisSecondaryAddDataLabels = null;
-    yaxisSecondaryTrendlineRequired = null;
+    yAxisPrimaryScreen = null;
+    yAxisPrimaryFieldInOnkey = null;
+    yAxisPrimaryAddDataLabels = null;
+    yAxisPrimaryTrendlineRequired = null;
+    yAxisSecondaryScreen = null;
+    yAxisSecondaryFieldInOnkey = null;
+    yAxisSecondaryAddDataLabels = null;
+    yAxisSecondaryTrendlineRequired = null;
     totals = null;
-    sortorder = null;
+    sortOrder = null;
     additionalRequirements = null;
-
-
 }

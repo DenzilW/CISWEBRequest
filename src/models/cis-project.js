@@ -11,6 +11,10 @@ export class CisProject extends ReportBase{
     typeOfRequest = null;
     databaseLocation = null;
 
+    dispose() {
+        // clean up properties here if any.
+    }
+
     saveToEmail() {
         return projectEmailTemplate
             .replace("{projectNumber}", this.projectNumber)

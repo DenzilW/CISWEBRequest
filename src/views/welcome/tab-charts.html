@@ -1,7 +1,26 @@
 <template bindable="model,actions">
+    <require from="./tab-charts.css"></require>
     <div class="flex-body">
-        <div class="flex-body-main">
-            <h2>Charts Template</h2>
+        <div class="flex-body-main flex-row">
+            <div class="chart-left">
+                <div class="parameters-heading">
+                    <button click.delegate="actions.addChart()" title="add chart">+</button>
+                    <label class="column1">Charts</label>
+                </div>
+                <ol class="list">
+                    <li repeat.for="chart of model.charts.items">
+                        <span class="chart-list-item">${chart.chartTitle}</span>
+                        <button click.delegate="model.charts.remove(chart)" class="remove-button" title="remove chart">Delete</button>
+                    </li>
+                </ol>
+            </div>
+            <div class="chart-body">
+                <div>
+                    <label id="cTitle-label" for="cTitle-input">chartTitle</label>
+                    <input id="cTitle-input" type="text" value.bind="model.selectedChart.chartTitle" aria-labelledby="cTitle-label" aria-describedby="cTitle-descriptor" />
+                    <label id="cTitle-descriptor" class="descriptor">Required</label>
+                </div>
+            </div>
         </div>
 
         <div class="bottom-toolbar">

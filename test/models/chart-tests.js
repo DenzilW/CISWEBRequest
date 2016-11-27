@@ -1,9 +1,12 @@
-import {expect} from 'chai';
+import {expect, assert} from 'chai';
+import * as sinon from 'sinon';
 import 'aurelia-polyfills';
 import {Charts} from './../../src/models/chart';
+import './../mocks/EventManagementMock';
+import './../mocks/CustomEventMock';
 
 describe('Chart Tests', function() {
-    let charts;
+    let charts = null;
 
     beforeEach(function() {
         charts = new Charts ();
@@ -27,6 +30,7 @@ describe('Chart Tests', function() {
 
     it('add', function() {
         //Arrange
+        const dispatchEventMockSpy = sinon.spy(global, "dispatchEvent");
         const count = charts.items.length;
 
         // Act
@@ -35,6 +39,10 @@ describe('Chart Tests', function() {
         
         // Assert
         expect(newCount).to.be.equal(count + 1,"Expect count to be greater than 0");
+        assert(dispatchEventMockSpy.calledOnce, "dispatchEvent should have been called when adding a new chart item");
+
+        // NB. restore spies when you done with them
+        dispatchEventMockSpy.restore();
     });
 
     it("removeAt", function() {

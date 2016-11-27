@@ -14,6 +14,10 @@ export class Report extends ReportBase {
     formattingRequirements = null;
     parameters = null;
 
+    dispose() {
+        // clean up properties here if any.
+    }
+
     saveToEmail() {
         // todo: return real html
         return "html";

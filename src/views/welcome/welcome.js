@@ -13,7 +13,8 @@ export class Welcome {
             gotoNextTab: this.gotoNextTab.bind(this),
             gotoPreviousTab: this.gotoPreviousTab.bind(this),
             sendEmail: this.sendEmail.bind(this),
-            addParameter: this.model.parameters.add.bind(this.model.parameters)
+            addParameter: this.model.parameters.add.bind(this.model.parameters),
+            addChart: this.model.charts.add.bind(this.model.charts)
         }
     }
 

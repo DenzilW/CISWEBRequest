@@ -4,21 +4,46 @@ import {CisProject} from './cis-project';
 import {Report} from './report';
 import {Charts} from './chart';
 import {CisParameters} from './cis-parameters'
+import {inject} from 'aurelia-framework';
 
-export class CisReport extends ReportBase {
+export class CisReport {
     project = null;
     report = null;
-    chart = null;
+    charts = null;
     reportData = null;
     parameters = null;
+    selectedChart = null;
 
-    constructor() {
-        super();
+    static inject() { return [EventAggregator]; }
+    constructor(eventAggregator) {
+        this.chartAddedEventHandler = this.chartAdded.bind(this);
+        addEventListener('new:chart', this.chartAddedEventHandler);
+
         this.project = new  CisProject();
         this.parameters = new CisParameters();
         this.report = new Report();
-        this.chart = new Charts();
+        this.charts = new Charts();
         this.reportData = new ReportData();
+    }
+
+    chartAdded(event) {
+        this.selectedChart = event.detail;
+    }
+
+    dispose() {
+        removeEventListener('new:chart', this.chartAddedEventHandler);
+
+        this.project.dispose();
+        this.parameters.dispose();
+        this.reports.dispose();
+        this.charts.dispose();
+        this.reportData.dispose();
+
+        this.project = null;
+        this.parameters = null;
+        this.reports = null;
+        this.charts = null;
+        this.reportData = null;
     }
 
     saveToEmail() {

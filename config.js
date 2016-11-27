@@ -91,6 +91,7 @@ System.config({
   },
   map: {
     "aurelia-bootstrapper": "npm:aurelia-bootstrapper@1.0.1",
+    "aurelia-event-aggregator": "npm:aurelia-event-aggregator@1.0.0",
     "aurelia-framework": "npm:aurelia-framework@1.0.7",
     "pragma-tabsheet": "npm:pragma-tabsheet@1.0.21",
     "npm:aurelia-binding@1.0.9": {
