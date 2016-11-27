@@ -1,9 +1,12 @@
 import {expect} from 'chai';
+import * as sinon from 'sinon';
 import 'aurelia-polyfills';
 import {Charts} from './../../src/models/chart';
+import {dispatchEventMock} from './../mocks/EventManagementMock';
+import './../mocks/CustomEventMock';
 
 describe('Chart Tests', function() {
-    let charts;
+    let charts = null;
 
     beforeEach(function() {
         charts = new Charts ();

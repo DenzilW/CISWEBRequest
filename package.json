@@ -16,7 +16,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "build-utilities": "0.0.112"
+    "build-utilities": "0.0.112",
+    "pragma-tabsheet": "^1.0.21"
   },
   "jspm": {
     "dependencies": {
