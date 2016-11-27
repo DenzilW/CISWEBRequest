@@ -11,7 +11,7 @@
                 <li repeat.for="parameter of model.parameters.items">
                     <input type="text" class="column1" value.bind="parameter.value" />
                     <input type="checkbox" class="column2" checked.bind="parameter.showOnReport" />
-                    <button click.delegate="model.parameters.remove(parameter)" class="remove-button" title="remove parameter">-</button>
+                    <button click.delegate="model.parameters.remove(parameter)" class="remove-button" title="remove parameter">Delete</button>
                 </li>
             </ol>
         </div>

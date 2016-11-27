@@ -95,6 +95,11 @@ input[type="text"] {
     padding: 1rem;
 }
 
+.flex-row {
+    display:flex;
+    flex-direction: row;
+}
+
 .bottom-toolbar {
     display:flex;
     justify-content: flex-end;
@@ -126,4 +131,10 @@ input[type="text"] {
 
 .descriptor {
     color: $descriptor-color;
+}
+
+.list {
+    overflow-y: auto;
+    flex: 1;
+    padding: 0;
 }
