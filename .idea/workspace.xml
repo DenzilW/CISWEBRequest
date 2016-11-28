@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7da2b80b-685a-47f2-8387-1b072ff3e822" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/chart.js" afterPath="$PROJECT_DIR$/src/models/chart.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/models/chart-tests.js" afterPath="$PROJECT_DIR$/test/models/chart-tests.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/models/cis-parameters-tests.js" afterPath="$PROJECT_DIR$/test/models/cis-parameters-tests.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,19 +19,16 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="DockManager">
-    <window id="3">
+    <window id="4">
       <content type="file-editors">
         <state>
           <leaf>
-            <file leaf-file-name="chart.js" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/models/chart.js">
+            <file leaf-file-name="cis-parameters.js" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/models/cis-parameters.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="811">
-                    <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="92" selection-end-column="43" />
-                    <folding>
-                      <element signature="n#!!doc" expanded="true" />
-                      <element signature="e#60#101#0" expanded="true" />
-                    </folding>
+                  <state relative-caret-position="150">
+                    <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="25" />
+                    <folding />
                   </state>
                 </provider>
               </entry>
@@ -47,7 +43,20 @@
     <favorites_list name="CISWEBRequest" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="cis-parameters-tests.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/models/cis-parameters-tests.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="675">
+              <caret line="45" column="18" lean-forward="true" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -55,13 +64,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/test/models/cis-parameters-tests.js" />
         <option value="$PROJECT_DIR$/src/models/cis-report-data.js" />
         <option value="$PROJECT_DIR$/test/models/cis-report-data-tests.js" />
         <option value="$PROJECT_DIR$/src/models/collection-base.js" />
         <option value="$PROJECT_DIR$/test/models/collection-base-tests.js" />
         <option value="$PROJECT_DIR$/src/models/chart.js" />
         <option value="$PROJECT_DIR$/test/models/chart-tests.js" />
+        <option value="$PROJECT_DIR$/test/models/cis-parameters-tests.js" />
       </list>
     </option>
   </component>
@@ -321,7 +330,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1480325460470</updated>
-      <workItem from="1480325461855" duration="2606000" />
+      <workItem from="1480325461855" duration="2792000" />
     </task>
     <task id="LOCAL-00001" summary="added tests&#10;">
       <created>1480326623946</created>
@@ -337,11 +346,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480327455804</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="chart tests">
+      <created>1480328078247</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1480328078247</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2606000" />
+    <option name="totallyTimeSpent" value="2792000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1786" height="1417" extended-state="0" />
@@ -355,7 +371,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20509915" sideWeight="0.27521008" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30331025" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32948422" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3995381" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -377,7 +393,8 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="added tests&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="added tests&#10;" />
+    <MESSAGE value="chart tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="chart tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -386,24 +403,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/models/cis-parameters.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="26" lean-forward="false" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/models/cis-parameters-tests.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#28#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/test/models/collection-base-tests.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="762">
@@ -458,23 +457,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/chart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="811">
-          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="92" selection-end-column="43" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#60#101#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/models/chart-tests.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
           <caret line="82" column="24" lean-forward="true" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
+            <element signature="e#0#36#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/chart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="811">
+          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="92" selection-end-column="43" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#60#101#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/cis-parameters.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/models/cis-parameters-tests.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="45" column="18" lean-forward="true" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>

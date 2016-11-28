@@ -1,6 +1,6 @@
 import {expect} from 'chai';
 import 'aurelia-polyfills';
-import {CisParameters} from './../../src/models/cis-parameters';
+import {CisParameters, CisParameter} from './../../src/models/cis-parameters';
 
 describe('CisParameters Tests', function() {
     let cisParameters;
@@ -29,4 +29,29 @@ describe('CisParameters Tests', function() {
         // Assert
         expect(newCount).to.be.equal(count + 1,"Expect count to be greater than 0");
     });
+});
+
+describe('CisParameter Tests', function() {
+    let parameter;
+
+    beforeEach(function() {
+        parameter = new CisParameter ();
+    });
+
+    it('constructor', function() {
+        expect(parameter).to.not.be.null;
+    });
+
+    it('dispose', function() {
+        // Arrange
+        parameter.value = "1";
+        parameter.showOnReport = true;
+
+        // Act
+        parameter.dispose();
+
+        // Assert
+        expect(parameter.value).to.be.null;
+        expect(parameter.showOnReport).to.be.null;
+    })
 });
