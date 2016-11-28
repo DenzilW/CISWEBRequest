@@ -8,8 +8,8 @@
                     <label class="column1">Charts</label>
                 </div>
                 <ol class="list">
-                    <li repeat.for="chart of model.charts.items" click.delegate="model.charts.selectChart(chart)" class="${chart.isSelected ? 'selected' : ''}">
-                        <span class="chart-list-item">${chart.chartTitle}</span>
+                    <li repeat.for="chart of model.charts.items" click.delegate="model.charts.selectItem(chart)" class="${chart.isSelected ? 'selected' : ''}">
+                        <span class="list-item">${chart.chartTitle}</span>
                         <button click.delegate="model.charts.remove(chart)" class="remove-button" title="remove chart">Delete</button>
                     </li>
                 </ol>
@@ -17,7 +17,7 @@
             <div class="chart-body">
                 <div>
                     <label id="cTitle-label" for="cTitle-input">Chart Title</label>
-                    <input id="cTitle-input" type="text" value.bind="model.charts.selectedChart.chartTitle" aria-labelledby="cTitle-label" aria-describedby="cTitle-descriptor" />
+                    <input id="cTitle-input" type="text" value.bind="model.charts.selectedItem.chartTitle" aria-labelledby="cTitle-label" aria-describedby="cTitle-descriptor" />
                     <label id="cTitle-descriptor" class="descriptor">Required</label>
                 </div>
             </div>
