@@ -41,6 +41,6 @@ export class CisReport {
     }
 
     saveToEmail() {
-        return "html";        
+        return "proview of email to send, will be replaced by denzil";
     }
 }
