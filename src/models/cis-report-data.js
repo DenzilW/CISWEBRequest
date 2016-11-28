@@ -49,6 +49,12 @@ export class CisReportDataGroupingItem {
     screen = null;
     fieldInOnKey = null;
     sortOrder = null;
+
+    dispose() {
+        this.screen = null;
+        this.fieldInOnKey = null;
+        this.sortOrder = null;
+    }
 }
 
 export class CisReportDataOnKeyFieldsCollection extends CollectionBase {
@@ -64,4 +70,11 @@ export class CisReportDataOnKeyFieldsItem {
     fieldInOnKey = null;
     fieldTitle = null;
     sortOrder = null;       // ascending, descending, none
+
+    dispose() {
+        this.screen = null;
+        this.fieldInOnKey = null;
+        this.fieldTitle = null;
+        this.sortOrder = null;
+    }
 }

@@ -10,7 +10,6 @@ export class CollectionBase {
             item.dispose();
         }
 
-        this.items.clear();
         this.items = null;
     }
 
