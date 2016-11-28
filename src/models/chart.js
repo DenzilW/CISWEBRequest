@@ -3,19 +3,10 @@
     Model for holding chart data
 */
 import {ReportBase} from './report-base';
+import {CollectionBase} from './collection-base';
 
-export class Charts {
-    items;
+export class Charts extends CollectionBase {
     selectedChart = null;
-
-    constructor() {
-        this.items = [];
-    }
-
-    dispose() {
-        this.items.clear();
-        this.items = null;
-    }
 
     add() {
         const newChart = new Chart(`chart ${this.items.length + 1}`);
@@ -23,15 +14,6 @@ export class Charts {
         this.selectChart(newChart);
 
         return newChart;
-    }
-
-    remove(chart) {
-        const index = this.items.indexOf(chart);
-        this.removeAt(index);
-    }
-
-    removeAt(index) {
-        return this.items.splice(index, 1); 
     }
 
     saveToEmail() {
@@ -80,5 +62,34 @@ export class Chart extends ReportBase {
         super();
         this.chartTitle = chartTitle;
         this.isSelected = true;
+    }
+
+    dispose() {
+        this.isSelected = null;
+        this.whatAchieve = null;
+        this.chartType = null;
+        this.chartTitle = null;
+        this.xAxisTitle = null;
+        this.yAxisTitle = null;
+        this.yAxisTitleprimary = null;
+        this.yAxisTitlesecondary = null;
+        this.axisScreen = null;
+        this.axisFieldInOnkey = null;
+        this.axisAddDataLabels = null;
+        this.axisTrendlineRequired = null;
+        this.fieldToGroupFieldInOnkey = null;
+        this.fieldToGroupAddDataLabels = null;
+        this.fieldToGroupTrendlineRequired = null;
+        this.yAxisPrimaryScreen = null;
+        this.yAxisPrimaryFieldInOnkey = null;
+        this.yAxisPrimaryAddDataLabels = null;
+        this.yAxisPrimaryTrendlineRequired = null;
+        this.yAxisSecondaryScreen = null;
+        this.yAxisSecondaryFieldInOnkey = null;
+        this.yAxisSecondaryAddDataLabels = null;
+        this.yAxisSecondaryTrendlineRequired = null;
+        this.totals = null;
+        this.sortOrder = null;
+        this.additionalRequirements = null;
     }
 }
