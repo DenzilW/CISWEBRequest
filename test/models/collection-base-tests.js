@@ -1,4 +1,5 @@
-import {expect} from 'chai';
+import {expect, assert} from 'chai';
+import * as sinon from 'sinon';
 import 'aurelia-polyfills';
 import {CollectionBase} from './../../src/models/collection-base';
 
@@ -68,4 +69,22 @@ describe('CollectionBase Tests', function() {
         expect(collectionBase.items[0].value).to.be.not.equal(param1.value, "Expected that param1 must be removed");
     });
 
+    it("dispose", function() {
+        // Arrange
+        const testItem = new TestObject();
+        const disposeSpy = sinon.spy(testItem, "dispose");
+
+        collectionBase.items.push(testItem);
+
+        // Act
+        collectionBase.dispose();
+
+        // Assert
+        assert(disposeSpy.calledOnce, "dispose should have been called on the testItem");
+        expect(collectionBase.items).to.be.null;
+    });
+
+    it("add, throw error", function() {
+        expect(() => new CollectionBase ().add()).to.throw("collection must override add method");
+    });
 });
