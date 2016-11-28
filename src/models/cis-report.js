@@ -4,6 +4,7 @@ import {CisProject} from './cis-project';
 import {Report} from './report';
 import {Charts} from './chart';
 import {CisParameters} from './cis-parameters'
+import {Email} from './email';
 import {inject} from 'aurelia-framework';
 
 export class CisReport {
@@ -12,6 +13,7 @@ export class CisReport {
     charts = null;
     reportData = null;
     parameters = null;
+    email = null;
 
     static inject() { return [EventAggregator]; }
     constructor(eventAggregator) {
@@ -20,6 +22,7 @@ export class CisReport {
         this.report = new Report();
         this.charts = new Charts();
         this.reportData = new CisReportData();
+        this.email = new Email();
     }
 
     dispose() {
@@ -34,6 +37,7 @@ export class CisReport {
         this.reports = null;
         this.charts = null;
         this.reportData = null;
+        this.email = null;
     }
 
     saveToEmail() {

@@ -39,7 +39,10 @@ export class CisReportData extends ReportBase {
 export class CisReportDataGroupingCollection extends CollectionBase {
     add() {
         const item = new CisReportDataGroupingItem();
+        item.screen = "work orders";
+        item.fieldInOnKey = "code";
         this.items.push(item);
+        this.selectItem(item);
         return item;
     }
 }
@@ -60,7 +63,11 @@ export class CisReportDataGroupingItem {
 export class CisReportDataOnKeyFieldsCollection extends CollectionBase {
     add() {
         const item = new CisReportDataOnKeyFieldsItem();
+        item.screen = "work orders";
+        item.fieldInOnKey = "code";
+        item.fieldTitle = "work order code";
         this.items.push(item);
+        this.selectItem(item);
         return item;
     }
 }

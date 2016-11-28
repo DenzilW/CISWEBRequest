@@ -1,5 +1,6 @@
 export class CollectionBase {
     items;
+    selectedItem;
 
     constructor() {
         this.items = [];
@@ -25,5 +26,14 @@ export class CollectionBase {
     removeAt(index) {
         this.items[index].dispose();
         return this.items.splice(index, 1); 
+    }
+
+    selectItem(item) {
+        if (this.selectedItem) {
+            this.selectedItem.isSelected = false;
+        }
+
+        item.isSelected = true;
+        this.selectedItem = item;
     }
 }
