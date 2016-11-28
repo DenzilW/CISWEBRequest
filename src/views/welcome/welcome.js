@@ -14,7 +14,10 @@ export class Welcome {
             gotoPreviousTab: this.gotoPreviousTab.bind(this),
             sendEmail: this.sendEmail.bind(this),
             addParameter: this.model.parameters.add.bind(this.model.parameters),
-            addChart: this.model.charts.add.bind(this.model.charts)
+            addChart: this.model.charts.add.bind(this.model.charts),
+            addDataGroup: this.model.reportData.dataGroupings.add.bind(this.model.reportData.dataGroupings),
+            addDataOnKeyFields: this.model.reportData.onKeyFields.add.bind(this.model.reportData.onKeyFields),
+            refreshEmail: this.createEmailBody.bind(this)
         }
     }
 
@@ -31,6 +34,12 @@ export class Welcome {
 
     gotoNextTab() {
         this.tabsheet.performAction(PragmaTabSheetActions.gotoNextTab, null);
+
+        const index = this.tabsheet.tabs.visibleTabs.length -1;
+        if (this.tabsheet.tabs.visibleTabs.indexOf(this.tabsheet.tabs.selectedTab) === index) {
+            this.createEmailBody();
+            console.log("last tab");
+        }
     }
 
     gotoPreviousTab() {
@@ -39,5 +48,9 @@ export class Welcome {
 
     sendEmail() {
         console.log('send email');
+    }
+
+    createEmailBody() {
+        this.model.email.body = "the text generated from the email code denzil is doing";
     }
 }

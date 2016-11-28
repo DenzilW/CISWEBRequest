@@ -69,10 +69,6 @@ label {
     margin-left: 1rem;
 }
 
-input[type="text"] {
-    width: 20rem;
-}
-
 .body {
     position: relative;
     display:block;
@@ -131,6 +127,7 @@ input[type="text"] {
 
 .descriptor {
     color: $descriptor-color;
+    width: auto;
 }
 
 .list {
@@ -145,4 +142,30 @@ input[type="text"] {
 
 .selected {
     background: $selected-background;
+}
+
+ul {
+    margin: 0;
+    padding: 1rem;
+    list-style: none;
+    background: $primary-background;
+}
+
+.list-item {
+    width: 14rem;
+    display: inline-block;
+}
+
+.parameter-details {
+    margin-top: 2.5rem;
+}
+
+.memo {
+    display: block;
+    height: 10rem;
+    width: 100%;
+}
+
+.padded {
+    padding: 1rem;
 }

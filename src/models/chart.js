@@ -6,27 +6,16 @@ import {ReportBase} from './report-base';
 import {CollectionBase} from './collection-base';
 
 export class Charts extends CollectionBase {
-    selectedChart = null;
-
     add() {
         const newChart = new Chart(`chart ${this.items.length + 1}`);
         this.items.push(newChart);
-        this.selectChart(newChart);
+        this.selectItem(newChart);
 
         return newChart;
     }
 
     saveToEmail() {
         return "html";
-    }
-
-    selectChart(chart) {
-        if (this.selectedChart) {
-            this.selectedChart.isSelected = false;
-        }
-
-        chart.isSelected = true;
-        this.selectedChart = chart;
     }
 }
 
