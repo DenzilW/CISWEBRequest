@@ -1,4 +1,4 @@
-import {ReportData} from './report-data';
+import {CisReportData} from './cis-report-data';
 import {ReportBase} from './report-base';
 import {CisProject} from './cis-project';
 import {Report} from './report';
@@ -19,7 +19,7 @@ export class CisReport {
         this.parameters = new CisParameters();
         this.report = new Report();
         this.charts = new Charts();
-        this.reportData = new ReportData();
+        this.reportData = new CisReportData();
     }
 
     dispose() {

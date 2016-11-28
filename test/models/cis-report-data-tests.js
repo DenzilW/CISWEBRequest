@@ -1,12 +1,12 @@
 import {expect} from 'chai';
 import 'aurelia-polyfills';
-import {ReportData} from './../../src/models/report-data';
+import {CisReportData} from './../../src/models/cis-report-data';
 
 describe('Reportdata Tests', function() {
     let reportData;
 
     beforeEach(function() {
-        reportData = new ReportData ();
+        reportData = new CisReportData ();
     });
     
     it('constructor', function() {
@@ -14,7 +14,7 @@ describe('Reportdata Tests', function() {
     });
     
     it('not constructor', function() {
-        expect(() => ReportData()).to.throw("Cannot call a class as a function");
+        expect(() => CisReportData()).to.throw("Cannot call a class as a function");
     });  
 
     it('saveToEmail', function() {
