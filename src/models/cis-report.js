@@ -12,13 +12,9 @@ export class CisReport {
     charts = null;
     reportData = null;
     parameters = null;
-    selectedChart = null;
 
     static inject() { return [EventAggregator]; }
     constructor(eventAggregator) {
-        this.chartAddedEventHandler = this.chartAdded.bind(this);
-        addEventListener('new:chart', this.chartAddedEventHandler);
-
         this.project = new  CisProject();
         this.parameters = new CisParameters();
         this.report = new Report();
@@ -26,13 +22,7 @@ export class CisReport {
         this.reportData = new ReportData();
     }
 
-    chartAdded(event) {
-        this.selectedChart = event.detail;
-    }
-
     dispose() {
-        removeEventListener('new:chart', this.chartAddedEventHandler);
-
         this.project.dispose();
         this.parameters.dispose();
         this.reports.dispose();
