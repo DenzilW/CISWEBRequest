@@ -3,10 +3,10 @@
     Model for holding chart data
 */
 import {ReportBase} from './report-base';
-import {inject} from 'aurelia-framework';
 
 export class Charts {
     items;
+    selectedChart = null;
 
     constructor() {
         this.items = [];
@@ -18,13 +18,11 @@ export class Charts {
     }
 
     add() {
-        const newCharts = new Chart();
-        newCharts.chartTitle = `chart ${this.items.length + 1}`;
-        this.items.push(newCharts);
+        const newChart = new Chart(`chart ${this.items.length + 1}`);
+        this.items.push(newChart);
+        this.selectChart(newChart);
 
-        dispatchEvent(new CustomEvent('new:chart', {detail: newCharts}));
-
-        return newCharts;
+        return newChart;
     }
 
     remove(chart) {
@@ -33,17 +31,25 @@ export class Charts {
     }
 
     removeAt(index) {
-        // splice the array
         return this.items.splice(index, 1); 
     }
 
     saveToEmail() {
-        // todo: return real html
         return "html";
+    }
+
+    selectChart(chart) {
+        if (this.selectedChart) {
+            this.selectedChart.isSelected = false;
+        }
+
+        chart.isSelected = true;
+        this.selectedChart = chart;
     }
 }
 
 export class Chart extends ReportBase {
+    isSelected = null;
     whatAchieve = null;
     chartType = null;
     chartTitle = null;
@@ -69,4 +75,10 @@ export class Chart extends ReportBase {
     totals = null;
     sortOrder = null;
     additionalRequirements = null;
+
+    constructor(chartTitle) {
+        super();
+        this.chartTitle = chartTitle;
+        this.isSelected = true;
+    }
 }

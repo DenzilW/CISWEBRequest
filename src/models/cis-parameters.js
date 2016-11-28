@@ -10,7 +10,6 @@ export class CisParameters {
         this.items = null;
     }
 
-
     add() {
         const newParameter = new CisParameter();
         this.items.push(newParameter);
