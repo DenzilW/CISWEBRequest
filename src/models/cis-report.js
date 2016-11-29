@@ -15,8 +15,7 @@ export class CisReport {
     parameters = null;
     email = null;
 
-    static inject() { return [EventAggregator]; }
-    constructor(eventAggregator) {
+    constructor() {
         this.project = new  CisProject();
         this.parameters = new CisParameters();
         this.report = new Report();
@@ -34,13 +33,19 @@ export class CisReport {
 
         this.project = null;
         this.parameters = null;
-        this.reports = null;
+        this.report = null;
         this.charts = null;
         this.reportData = null;
         this.email = null;
     }
 
     saveToEmail() {
-        return "html";        
+        return `
+        ${this.project.saveToEmail()}
+        ${this.report.saveToEmail()}
+        ${this.parameters.saveToEmail()}
+        ${this.charts.saveToEmail()}
+        ${this.reportData.saveToEmail()}
+        `;
     }
 }

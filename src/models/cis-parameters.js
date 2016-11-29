@@ -6,6 +6,10 @@ export class CisParameters extends CollectionBase {
         this.items.push(newParameter);
         return newParameter;
     }
+
+    saveToEmail() {
+        return "Parameters stuff -- todo";
+    }
 }
 
 export class CisParameter {

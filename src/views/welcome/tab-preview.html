@@ -1,8 +1,9 @@
 <template bindable="model,actions">
     <div class="flex-body">
-        <div class="flex-body-main">
+        
+        <pre class="flex-body-main">
             ${model.email.body}
-        </div>
+        </pre>
 
         <div class="bottom-toolbar">
             <button click.delegate="actions.gotoPreviousTab()" class="tab-nav-button previous-button">Prior</button>

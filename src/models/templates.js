@@ -65,5 +65,6 @@ On Key fields to be used
 Screen in On Key    | Field in On Key| Field title on report    | Sort order
 ---------------------------------------------
 Report data to include totals?  : {reportIncludeTotals}
-Any additional requirements for the report data?: {reportDataTitle}
+Any additional requirements for the report data?: {additionalReportData}
 `;
+

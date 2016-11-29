@@ -51,6 +51,6 @@ export class Welcome {
     }
 
     createEmailBody() {
-        this.model.email.body = "the text generated from the email code denzil is doing";
+        this.model.email.body = this.model.saveToEmail();
     }
 }

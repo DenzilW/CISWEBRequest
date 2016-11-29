@@ -18,11 +18,20 @@ describe('Reportdata Tests', function() {
     });  
 
     it('saveToEmail', function() {
+        // Arrange
+        const cisReportData = new CisReportData();
+        cisReportData.reportDataTitle = "Report Work Order";
+        cisReportData.reportIncludeTotals = "1000";
+        cisReportData.additionalReportData = "Asset for WO Department";
+
         // Act
-        const html = reportData.saveToEmail();
+        const emailTemplate = cisReportData.saveToEmail();
 
         // Assert
-        expect(html).to.equal("html", "result of saveToEmail should be 'html'");
+        expect(emailTemplate.length).to.be.above(0, "emailtemplate should have some length");
+        expect(emailTemplate.indexOf('Report data title: Report Work Order')).to.be.above(-1, "reportDataTitle text not set correctly");
+        expect(emailTemplate.indexOf('Report data to include totals?  : 1000')).to.be.above(-1, "reportIncludeTotals text not set correctly");
+        expect(emailTemplate.indexOf('Any additional requirements for the report data?: Asset for WO Department')).to.be.above(-1, "additionalReportData text not set correctly");
     })  
 });
 
@@ -112,3 +121,5 @@ describe('CisReportDataOnKeyFieldsItem Tests', function() {
         expect(item.sortOrder).to.be.null;
     })
 });
+
+
