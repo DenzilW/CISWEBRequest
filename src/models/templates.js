@@ -8,7 +8,8 @@ Project
 ---------------------------------------------
 Project Number: {projectNumber}
 Requester: {requester}
-Type Of Request: {databaseLocation}
+Type Of Request: {typeOfRequest}
+Database backup location: {databaseLocation}
 `;
 
 export const reportEmailTemplate =

@@ -1,6 +1,11 @@
 <template bindable="model,actions">
     <div class="flex-body">
         <div class="flex-body-main">
+
+            <div>
+                <label id="pn-label" for="pn-input">Project Information</label>
+            </div>
+
             <div>
                 <label id="pn-label" for="pn-input">Project Number</label>
                 <input id="pn-input" type="text" value.bind="model.project.projectNumber" aria-labelledby="pn-label" aria-describedby="pn-descriptor" />
@@ -12,6 +17,55 @@
                 <input id="req-input" type="text" value.bind="model.project.requester" aria-labelledby="req-label" aria-describedby="req-descriptor" />
                 <label id="req-descriptor" class="descriptor">Required</label>
             </div>
+
+            <div>
+                <label id="tor-label" for="tor-input">Type Of Request</label>
+                <input id="tor-input" type="text" value.bind="model.project.typeOfRequest" aria-labelledby="tor-label" aria-describedby="tor-descriptor" />
+                <label id="tor-descriptor" class="descriptor">Required</label>
+            </div>
+
+            <div>
+                <label id="db-label" for="ter-input">Database backup location</label>
+                <input id="db-input" type="text" value.bind="model.project.databaseLocation" aria-labelledby="db-label" aria-describedby="db-descriptor" />
+                <label id="db-descriptor" class="descriptor">Required</label>
+            </div>
+        </div>
+
+        <div class="flex-body-main">
+
+            <div>
+                <label id="pn-label" for="pn-input">Report Information</label>
+            </div>
+            <div>
+                <label id="tore-label" for="tore-input">Type Of Report</label>
+                <input id="tore-input" type="text" value.bind="model.report.typeReport" aria-labelledby="tore-label" aria-describedby="tore-descriptor" />
+                <label id="tore-descriptor" class="descriptor">Required</label>
+            </div>
+            <div>
+                <label id="usage-label" for="usage-input">Usage</label>
+                <input id="usage-input" type="text" value.bind="model.report.usage" aria-labelledby="usage-label" aria-describedby="usage-descriptor" />
+                <label id="usage-descriptor" class="descriptor">Required</label>
+            </div>
+            <div>
+                <label id="pgl-label" for="pgl-input">Page Layout</label>
+                <input id="pgl-input" type="text" value.bind="model.report.pageLayout" aria-labelledby="pgl-label" aria-describedby="pgl-descriptor" />
+                <label id="pgl-descriptor" class="descriptor">Required</label>
+            </div>
+            <div>
+                <label id="por-label" for="por-input">Purpose of the report</label>
+                <input id="por-input" type="text" value.bind="model.report.purposeOfReport" aria-labelledby="por-label" aria-describedby="por-descriptor" />
+                <label id="por-descriptor" class="descriptor">Required</label>
+            </div>            
+            <div>
+                <label id="rpt-label" for="rpt-input">Report Title</label>
+                <input id="rpt-input" type="text" value.bind="model.report.reportTitle" aria-labelledby="rpt-label" aria-describedby="rpt-descriptor" />
+                <label id="rpt-descriptor" class="descriptor">Required</label>
+            </div>
+            <div>
+                <label id="frm-label" for="frm-input">Formatting - specific requirements for colours, fonts: {formattingStyle}</label>
+                <input id="frm-input" type="text" value.bind="model.report.formattingRequirements" aria-labelledby="frm-label" aria-describedby="frm-descriptor" />
+                <label id="frm-descriptor" class="descriptor">Required</label>
+            </div>            
         </div>
 
         <div class="bottom-toolbar">
