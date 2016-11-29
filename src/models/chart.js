@@ -57,9 +57,8 @@ export class Chart extends ReportBase {
         this.chartType = null;
         this.chartTitle = null;
         this.xAxisTitle = null;
-        this.yAxisTitle = null;
-        this.yAxisTitleprimary = null;
-        this.yAxisTitlesecondary = null;
+        this.yAxisTitlePrimary = null;
+        this.yAxisTitleSecondary = null;
         this.axisScreen = null;
         this.axisFieldInOnkey = null;
         this.axisAddDataLabels = null;
@@ -85,9 +84,9 @@ export class Chart extends ReportBase {
             .replace("{chartAchieve}", this.whatAchieve)
             .replace("{chartType}", this.chartType)
             .replace("{chartTitle}", this.chartTitle)
-            .replace("{yAxisTitle}", this.yAxisTitle)
-            .replace("{yAxisTitlePrimary}", this.yAxisTitleprimary)
-            .replace("{yAxisTitleSecondary}", this.yAxisTitlesecondary)
+            .replace("{xAxisTitle}", this.xAxisTitle)
+            .replace("{yAxisTitlePrimary}", this.yAxisTitlePrimary)
+            .replace("{yAxisTitleSecondary}", this.yAxisTitleSecondary)
             .replace("{axisScreen}", this.axisScreen)
             .replace("{yAxisTitleprimary}", this.yAxisTitleprimary)
             .replace("{axisFieldInOnkey}", this.axisFieldInOnkey)

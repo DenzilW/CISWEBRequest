@@ -38,8 +38,8 @@ What must the chart display / achieve?: {chartAchieve}
 Chart Type: {chartType}
 Chart Title: {chartTitle}
 X-axis title: {xAxisTitle}
-Y-axis title - primary axis: {yaxisTitlePrimary}
-Y-axis title - secondary axis (if used): {yaxisTitleSecondary}
+Y-axis title - primary axis: {yAxisTitlePrimary}
+Y-axis title - secondary axis (if used): {yAxisTitleSecondary}
 On Key fields to be used
 ---------------------------------------------
 Axis                | Screen in On Key  |  Field in On Key  | Add data labels   | Trendline required
