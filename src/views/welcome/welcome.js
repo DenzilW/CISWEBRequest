@@ -47,10 +47,10 @@ export class Welcome {
     }
 
     sendEmail() {
-        console.log('send email');
+        this.model.email.send();
     }
 
     createEmailBody() {
-        this.model.email.body = "the text generated from the email code denzil is doing";
+        this.model.email.body = this.model.saveToEmail();
     }
 }

@@ -5,4 +5,8 @@ export class Email {
     constructor() {
         this.body = "not defined yet, please click refresh button";
     }
+
+    send() {
+        console.log("send email");
+    }
 }

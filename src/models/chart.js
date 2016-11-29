@@ -4,7 +4,6 @@
 */
 import {ReportBase} from './report-base';
 import {CollectionBase} from './collection-base';
-import {chartEmailTemplate} from './templates';
 
 export class Charts extends CollectionBase {
     add() {
@@ -15,7 +14,9 @@ export class Charts extends CollectionBase {
         return newChart;
     }
 
-
+    saveToEmail() {
+        return "html";
+    }
 }
 
 export class Chart extends ReportBase {
@@ -26,10 +27,10 @@ export class Chart extends ReportBase {
     xAxisTitle = null;
     yAxisTitlePrimary = null;
     yAxisTitleSecondary = null;
-    axisScreen = null;
-    axisFieldInOnkey = null;
-    axisAddDataLabels = null;
-    axisTrendlineRequired = null;
+    xAxisScreen = null;
+    xAxisFieldInOnkey = null;
+    xAxisAddDataLabels = null;
+    xAxisTrendlineRequired = null;
     fieldToGroupFieldInOnkey = null;
     fieldToGroupAddDataLabels = null;
     fieldToGroupTrendlineRequired = null;
@@ -58,12 +59,12 @@ export class Chart extends ReportBase {
         this.chartTitle = null;
         this.xAxisTitle = null;
         this.yAxisTitle = null;
-        this.yAxisTitleprimary = null;
-        this.yAxisTitlesecondary = null;
-        this.axisScreen = null;
-        this.axisFieldInOnkey = null;
-        this.axisAddDataLabels = null;
-        this.axisTrendlineRequired = null;
+        this.yAxisTitlePrimary = null;
+        this.yAxisTitleSecondary = null;
+        this.xAxisScreen = null;
+        this.xAxisFieldInOnkey = null;
+        this.xAxisAddDataLabels = null;
+        this.xAxisTrendlineRequired = null;
         this.fieldToGroupFieldInOnkey = null;
         this.fieldToGroupAddDataLabels = null;
         this.fieldToGroupTrendlineRequired = null;
@@ -78,35 +79,5 @@ export class Chart extends ReportBase {
         this.totals = null;
         this.sortOrder = null;
         this.additionalRequirements = null;
-    }
-
-        saveToEmail() {
-        return chartEmailTemplate
-            .replace("{chartAchieve}", this.whatAchieve)
-            .replace("{chartType}", this.chartType)
-            .replace("{chartTitle}", this.chartTitle)
-            .replace("{yAxisTitle}", this.yAxisTitle)
-            .replace("{yAxisTitlePrimary}", this.yAxisTitleprimary)
-            .replace("{yAxisTitleSecondary}", this.yAxisTitlesecondary)
-            .replace("{axisScreen}", this.axisScreen)
-            .replace("{yAxisTitleprimary}", this.yAxisTitleprimary)
-            .replace("{axisFieldInOnkey}", this.axisFieldInOnkey)
-            .replace("{axisFieldInOnkey}", this.axisFieldInOnkey)
-            .replace("{axisAddDataLabels}", this.axisAddDataLabels)
-            .replace("{axisTrendlineRequired}", this.axisTrendlineRequired)
-            .replace("{fieldToGroupFieldInOnkey}", this.fieldToGroupFieldInOnkey)
-            .replace("{fieldToGroupAddDataLabels}", this.fieldToGroupAddDataLabels)
-            .replace("{fieldToGroupTrendlineRequired}", this.fieldToGroupTrendlineRequired)
-            .replace("{yAxisPrimaryScreen}", this.yAxisPrimaryScreen)
-            .replace("{yAxisPrimaryFieldInOnkey}", this.yAxisPrimaryFieldInOnkey)
-            .replace("{yAxisPrimaryAddDataLabels}", this.yAxisPrimaryAddDataLabels)
-            .replace("{yAxisPrimaryTrendlineRequired}", this.yAxisPrimaryTrendlineRequired)
-            .replace("{yAxisSecondaryScreen}", this.yAxisSecondaryScreen)
-            .replace("{yAxisSecondaryFieldInOnkey}", this.yAxisSecondaryFieldInOnkey)
-            .replace("{yAxisSecondaryAddDataLabels}", this.yAxisSecondaryAddDataLabels)
-            .replace("{yAxisSecondaryTrendlineRequired}", this.yAxisSecondaryTrendlineRequired)
-            .replace("{totals}", this.totals)
-            .replace("{sortOrder}", this.sortOrder)
-            .replace("{additionalRequirements}", this.additionalRequirements)
     }
 }
