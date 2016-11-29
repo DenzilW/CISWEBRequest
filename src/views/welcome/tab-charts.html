@@ -15,11 +15,173 @@
                 </ol>
             </div>
             <div class="chart-body">
+
+                <div>
+                    <label id="wa-label" for="wa-input">What to achive with this chart</label>
+                    <input id="wa-input" type="text" value.bind="model.charts.selectedItem.whatAchieve" aria-labelledby="wa-label" aria-describedby="wa-descriptor" />
+                    <label id="wa-descriptor" class="descriptor">Required</label>
+                </div>
+
+                <div>
+                    <label id="ct-label" for="ct-input">Chart Type</label>
+                    <input id="ct-input" type="text" value.bind="model.charts.selectedItem.chartType" aria-labelledby="ct-label" aria-describedby="ct-descriptor" />
+                    <label id="ct-descriptor" class="descriptor">Required</label>
+                </div>
+
+                <div>
+                    <label id="totals-label" for="totals-input">Totals</label>
+                    <input id="totals-input" type="text" value.bind="model.charts.selectedItem.totals" aria-labelledby="totals-label" aria-describedby="totals-descriptor" />
+                    <label id="totals-descriptor" class="descriptor">Required</label>
+                </div>
+
+                <div>
+                    <label id="so-label" for="so-input">Totals</label>
+                    <input id="so-input" type="text" value.bind="model.charts.selectedItem.sortOrder" aria-labelledby="so-label" aria-describedby="so-descriptor" />
+                    <label id="so-descriptor" class="descriptor">Required</label>
+                </div>
+
+
+                <hr />
+                <h3>Chart General</h3>
+
                 <div>
                     <label id="cTitle-label" for="cTitle-input">Chart Title</label>
                     <input id="cTitle-input" type="text" value.bind="model.charts.selectedItem.chartTitle" aria-labelledby="cTitle-label" aria-describedby="cTitle-descriptor" />
                     <label id="cTitle-descriptor" class="descriptor">Required</label>
                 </div>
+
+                <div>
+                    <label id="xat-label" for="xat-input">X Axis Title</label>
+                    <input id="xat-input" type="text" value.bind="model.charts.selectedItem.xAxisTitle" aria-labelledby="xat-label" aria-describedby="xat-descriptor" />
+                    <label id="xat-descriptor" class="descriptor">Required</label>
+                </div>
+
+                <div>
+                    <label id="yat-label" for="yat-input">Y Axis Title</label>
+                    <input id="yat-input" type="text" value.bind="model.charts.selectedItem.yAxisTitlePrimary" aria-labelledby="yat-label" aria-describedby="yat-descriptor" />
+                    <label id="yat-descriptor" class="descriptor">Required</label>
+                </div>
+
+                <div>
+                    <label id="yast-label" for="yast-input">Y Axis Secondary</label>
+                    <input id="yast-input" type="text" value.bind="model.charts.selectedItem.yAxisTitleSecondary" aria-labelledby="yast-label" aria-describedby="yast-descriptor" />
+                    <label id="yast-descriptor" class="descriptor">Required</label>
+                </div>
+
+                <hr />
+
+                <h3>X Axis</h3>
+
+                <div>
+                    <label id="xas-label" for="xas-input">Screen</label>
+                    <input id="xas-input" type="text" value.bind="model.charts.selectedItem.xAxisScreen" aria-labelledby="xas-label" aria-describedby="xas-descriptor" />
+                    <label id="xas-descriptor" class="descriptor">Required</label>
+                </div>
+
+                <div>
+                    <label id="xaf-label" for="xaf-input">Field In On Key</label>
+                    <input id="xaf-input" type="text" value.bind="model.charts.selectedItem.xAxisFieldInOnkey" aria-labelledby="xaf-label" aria-describedby="xaf-descriptor" />
+                    <label id="xaf-descriptor" class="descriptor">Required</label>
+                </div>
+
+                <div>
+                    <label id="xal-label" for="xal-input">Add Data Labels</label>
+                    <input id="xal-input" type="text" value.bind="model.charts.selectedItem.xAxisAddDataLabels" aria-labelledby="xal-label" aria-describedby="xal-descriptor" />
+                    <label id="xal-descriptor" class="descriptor">Required</label>
+                </div>
+
+                <div>
+                    <label id="xatl-label" for="xatl-input">Trend Line Required</label>
+                    <input id="xatl-input" type="text" value.bind="model.charts.selectedItem.xAxisTrendlineRequired" aria-labelledby="xatl-label" aria-describedby="xatl-descriptor" />
+                    <label id="xatl-descriptor" class="descriptor">Required</label>
+                </div>
+
+                <hr />
+
+                <h3>Y Axis Primary</h3>
+
+                <div>
+                    <label id="yas-label" for="yas-input">Screen</label>
+                    <input id="yas-input" type="text" value.bind="model.charts.selectedItem.yAxisPrimaryScreen" aria-labelledby="yas-label" aria-describedby="yas-descriptor" />
+                    <label id="yas-descriptor" class="descriptor">Required</label>
+                </div>
+
+                <div>
+                    <label id="yaf-label" for="yaf-input">Field In On Key</label>
+                    <input id="yaf-input" type="text" value.bind="model.charts.selectedItem.yAxisPrimaryFieldInOnkey" aria-labelledby="yaf-label" aria-describedby="yaf-descriptor" />
+                    <label id="yaf-descriptor" class="descriptor">Required</label>
+                </div>
+
+                <div>
+                    <label id="yal-label" for="yal-input">Add Data Labels</label>
+                    <input id="yal-input" type="text" value.bind="model.charts.selectedItem.yAxisPrimaryAddDataLabels" aria-labelledby="yal-label" aria-describedby="yal-descriptor" />
+                    <label id="yal-descriptor" class="descriptor">Required</label>
+                </div>
+
+                <div>
+                    <label id="yatl-label" for="yatl-input">Trend Line Required</label>
+                    <input id="yatl-input" type="text" value.bind="model.charts.selectedItem.yAxisPrimaryTrendlineRequired" aria-labelledby="yatl-label" aria-describedby="yatl-descriptor" />
+                    <label id="yatl-descriptor" class="descriptor">Required</label>
+                </div>
+
+                <hr />
+
+                <h3>Y Axis Secondary</h3>
+
+                <div>
+                    <label id="yass-label" for="yass-input">Screen</label>
+                    <input id="yass-input" type="text" value.bind="model.charts.selectedItem.yAxisSecondaryScreen" aria-labelledby="yass-label" aria-describedby="yass-descriptor" />
+                    <label id="yass-descriptor" class="descriptor">Required</label>
+                </div>
+
+                <div>
+                    <label id="yafs-label" for="yafs-input">Field In On Key</label>
+                    <input id="yafs-input" type="text" value.bind="model.charts.selectedItem.yAxisSecondaryFieldInOnkey" aria-labelledby="yafs-label" aria-describedby="yafs-descriptor" />
+                    <label id="yafs-descriptor" class="descriptor">Required</label>
+                </div>
+
+                <div>
+                    <label id="yals-label" for="yals-input">Add Data Labels</label>
+                    <input id="yals-input" type="text" value.bind="model.charts.selectedItem.yAxisSecondaryAddDataLabels" aria-labelledby="yals-label" aria-describedby="yals-descriptor" />
+                    <label id="yals-descriptor" class="descriptor">Required</label>
+                </div>
+
+                <div>
+                    <label id="yatls-label" for="yatls-input">Trend Line Required</label>
+                    <input id="yatls-input" type="text" value.bind="model.charts.selectedItem.yAxisSecondaryTrendlineRequired" aria-labelledby="yatls-label" aria-describedby="yatls-descriptor" />
+                    <label id="yatls-descriptor" class="descriptor">Required</label>
+                </div>
+
+                <hr />
+
+                <h3>Field to group</h3>
+
+                <div>
+                    <label id="ftg-label" for="ftg-input">In On Key</label>
+                    <input id="ftg-input" type="text" value.bind="model.charts.selectedItem.fieldToGroupFieldInOnkey" aria-labelledby="ftg-label" aria-describedby="ftg-descriptor" />
+                    <label id="ftg-descriptor" class="descriptor">Required</label>
+                </div>
+
+                <div>
+                    <label id="ftgl-label" for="ftgl-input">Add Data Labels</label>
+                    <input id="ftgl-input" type="text" value.bind="model.charts.selectedItem.fieldToGroupAddDataLabels" aria-labelledby="ftgl-label" aria-describedby="ftgl-descriptor" />
+                    <label id="ftgl-descriptor" class="descriptor">Required</label>
+                </div>
+
+                <div>
+                    <label id="ftglr-label" for="ftglr-input">Trend Line Required</label>
+                    <input id="ftglr-input" type="text" value.bind="model.charts.selectedItem.fieldToGroupTrendlineRequired" aria-labelledby="ftglr-label" aria-describedby="ftglr-descriptor" />
+                    <label id="ftglr-descriptor" class="descriptor">Required</label>
+                </div>
+
+                <hr />
+
+                <div>
+                    <label id="ar-label" for="ar-input">Additional Requirements</label>
+                    <textarea id="ar-input" value.bind="model.charts.selectedItem.additionalRequirements" aria-labelledby="ar-label" aria-describedby="ar-descriptor" class="memo"/>
+                    <label id="ar-descriptor" class="descriptor">Required</label>
+                </div>
+
             </div>
         </div>
 
