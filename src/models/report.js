@@ -4,6 +4,7 @@
 */
 import {ReportBase} from './report-base';
 import {CisParameters} from './cis-parameters';
+import {reportEmailTemplate} from './templates';
 
 export class Report extends ReportBase {
     typeReport = null;
@@ -19,7 +20,12 @@ export class Report extends ReportBase {
     }
 
     saveToEmail() {
-        // todo: return real html
-        return "html";
+        return reportEmailTemplate
+            .replace("{typeOfReport}", this.typeReport)
+            .replace("{usage}", this.usage)
+            .replace("{pageLayout}", this.pageLayout)
+            .replace("{purposeOfReport}", this.purposeOfReport)
+            .replace("{reportTitle}", this.reportTitle)
+            .replace("{formattingStyle}", this.formattingRequirements)
     }
 }
