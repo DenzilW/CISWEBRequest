@@ -23,6 +23,10 @@ Report parameters that you would like to filter the data on
 ---------------------------------------------
 Parameter               | Show parameter values on report?
 ---------------------------------------------
+`
+
+export const parameterEmailTemplate = 
+`
 {prameter}              | {showOnReport}
 ---------------------------------------------
 `;
@@ -31,13 +35,12 @@ export const chartEmailTemplate =
 `
 Chart
 What must the chart display / achieve?: {chartAchieve}
-Chart Type: {charType}
+Chart Type: {chartType}
 Chart Title: {chartTitle}
-X-axis title: {xaxisTitle}
+X-axis title: {xAxisTitle}
 Y-axis title - primary axis: {yaxisTitlePrimary}
 Y-axis title - secondary axis (if used): {yaxisTitleSecondary}
 On Key fields to be used
-Type Of Request: {databaseLocation}
 ---------------------------------------------
 Axis                | Screen in On Key  |  Field in On Key  | Add data labels   | Trendline required
 ---------------------------------------------
