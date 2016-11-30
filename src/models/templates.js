@@ -28,7 +28,7 @@ Parameter               | Show parameter values on report?
 
 export const parameterEmailTemplate = 
 `
-{prameter}              | {showOnReport}
+{prameter}                  | {showOnReport}
 ---------------------------------------------
 `;
 
