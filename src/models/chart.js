@@ -18,7 +18,7 @@ export class Charts extends CollectionBase {
     saveToEmail() {
         let email = "";
         for(let char of this.items) {
-            email += chart.saveToEmail();
+            email += char.saveToEmail();
         }
         return email;
     }

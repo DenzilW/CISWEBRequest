@@ -31,6 +31,23 @@ describe('CisParameters Tests', function() {
     });
 });
 
+    it('saveToEmail', function() {
+        // Arrange
+        const cisParameter = new CisParameter();
+        cisParameter.value = "AssetCode";
+        cisParameter.showOnReport = "true";
+        cisParameter.yAxisSecondaryScreen = " Screen";
+
+        // Act
+        const emailTemplate = cisParameter.saveToEmail();
+
+        // Assert
+        expect(emailTemplate.length).to.be.above(0, "emailtemplate should have some length");
+        expect(emailTemplate.indexOf('AssetCode')).to.be.above(-1, "value text not set correctly");
+        expect(emailTemplate.indexOf('true')).to.be.above(-1, "showOnReport text not set correctly");
+    })
+
+
 describe('CisParameter Tests', function() {
     let parameter;
 
