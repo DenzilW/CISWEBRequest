@@ -15,3 +15,4 @@ typings
 src/audit-html.js
 service-worker.js
 chromedriver.*
+dist
