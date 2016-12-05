@@ -1,6 +1,7 @@
 import {ReportBase} from './report-base';
 import {CollectionBase} from './collection-base';
 import {parameterEmailTemplate} from './templates';
+import {parameterHeader} from './templates';
 
 export class CisParameters extends CollectionBase {
     add() {
@@ -11,6 +12,11 @@ export class CisParameters extends CollectionBase {
 
     saveToEmail() {
         let email = "";
+        let count = this.items.length;
+        if (count > 0)
+        {
+            email =  parameterHeader
+        }
         for(let param of this.items) {
             email += param.saveToEmail();
         }

@@ -20,6 +20,10 @@ Page Layout: {pageLayout}
 Purpose of the report: {purposeOfReport}
 Report Title: {reportTitle}
 Formatting - specific requirements for colours, fonts: {formattingStyle}
+`
+
+export const parameterHeader =
+`
 Report parameters that you would like to filter the data on
 ---------------------------------------------
 Parameter               | Show parameter values on report?
