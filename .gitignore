@@ -6,3 +6,7 @@ app
 coverage
 publish
 distribution
+dist
+chromedriver.exe
+service-worker.js
+.idea
