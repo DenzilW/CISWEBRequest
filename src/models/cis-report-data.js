@@ -12,11 +12,11 @@ import {CollectionBase} from './collection-base';
 import {reportDataEmailTemplate} from './templates';
 
 export class CisReportData extends ReportBase {
-    reportDataTitle = null;
-    reportIncludeTotals = null;
-    additionalReportData = null;
-    dataGroupings = null;
-    onKeyFields = null;
+    reportDataTitle: string;
+    reportIncludeTotals: boolean;
+    additionalReportData: string;
+    dataGroupings = CisReportDataGroupingCollection;
+    onKeyFields = CisReportDataOnKeyFieldsCollection;
 
     constructor() {
         super();
@@ -27,12 +27,6 @@ export class CisReportData extends ReportBase {
     dispose() {
         this.dataGroupings.dispose();
         this.onKeyFields.dispose();
-
-        this.reportDataTitle = null;
-        this.reportIncludeTotals = null;
-        this.additionalReportData = null;
-        this.dataGroupings = null;
-        this.onKeyFields = null;
     }
 
        saveToEmail() {
