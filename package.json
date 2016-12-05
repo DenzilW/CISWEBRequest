@@ -10,7 +10,8 @@
     "build": "gulp build:all",
     "watch:ui": "gulp build:all && gulp watch:ui",
     "watch:all": "gulp build:all && gulp watch:all",
-    "run": "gulp build:all && gulp serve"
+    "run": "gulp build:all && gulp serve",
+    "build:dist": "gulp build:dist"
   },
   "keywords": [],
   "author": "",
