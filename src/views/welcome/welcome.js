@@ -1,6 +1,3 @@
-import {CisReport} from './../../models/cis-report';
-import {PragmaTabSheetActions} from 'pragma-tabsheet';
-
 export class Welcome {
     model = null;
     actions = null;
@@ -48,9 +45,5 @@ export class Welcome {
 
     sendEmail() {
         window.open('mailto:test@denzil.williams@pragmaword.net?subject=subject&body=' + createEmailBody());
-    }
-
-    createEmailBody() {
-        this.model.email.body = this.model.saveToEmail();
     }
 }

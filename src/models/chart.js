@@ -2,6 +2,8 @@
     Denzil Williams:
     Model for holding chart data
 */
+
+// @flow
 import {ReportBase} from './report-base';
 import {CollectionBase} from './collection-base';
 import {chartEmailTemplate} from './templates';
@@ -53,7 +55,7 @@ export class Chart extends ReportBase {
     sortOrder = null;
     additionalRequirements = null;
 
-    constructor(chartTitle) {
+    constructor(chartTitle: string) {
         super();
         this.chartTitle = chartTitle;
         this.isSelected = true;

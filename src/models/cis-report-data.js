@@ -4,6 +4,9 @@
     
     temp chanage for branch
 */
+
+// @flow
+
 import {ReportBase} from './report-base';
 import {CollectionBase} from './collection-base';
 import {reportDataEmailTemplate} from './templates';
