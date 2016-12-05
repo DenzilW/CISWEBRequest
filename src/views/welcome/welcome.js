@@ -47,7 +47,7 @@ export class Welcome {
     }
 
     sendEmail() {
-        console.log('send email');
+        window.open('mailto:test@denzil.williams@pragmaword.net?subject=subject&body=' + createEmailBody());
     }
 
     createEmailBody() {
