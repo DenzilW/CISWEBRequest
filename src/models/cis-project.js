@@ -19,6 +19,7 @@ export class CisProject extends ReportBase{
         return projectEmailTemplate
             .replace("{projectNumber}", this.projectNumber)
             .replace("{requester}", this.requester)
+            .replace("{typeOfRequest}", this.typeOfRequest)
             .replace("{databaseLocation}", this.databaseLocation)
     }
 }

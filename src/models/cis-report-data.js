@@ -1,9 +1,15 @@
 /*
     Denzil Williams:
     Model for holding  the report data
+    
+    temp chanage for branch
 */
+
+// @flow
+
 import {ReportBase} from './report-base';
 import {CollectionBase} from './collection-base';
+import {reportDataEmailTemplate} from './templates';
 
 export class CisReportData extends ReportBase {
     reportDataTitle = null;
@@ -29,9 +35,11 @@ export class CisReportData extends ReportBase {
         this.onKeyFields = null;
     }
 
-    saveToEmail() {
-        // todo: return real html
-        return "html";
+       saveToEmail() {
+        return reportDataEmailTemplate
+            .replace("{reportDataTitle}", this.reportDataTitle)
+            .replace("{reportIncludeTotals}", this.reportIncludeTotals)
+            .replace("{additionalReportData}", this.additionalReportData)
     }
 }
 

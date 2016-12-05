@@ -25,7 +25,7 @@ describe('Charts Tests', function() {
         chart.chartTitle = "Asset for WO Department";
         chart.xAxisTitle = "Days";
         chart.yAxisTitlePrimary = "Code MSI";
-        chart.yAxisTitleSecondary = "Code MSI";
+        chart.yAxisTitleSecondary = "Description MSI";
         chart.axisScreen = "Asset Screen";
         chart.axisFieldInOnkey = "Code";
         chart.axisAddDataLabels = "true";
@@ -53,6 +53,12 @@ describe('Charts Tests', function() {
         expect(emailTemplate.indexOf('What must the chart display / achieve?: Analyser Assets')).to.be.above(-1, "whatAchieve text not set correctly");
         expect(emailTemplate.indexOf('Chart Type: Line')).to.be.above(-1, "chartType text not set correctly");
         expect(emailTemplate.indexOf('Chart Title: Asset for WO Department')).to.be.above(-1, "chartTitle text not set correctly");
+        expect(emailTemplate.indexOf('X-axis title: Days')).to.be.above(-1, "xAxisTitle text not set correctly");
+        expect(emailTemplate.indexOf('Y-axis title - primary axis: Code MSI')).to.be.above(-1, "yAxisTitleprimary text not set correctly");
+        expect(emailTemplate.indexOf('Y-axis title - secondary axis (if used): Description MSI')).to.be.above(-1, "xAxyAxisTitlesecondaryisTitle text not set correctly");
+        expect(emailTemplate.indexOf('Totals  : 2500')).to.be.above(-1, "totals text not set correctly");
+        expect(emailTemplate.indexOf('Sort Order  : Ascending')).to.be.above(-1, "sortOrder text not set correctly");
+        expect(emailTemplate.indexOf('Any additional requirements for the chart? : Asset summary per MSI')).to.be.above(-1, "additionalRequirements text not set correctly");
     })
 
     it('add', function() {
@@ -87,9 +93,8 @@ describe('Chart Tests', function() {
         chart.chartType = "1";
         chart.chartTitle = "1";
         chart.xAxisTitle = "1";
-        chart.yAxisTitle = "1";
-        chart.yAxisTitleprimary = "1";
-        chart.yAxisTitlesecondary = "1";
+        chart.yAxisTitlePrimary = "1";
+        chart.yAxisTitlePecondary = "1";
         chart.axisScreen = "1";
         chart.axisFieldInOnkey = "1";
         chart.axisAddDataLabels = "1";
@@ -118,9 +123,8 @@ describe('Chart Tests', function() {
         expect(chart.chartType).to.be.null;
         expect(chart.chartTitle).to.be.null;
         expect(chart.xAxisTitle).to.be.null;
-        expect(chart.yAxisTitle).to.be.null;
-        expect(chart.yAxisTitleprimary).to.be.null;
-        expect(chart.yAxisTitlesecondary).to.be.null;
+        expect(chart.yAxisTitlePrimary).to.be.null;
+        expect(chart.yAxisTitleSecondary).to.be.null;
         expect(chart.axisScreen).to.be.null;
         expect(chart.axisFieldInOnkey).to.be.null;
         expect(chart.axisAddDataLabels).to.be.null;

@@ -8,7 +8,8 @@ Project
 ---------------------------------------------
 Project Number: {projectNumber}
 Requester: {requester}
-Type Of Request: {databaseLocation}
+Type Of Request: {typeOfRequest}
+Database backup location: {databaseLocation}
 `;
 
 export const reportEmailTemplate =
@@ -19,6 +20,10 @@ Page Layout: {pageLayout}
 Purpose of the report: {purposeOfReport}
 Report Title: {reportTitle}
 Formatting - specific requirements for colours, fonts: {formattingStyle}
+`
+
+export const parameterHeader =
+`
 Report parameters that you would like to filter the data on
 ---------------------------------------------
 Parameter               | Show parameter values on report?
@@ -27,7 +32,7 @@ Parameter               | Show parameter values on report?
 
 export const parameterEmailTemplate = 
 `
-{prameter}              | {showOnReport}
+{prameter}                  | {showOnReport}
 ---------------------------------------------
 `;
 
@@ -38,8 +43,8 @@ What must the chart display / achieve?: {chartAchieve}
 Chart Type: {chartType}
 Chart Title: {chartTitle}
 X-axis title: {xAxisTitle}
-Y-axis title - primary axis: {yaxisTitlePrimary}
-Y-axis title - secondary axis (if used): {yaxisTitleSecondary}
+Y-axis title - primary axis: {yAxisTitlePrimary}
+Y-axis title - secondary axis (if used): {yAxisTitleSecondary}
 On Key fields to be used
 ---------------------------------------------
 Axis                | Screen in On Key  |  Field in On Key  | Add data labels   | Trendline required
@@ -65,5 +70,6 @@ On Key fields to be used
 Screen in On Key    | Field in On Key| Field title on report    | Sort order
 ---------------------------------------------
 Report data to include totals?  : {reportIncludeTotals}
-Any additional requirements for the report data?: {reportDataTitle}
+Any additional requirements for the report data?: {additionalReportData}
 `;
+

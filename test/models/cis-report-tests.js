@@ -18,10 +18,9 @@ describe('CisReport Tests', function() {
     }); 
 
     it('saveToEmail', function() {
+        // Arrange
         // Act
-        const html = cisReport.saveToEmail();
 
         // Assert
-        expect(html).to.equal("html", "result of saveToEmail should be 'html'");
     })   
 })
