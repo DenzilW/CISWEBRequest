@@ -6,12 +6,7 @@ styles
 app
 coverage
 typings
-.idea/build-utilities.iml
-.idea/inspectionProfiles/
-.idea/jsLibraryMappings.xml
-.idea/misc.xml
-.idea/modules.xml
-.idea/workspace.xml
+.idea/**/*.*
 src/audit-html.js
 service-worker.js
 chromedriver.*
