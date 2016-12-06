@@ -75,15 +75,9 @@ export class CisReportDataOnKeyFieldsCollection extends CollectionBase {
 }
 
 export class CisReportDataOnKeyFieldsItem {
-    screen = null;          // list of onkey screens? : todo later.
-    fieldInOnKey = null;
-    fieldTitle = null;
-    sortOrder = null;       // ascending, descending, none
+    screen: string;          // list of onkey screens? : todo later.
+    fieldInOnKey: string;
+    fieldTitle: string;
+    sortOrder: string;       // ascending, descending, none
 
-    dispose() {
-        this.screen = null;
-        this.fieldInOnKey = null;
-        this.fieldTitle = null;
-        this.sortOrder = null;
-    }
 }

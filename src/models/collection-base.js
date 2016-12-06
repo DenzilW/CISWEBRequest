@@ -8,7 +8,9 @@ export class CollectionBase {
 
     dispose() {
         for(let item of this.items) {
-            item.dispose();
+            if (typeof item.dispose == "function") {
+                item.dispose();
+            }
         }
 
         this.items = null;

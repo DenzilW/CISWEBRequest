@@ -2,6 +2,11 @@
  * Created by Johan Rabie on 2016/11/25.
  */
 
+export const emailTemplate =
+`
+mailto:denzil.williams@pragmaword.net?subject={subject}&body={body}
+`
+
 export const projectEmailTemplate =
 `
 Project

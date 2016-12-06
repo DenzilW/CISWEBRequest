@@ -1,3 +1,5 @@
+// @flow
+
 import {ReportBase} from './report-base';
 import {CollectionBase} from './collection-base';
 import {parameterEmailTemplate} from './templates';
@@ -25,17 +27,12 @@ export class CisParameters extends CollectionBase {
 }
 
 export class CisParameter {
-    value = null;
-    showOnReport = null;
+    value: string;
+    showOnReport: boolean;
 
     constructor() {
         this.value = "";
         this.showOnReport = true;
-    }
-
-    dispose() {
-        this.value = null;
-        this.showOnReport = null;
     }
 
     saveToEmail() {
