@@ -2,17 +2,20 @@
     Denzil Williams:
     Model for holding information about the project
 */
+
+// @flow
+
 import {ReportBase} from './report-base';
 import {projectEmailTemplate} from './templates';
 
 export class CisProject extends ReportBase{
-    projectNumber = null;
-    requester = null;
-    typeOfRequest = null;
-    databaseLocation = null;
+    projectNumber: string;
+    requester: string;
+    typeOfRequest: string;
+    databaseLocation: string;
 
     dispose() {
-        // clean up properties here if any.
+        // nothing to clean here because these are just strings
     }
 
     saveToEmail() {

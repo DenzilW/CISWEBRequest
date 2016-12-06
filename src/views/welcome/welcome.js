@@ -1,5 +1,6 @@
 import {CisReport} from './../../models/cis-report';
 import {PragmaTabSheetActions} from 'pragma-tabsheet';
+import {emailTemplate} from './../../models/templates';
 
 // @flow
 
@@ -49,11 +50,15 @@ export class Welcome {
     }
 
     sendEmail() {
-        window.open('mailto:test@denzil.williams@pragmaword.net?subject=subject&body=' + this.createEmailBody());
+        const body = encodeURIComponent(this.model.saveToEmail());
+        const subjectMessage = encodeURIComponent("CIS Report Request");
+
+        const mail = emailTemplate.replace("{subject}", subjectMessage).replace("{body}", body);
+
+        window.open(mail);
     }
 
     createEmailBody() {
         this.model.email.body = this.model.saveToEmail();
-
     }
 }

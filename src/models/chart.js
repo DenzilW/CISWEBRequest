@@ -29,67 +29,38 @@ export class Charts extends CollectionBase {
 }
 
 export class Chart extends ReportBase {
-    isSelected = null;
-    whatAchieve = null;
-    chartType = null;
-    chartTitle = null;
-    xAxisTitle = null;
-    yAxisTitlePrimary = null;
-    yAxisTitleSecondary = null;
-    axisScreen = null;
-    axisFieldInOnkey = null;
-    axisAddDataLabels = null;
-    axisTrendlineRequired = null;
-    fieldToGroupFieldInOnkey = null;
-    fieldToGroupAddDataLabels = null;
-    fieldToGroupTrendlineRequired = null;
-    yAxisPrimaryScreen = null;
-    yAxisPrimaryFieldInOnkey = null;
-    yAxisPrimaryAddDataLabels = null;
-    yAxisPrimaryTrendlineRequired = null;
-    yAxisSecondaryScreen = null;
-    yAxisSecondaryFieldInOnkey = null;
-    yAxisSecondaryAddDataLabels = null;
-    yAxisSecondaryTrendlineRequired = null;
-    totals = null;
-    sortOrder = null;
-    additionalRequirements = null;
-
+    isSelected: boolean;
+    whatAchieve: string;
+    chartType: string;
+    chartTitle: string;
+    xAxisTitle: string;
+    yAxisTitlePrimary: string;
+    yAxisTitleSecondary: string;
+    axisScreen: string;
+    axisFieldInOnkey: string;
+    axisAddDataLabels: string;
+    axisTrendlineRequired: string;
+    fieldToGroupFieldInOnkey: string;
+    fieldToGroupAddDataLabels: string;
+    fieldToGroupTrendlineRequired: string;
+    yAxisPrimaryScreen: string;
+    yAxisPrimaryFieldInOnkey: string;
+    yAxisPrimaryAddDataLabels: string;
+    yAxisPrimaryTrendlineRequired: string;
+    yAxisSecondaryScreen: string;
+    yAxisSecondaryFieldInOnkey: string;
+    yAxisSecondaryAddDataLabels: string;
+    yAxisSecondaryTrendlineRequired: string;
+    totals: string;
+    sortOrder: String;
+    additionalRequirements: string;
     constructor(chartTitle: string) {
         super();
         this.chartTitle = chartTitle;
         this.isSelected = true;
     }
 
-    dispose() {
-        this.isSelected = null;
-        this.whatAchieve = null;
-        this.chartType = null;
-        this.chartTitle = null;
-        this.xAxisTitle = null;
-        this.yAxisTitlePrimary = null;
-        this.yAxisTitleSecondary = null;
-        this.axisScreen = null;
-        this.axisFieldInOnkey = null;
-        this.axisAddDataLabels = null;
-        this.axisTrendlineRequired = null;
-        this.fieldToGroupFieldInOnkey = null;
-        this.fieldToGroupAddDataLabels = null;
-        this.fieldToGroupTrendlineRequired = null;
-        this.yAxisPrimaryScreen = null;
-        this.yAxisPrimaryFieldInOnkey = null;
-        this.yAxisPrimaryAddDataLabels = null;
-        this.yAxisPrimaryTrendlineRequired = null;
-        this.yAxisSecondaryScreen = null;
-        this.yAxisSecondaryFieldInOnkey = null;
-        this.yAxisSecondaryAddDataLabels = null;
-        this.yAxisSecondaryTrendlineRequired = null;
-        this.totals = null;
-        this.sortOrder = null;
-        this.additionalRequirements = null;
-    }
-
-        saveToEmail() {
+    saveToEmail() {
         return chartEmailTemplate
             .replace("{chartAchieve}", this.whatAchieve)
             .replace("{chartType}", this.chartType)
