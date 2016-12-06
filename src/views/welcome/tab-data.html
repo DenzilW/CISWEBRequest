@@ -5,13 +5,13 @@
         <div class="flex-body-main">
             <div>
                 <label id="rdt-label" for="rdt-input">Report Data Title</label>
-                <input id="rdt-input" type="text" value.bind="model.report.reportDataTitle" aria-describedby="rdt-descriptor" aria-label="rdt-label" />
+                <input id="rdt-input" type="text" value.bind="model.reportData.reportDataTitle" aria-describedby="rdt-descriptor" aria-label="rdt-label" />
                 <label id="rdt-descriptor" class="descriptor">Required</label>
             </div>
 
             <div>
                 <label id="totals-label" for="totals-input">Totals</label>
-                <input id="totals-input" type="checkbox" value.bind="model.report.reportIncludeTotals" aria-describedby="totals-descriptor" aria-label="totals-label" />
+                <input id="totals-input" type="checkbox" value.bind="model.reportData.reportIncludeTotals" aria-describedby="totals-descriptor" aria-label="totals-label" />
                 <label id="totals-descriptor" class="descriptor">Should the report include totals?</label>
             </div>
 
