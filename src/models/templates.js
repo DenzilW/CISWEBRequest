@@ -67,13 +67,36 @@ export const reportDataEmailTemplate =
 `
 Report data
 Report data title: {reportDataTitle}
+`;
+
+export const reportDataGroupingItemEmailTemplateHeader =
+`
+What would you like the report data to be grouped on?
 ---------------------------------------------
 Screen in On Key    | Field in On Key| Sort order
 ---------------------------------------------
+`;
+
+export const reportDataGroupingItemEmailTemplate =
+`
+{screenInOnkey}     | {fieldInOnkey}    | {sortOrder}
+`;
+
+export const reportDataOnKeyFieldsHeaderEmailTemplate = 
+`
 On Key fields to be used
 ---------------------------------------------
 Screen in On Key    | Field in On Key| Field title on report    | Sort order
 ---------------------------------------------
+`;
+
+export const reportDataOnKeyFieldsEmailTemplate = 
+`
+{screenInOnKey}     | {fieldInOnKey}       |  {fieldTitleOnReport}  | {sortOrder}
+`;
+
+export const reportDataFooterEmailTemplate = 
+`
 Report data to include totals?  : {reportIncludeTotals}
 Any additional requirements for the report data?: {additionalReportData}
 `;
