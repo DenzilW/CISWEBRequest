@@ -10,6 +10,11 @@
 import {ReportBase} from './report-base';
 import {CollectionBase} from './collection-base';
 import {reportDataEmailTemplate} from './templates';
+import {reportDataGroupingItemEmailTemplateHeader} from './templates';
+import {reportDataGroupingItemEmailTemplate} from './templates';
+import {reportDataFooterEmailTemplate} from './templates';
+import {reportDataOnKeyFieldsHeaderEmailTemplate} from './templates';
+import {reportDataOnKeyFieldsEmailTemplate} from './templates';
 
 export class CisReportData extends ReportBase {
     reportDataTitle: string;
@@ -29,11 +34,19 @@ export class CisReportData extends ReportBase {
         this.onKeyFields.dispose();
     }
 
-       saveToEmail() {
-        return reportDataEmailTemplate
-            .replace("{reportDataTitle}", this.reportDataTitle)
-            .replace("{reportIncludeTotals}", this.reportIncludeTotals)
-            .replace("{additionalReportData}", this.additionalReportData)
+    saveToEmail() {
+        let email = reportDataEmailTemplate
+            .replace("{reportDataTitle}", this.reportDataTitle);
+
+        email += this.dataGroupings.saveToEmail();
+
+        email += this.onKeyFields.saveToEmail();
+
+        email += reportDataFooterEmailTemplate
+                .replace("{reportIncludeTotals}", this.reportIncludeTotals)
+                .replace("{additionalReportData}", this.additionalReportData)
+
+        return email;    
     }
 }
 
@@ -47,19 +60,30 @@ export class CisReportDataGroupingCollection extends CollectionBase {
         this.selectItem(item);
         return item;
     }
+
+   saveToEmail() {
+        let email = reportDataGroupingItemEmailTemplateHeader;
+
+        for(let param of this.items) {
+            email += param.saveToEmail();
+        }
+        return email;
+   } 
 }
 
 // item
-export class CisReportDataGroupingItem {
-    screen = null;
-    fieldInOnKey = null;
-    sortOrder = null;
+export class CisReportDataGroupingItem extends ReportBase{
+    screen: string;
+    fieldInOnKey: string;
+    sortOrder: string;
 
-    dispose() {
-        this.screen = null;
-        this.fieldInOnKey = null;
-        this.sortOrder = null;
+    saveToEmail() {
+        return reportDataGroupingItemEmailTemplate
+                .replace("{screenInOnkey}", this.screen)
+                .replace("{fieldInOnkey}", this.fieldInOnKey)
+                .replace("{sortOrder}", this.sortOrder);
     }
+
 }
 
 export class CisReportDataOnKeyFieldsCollection extends CollectionBase {
@@ -72,12 +96,29 @@ export class CisReportDataOnKeyFieldsCollection extends CollectionBase {
         this.selectItem(item);
         return item;
     }
+
+   saveToEmail() {
+        let email = reportDataOnKeyFieldsHeaderEmailTemplate;
+
+        for(let param of this.items) {
+            email += param.saveToEmail();
+        }
+        return email;
+   }     
 }
 
-export class CisReportDataOnKeyFieldsItem {
+export class CisReportDataOnKeyFieldsItem extends ReportBase {
     screen: string;          // list of onkey screens? : todo later.
     fieldInOnKey: string;
     fieldTitle: string;
-    sortOrder: string;       // ascending, descending, none
+    sortOrder: string;       // ascending, descending, none 
+
+    saveToEmail() {
+        return reportDataOnKeyFieldsEmailTemplate
+                .replace("{screenInOnKey}", this.screen)
+                .replace("{fieldInOnKey}", this.fieldInOnKey)
+                .replace("{fieldTitleOnReport}", this.fieldTitle)
+                .replace("{sortOrder}", this.sortOrder);
+    }    
 
 }

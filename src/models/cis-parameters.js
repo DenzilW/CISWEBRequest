@@ -40,4 +40,5 @@ export class CisParameter {
             .replace("{prameter}", this.value)
             .replace("{showOnReport}", this.showOnReport)
     }
+   
 }   
