@@ -58,17 +58,4 @@ describe('CisParameter Tests', function() {
     it('constructor', function() {
         expect(parameter).to.not.be.null;
     });
-
-    it('dispose', function() {
-        // Arrange
-        parameter.value = "1";
-        parameter.showOnReport = true;
-
-        // Act
-        parameter.dispose();
-
-        // Assert
-        expect(parameter.value).to.be.null;
-        expect(parameter.showOnReport).to.be.null;
-    })
 });
