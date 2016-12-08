@@ -33,13 +33,14 @@ describe('CisParameters Tests', function() {
 
     it('saveToEmail', function() {
         // Arrange
-        const cisParameter = new CisParameter();
-        cisParameter.value = "AssetCode";
-        cisParameter.showOnReport = "true";
-        cisParameter.yAxisSecondaryScreen = " Screen";
+        const cisParameters = new CisParameters();
+        cisParameters.add();
+
+        cisParameters.items[0].value = "AssetCode";
+        cisParameters.items[0].showOnReport = "true";
 
         // Act
-        const emailTemplate = cisParameter.saveToEmail();
+        const emailTemplate = cisParameters.saveToEmail();
 
         // Assert
         expect(emailTemplate.length).to.be.above(0, "emailtemplate should have some length");
@@ -58,4 +59,19 @@ describe('CisParameter Tests', function() {
     it('constructor', function() {
         expect(parameter).to.not.be.null;
     });
+
+    it('saveToEmail', function() {
+        // Arrange
+        const cisParameter = new CisParameter();
+        cisParameter.value = "AssetCode";
+        cisParameter.showOnReport = "true";
+
+        // Act
+        const emailTemplate = cisParameter.saveToEmail();
+
+        // Assert
+        expect(emailTemplate.length).to.be.above(0, "emailtemplate should have some length");
+        expect(emailTemplate.indexOf('AssetCode')).to.be.above(-1, "value text not set correctly");
+        expect(emailTemplate.indexOf('true')).to.be.above(-1, "showOnReport text not set correctly");
+    })
 });
