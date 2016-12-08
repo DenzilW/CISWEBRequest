@@ -36,13 +36,26 @@ export class Welcome {
     }
 
     gotoNextTab() {
-        this.tabsheet.performAction(PragmaTabSheetActions.gotoNextTab, null);
+        let validMessage: string;
+        validMessage = "";
 
-        const index = this.tabsheet.tabs.visibleTabs.length -1;
-        if (this.tabsheet.tabs.visibleTabs.indexOf(this.tabsheet.tabs.selectedTab) === index) {
-            this.createEmailBody();
-            console.log("last tab");
+        if (this.tabsheet.tabs.visibleTabs.indexOf(this.tabsheet.tabs.selectedTab) === 0) {
+           validMessage = this.validateProjects();
+           validMessage += this.validateReport();
+           if (validMessage != "") {
+               alert(validMessage);
+           }
         }
+        
+        if (validMessage === "") { 
+            this.tabsheet.performAction(PragmaTabSheetActions.gotoNextTab, null);
+
+            const index = this.tabsheet.tabs.visibleTabs.length -1;
+            if (this.tabsheet.tabs.visibleTabs.indexOf(this.tabsheet.tabs.selectedTab) === index) {
+                this.createEmailBody();
+            }
+        }
+       
     }
 
     gotoPreviousTab() {
@@ -61,4 +74,12 @@ export class Welcome {
     createEmailBody() {
         this.model.email.body = this.model.saveToEmail();
     }
+
+    validateProjects(){
+        return this.model.project.validate();
+    }   
+
+    validateReport(){
+        return this.model.report.validate();
+    }  
 }
