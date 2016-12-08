@@ -7,17 +7,13 @@ import {CisParameters} from './cis-parameters';
 import {reportEmailTemplate} from './templates';
 
 export class Report extends ReportBase {
-    typeReport = null;
-    usage = null;
-    pageLayout = null;
-    purposeOfReport = null;
-    reportTitle = null;
-    formattingRequirements = null;
-    parameters = null;
-
-    dispose() {
-        // clean up properties here if any.
-    }
+    typeReport: string;
+    usage: string;
+    pageLayout: string;
+    purposeOfReport: sring;
+    reportTitle: string;
+    formattingRequirements: string;
+    parameters: string;
 
     saveToEmail() {
         return reportEmailTemplate

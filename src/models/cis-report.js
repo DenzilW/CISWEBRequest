@@ -28,7 +28,7 @@ export class CisReport {
         this.parameters.dispose();
         this.report.dispose();
         this.charts.dispose();
-        this.reportData.dispose();
+        this.reportData.dispose(); 
     }
 
     saveToEmail() {
