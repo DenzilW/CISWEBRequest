@@ -31,19 +31,19 @@ export class CisProject extends ReportBase{
         validMessage = "";
     
         if (this.projectNumber == undefined || this.projectNumber.length == 0) {
-            validMessage = "Project Number must be filled out\n";
+            validMessage = "Project Number must have a value\n";
         }
 
         if (this.requester == undefined || this.requester.length == 0) {
-            validMessage += "Requester must be filled out\n";
+            validMessage += "Requester must have a value\n";
         }
 
         if (this.typeOfRequest == undefined || this.typeOfRequest.length == 0) {
-            validMessage += "Type Of Requester must be filled out\n";
+            validMessage += "Type Of Request must have a value\n";
         }
         
         if (this.databaseLocation == undefined || this.databaseLocation.length == 0) {
-            validMessage += "Database Location must be filled out\n";
+            validMessage += "Database Location must have a value\n";
         }
 
         return validMessage;   
