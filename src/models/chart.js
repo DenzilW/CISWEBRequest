@@ -19,10 +19,19 @@ export class Charts extends CollectionBase {
 
     saveToEmail() {
         let email = "";
-        for(let char of this.items) {
-            email += char.saveToEmail();
+        for(let chart of this.items) {
+            email += chart.saveToEmail();
         }
         return email;
+    }
+
+    validate() {
+        let validMessage: string;
+        validMessage = "";
+        for (let chart of this.items) {
+            validMessage += chart.validate()
+        }  
+        return validMessage;
     }
 
 
@@ -89,4 +98,16 @@ export class Chart extends ReportBase {
             .replace("{sortOrder}", this.sortOrder)
             .replace("{additionalRequirements}", this.additionalRequirements)
     }
+
+     validate() {
+        let validMessage: string;
+        validMessage = "";
+        if (this.totals == undefined || this.totals.length == 0) {
+            validMessage += "Total must have a value\n";
+        }
+        if (this.sortOrder == undefined || this.sortOrder.length == 0) {
+            validMessage += "Sort Order must have a value\n";
+        }
+        return validMessage;
+     }
 }
