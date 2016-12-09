@@ -46,7 +46,12 @@ export class Welcome {
                alert(validMessage);
            }
         }
-        
+        if (this.tabsheet.tabs.visibleTabs.indexOf(this.tabsheet.tabs.selectedTab) === 2) {
+           validMessage = this.validateCharts();
+           if (validMessage != "") {
+               alert(validMessage);
+           }
+        }
         if (this.tabsheet.tabs.visibleTabs.indexOf(this.tabsheet.tabs.selectedTab) === 3) {
            validMessage = this.validateReportData();
            if (validMessage != "") {
@@ -93,4 +98,7 @@ export class Welcome {
     validateReportData(){
         return this.model.reportData.validate();
     } 
+    validateCharts() {
+        return this.model.charts.validate();
+    }
 }
