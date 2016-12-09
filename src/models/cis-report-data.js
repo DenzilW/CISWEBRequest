@@ -18,7 +18,7 @@ import {reportDataOnKeyFieldsEmailTemplate} from './templates';
 
 export class CisReportData extends ReportBase {
     reportDataTitle: string;
-    reportIncludeTotals: boolean;
+    reportIncludeTotals: string;
     additionalReportData: string;
     dataGroupings = CisReportDataGroupingCollection;
     onKeyFields = CisReportDataOnKeyFieldsCollection;
@@ -48,6 +48,22 @@ export class CisReportData extends ReportBase {
 
         return email;    
     }
+
+    validate() {
+        let validMessage: string;
+        validMessage = "";
+    
+        if (this.reportDataTitle == undefined || this.reportDataTitle.length == 0) {
+            validMessage = "Report title must have a value\n";
+        }
+
+
+        if (this.reportIncludeTotals == undefined || this.reportIncludeTotals.length == 0) {
+            validMessage = "Report totals must have a value\n";
+        }
+
+        return validMessage
+    }     
 }
 
 // collection
@@ -119,6 +135,5 @@ export class CisReportDataOnKeyFieldsItem extends ReportBase {
                 .replace("{fieldInOnKey}", this.fieldInOnKey)
                 .replace("{fieldTitleOnReport}", this.fieldTitle)
                 .replace("{sortOrder}", this.sortOrder);
-    }    
-
+    }   
 }
