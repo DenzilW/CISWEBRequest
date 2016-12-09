@@ -39,7 +39,7 @@ export class CisProject extends ReportBase{
         }
 
         if (this.typeOfRequest == undefined || this.typeOfRequest.length == 0) {
-            validMessage += "Type Of Requester must have a value\n";
+            validMessage += "Type Of Request must have a value\n";
         }
         
         if (this.databaseLocation == undefined || this.databaseLocation.length == 0) {
