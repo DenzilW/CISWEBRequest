@@ -47,6 +47,13 @@ export class Welcome {
            }
         }
         
+        if (this.tabsheet.tabs.visibleTabs.indexOf(this.tabsheet.tabs.selectedTab) === 3) {
+           validMessage = this.validateReportData();
+           if (validMessage != "") {
+               alert(validMessage);
+           }
+        }
+
         if (validMessage === "") { 
             this.tabsheet.performAction(PragmaTabSheetActions.gotoNextTab, null);
 
@@ -82,4 +89,8 @@ export class Welcome {
     validateReport(){
         return this.model.report.validate();
     }  
+
+    validateReportData(){
+        return this.model.reportData.validate();
+    } 
 }
