@@ -15,6 +15,54 @@ export class Report extends ReportBase {
     formattingRequirements: string;
     parameters: string;
 
+    _typeReport: string;
+    _usage: string
+    pageLayout: string;
+    _usage: string
+
+    get typeReport() {
+        return this._typeReport;
+    }
+
+    set typeReport(value) {
+        this._typeReport = value;
+    }
+
+    get usage() {
+        return this._usage;
+    }
+
+    set usage(value) {
+        this._usage = value;
+    }  
+
+    get pageLayout() {
+        return this._pageLayout;
+    }
+
+    set pageLayout(value) {
+        this._pageLayout = value;
+    }      
+
+    constructor() {
+        super();
+        this.options = {
+            tor: [
+                'Analyser Report',
+                'Crystal Report',
+            ],
+            usage: [
+                'On Key Report',
+                'From a browser usin Stdselection',
+                'From notification received via Notification Manager',
+            ],
+            pgl: [
+                'Potrait',
+                'Landscape'
+            ]
+        }
+    }
+
     saveToEmail() {
         return reportEmailTemplate
             .replace("{typeOfReport}", this.typeReport)

@@ -11,7 +11,6 @@ export class Welcome {
     
     constructor() {
         this.model = new CisReport();
-
         this.actions = {
             gotoNextTab: this.gotoNextTab.bind(this),
             gotoPreviousTab: this.gotoPreviousTab.bind(this),

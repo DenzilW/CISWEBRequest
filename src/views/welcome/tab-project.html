@@ -26,8 +26,12 @@
 
             <div>
                 <label id="db-label" for="db-input">Database backup location</label>
-                <input id="db-input" type="text" value.bind="model.project.databaseLocation" aria-labelledby="db-label" aria-describedby="db-descriptor" />
-                <label id="db-descriptor" class="descriptor">Required</label>
+
+                <select value.bind="model.project.databaseLocation">
+                    <option repeat.for="location of model.project.options.dbl" value.bind="location">${location}</option>
+                </select>
+
+                <textarea if.bind="model.project.showOtherInput" value.bind="model.project.databaseLocationOther" class="memo"></textarea>
             </div>
 
             <div>
@@ -36,18 +40,21 @@
 
             <div>
                 <label id="tore-label" for="tore-input">Type Of Report</label>
-                <input id="tore-input" type="text" value.bind="model.report.typeReport" aria-labelledby="tore-label" aria-describedby="tore-descriptor" />
-                <label id="tore-descriptor" class="descriptor">Required</label>
+                 <select value.bind="model.report.typeReport">
+                    <option repeat.for="typeOfReport of model.report.options.tor" value.bind="typeOfReport">${typeOfReport}</option>
+                </select>
             </div>
             <div>
                 <label id="usage-label" for="usage-input">Usage</label>
-                <input id="usage-input" type="text" value.bind="model.report.usage" aria-labelledby="usage-label" aria-describedby="usage-descriptor" />
-                <label id="usage-descriptor" class="descriptor">Required</label>
+                 <select value.bind="model.report.usage">
+                    <option repeat.for="usage of model.report.options.usage" value.bind="usage">${usage}</option>
+                </select>
             </div>
             <div>
                 <label id="pgl-label" for="pgl-input">Page Layout</label>
-                <input id="pgl-input" type="text" value.bind="model.report.pageLayout" aria-labelledby="pgl-label" aria-describedby="pgl-descriptor" />
-                <label id="pgl-descriptor" class="descriptor">Required</label>
+                 <select value.bind="model.report.pageLayout">
+                    <option repeat.for="pgl of model.report.options.pgl" value.bind="pgl">${pgl}</option>
+                </select>
             </div>
             <div>
                 <label id="por-label" for="por-input">Purpose of the report</label>

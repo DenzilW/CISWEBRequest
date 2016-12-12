@@ -12,7 +12,33 @@ export class CisProject extends ReportBase{
     projectNumber: string;
     requester: string;
     typeOfRequest: string;
-    databaseLocation: string;
+    options: any;
+    showOtherInput: boolean = false;
+
+    _databaseLocation: string;
+
+    get databaseLocation() {
+        return this._databaseLocation;
+    }
+
+    set databaseLocation(value) {
+        this._databaseLocation = value;
+        
+        const lastOption = this.options.dbl[2];
+        this.showOtherInput = value == lastOption;
+    }
+
+    constructor() {
+        super();
+        this.typeOfRequest = "New Report";
+        this.options = {
+            dbl: [
+                'We will arrange for a backup on ftp',
+                'This database in available on the ASP server',
+                'Other (please specify'
+            ]
+        }
+    }
 
     dispose() {
         // nothing to clean here because these are just strings

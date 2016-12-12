@@ -63,10 +63,33 @@ export class Chart extends ReportBase {
     totals: string;
     sortOrder: String;
     additionalRequirements: string;
+
     constructor(chartTitle: string) {
         super();
         this.chartTitle = chartTitle;
         this.isSelected = true;
+        this.options = {
+            ctype: [
+                '"Clustered column (vertical)',
+                'Stacked column',
+                '100% stacked column (vertical)',
+                'Line',
+                'Stacked line',
+                '100% Stacked line',  
+                'Column and line combo',
+                'Stacked column and line combo', 
+                'Pie', 
+                'Exploded pie', 
+                'Clustered bar (horizontal)', 
+                'Stacked bar (horizontal)', 
+                '100% stacked bar (horizontal)', 
+                'Area', 
+                'Area stacked', 
+                '100% area stacked',  
+                'Other (please specify)'
+            ]
+        }         
+        
     }
 
     saveToEmail() {
