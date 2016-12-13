@@ -2,6 +2,8 @@
     Denzil Williams:
     Model for holding data about the report
 */
+
+
 import {ReportBase} from './report-base';
 import {CisParameters} from './cis-parameters';
 import {reportEmailTemplate} from './templates';
@@ -10,7 +12,7 @@ export class Report extends ReportBase {
     typeReport: string;
     usage: string;
     pageLayout: string;
-    purposeOfReport: sring;
+    purposeOfReport: string;
     reportTitle: string;
     formattingRequirements: string;
     parameters: string;
@@ -18,9 +20,9 @@ export class Report extends ReportBase {
     _typeReport: string;
     _usage: string
     pageLayout: string;
-    _usage: string
+    _usage: string;
 
-    get typeReport() {
+    get typeReport(): string {
         return this._typeReport;
     }
 

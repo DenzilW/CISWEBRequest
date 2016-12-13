@@ -4,3 +4,4 @@
 [options]
 suppress_comment= \\(.\\|\n\\)*\\$flow-suppress
 esproposal.class_instance_fields=enable
+unsafe.enable_getters_and_setters=true
