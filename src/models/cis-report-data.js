@@ -5,8 +5,6 @@
     temp chanage for branch
 */
 
-// @flow
-
 import {ReportBase} from './report-base';
 import {CollectionBase} from './collection-base';
 import {reportDataEmailTemplate} from './templates';
@@ -23,10 +21,29 @@ export class CisReportData extends ReportBase {
     dataGroupings = CisReportDataGroupingCollection;
     onKeyFields = CisReportDataOnKeyFieldsCollection;
 
+    _reportIncludeTotals: string;
+
+    get reportIncludeTotals() {
+        this._reportIncludeTotals;
+    }
+
+    set reportIncludeTotals(value) {
+        this._reportIncludeTotals = value;
+    }
+
     constructor() {
         super();
         this.dataGroupings = new CisReportDataGroupingCollection();
         this.onKeyFields = new CisReportDataOnKeyFieldsCollection();
+
+         this.options = {
+            tot: [
+                'Don\'t include totals',
+                'Display totals for each column',
+                'Display totals for each row',
+                'Display totals for columns and rows',
+            ]
+        }         
     }
 
     dispose() {
@@ -59,7 +76,7 @@ export class CisReportData extends ReportBase {
 
 
         if (this.reportIncludeTotals == undefined || this.reportIncludeTotals.length == 0) {
-            validMessage = "Report totals must have a value\n";
+            validMessage += "Report totals must have a value\n";
         }
 
         return validMessage
