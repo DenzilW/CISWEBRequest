@@ -3,7 +3,7 @@
     Model for holding chart data
 */
 
-// @flow
+
 import {ReportBase} from './report-base';
 import {CollectionBase} from './collection-base';
 import {chartEmailTemplate} from './templates';
@@ -15,6 +15,73 @@ export class Charts extends CollectionBase {
         this.selectItem(newChart);
 
         return newChart;
+    }
+
+    _chartType: string;
+    _totals: string;
+    _sortOrder: string;
+    
+    get charttype() {
+        this._chartType
+    }
+
+    set chartType(value) {
+         this._chartType = value;
+    }
+
+    get totals() {
+        this._totals
+    }
+
+    set totals(value) {
+         this._totals = value;
+    }
+
+    get sortOrder() {
+        this._sortOrder
+    }
+
+    set sortOrder(value) {
+         this._sortOrder = value;
+    }
+
+    constructor(chartTitle: string) {
+        super();
+        this.chartTitle = chartTitle;
+        this.isSelected = true;
+        this.options = {
+            ctype: [
+                '"Clustered column (vertical)',
+                'Stacked column',
+                '100% stacked column (vertical)',
+                'Line',
+                'Stacked line',
+                '100% Stacked line',  
+                'Column and line combo',
+                'Stacked column and line combo', 
+                'Pie', 
+                'Exploded pie', 
+                'Clustered bar (horizontal)', 
+                'Stacked bar (horizontal)', 
+                '100% stacked bar (horizontal)', 
+                'Area', 
+                'Area stacked', 
+                '100% area stacked',  
+                'Other (please specify)',
+            ],
+            ctotals: [
+                'Display totals on chart',
+                'Show cumulative value on chart',
+                'Show absolute values on chart',
+            ],
+            sort: [
+                'None specified',
+                'X axis category ascending',
+                'X axis category descending',
+                'Y axis value ascending',
+                'Y axis value descending',
+            ]
+        }         
     }
 
     saveToEmail() {
@@ -63,35 +130,7 @@ export class Chart extends ReportBase {
     totals: string;
     sortOrder: String;
     additionalRequirements: string;
-
-    constructor(chartTitle: string) {
-        super();
-        this.chartTitle = chartTitle;
-        this.isSelected = true;
-        this.options = {
-            ctype: [
-                '"Clustered column (vertical)',
-                'Stacked column',
-                '100% stacked column (vertical)',
-                'Line',
-                'Stacked line',
-                '100% Stacked line',  
-                'Column and line combo',
-                'Stacked column and line combo', 
-                'Pie', 
-                'Exploded pie', 
-                'Clustered bar (horizontal)', 
-                'Stacked bar (horizontal)', 
-                '100% stacked bar (horizontal)', 
-                'Area', 
-                'Area stacked', 
-                '100% area stacked',  
-                'Other (please specify)'
-            ]
-        }         
-        
-    }
-
+       
     saveToEmail() {
         return chartEmailTemplate
             .replace("{chartAchieve}", this.whatAchieve)

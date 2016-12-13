@@ -11,8 +11,9 @@
 
             <div>
                 <label id="totals-label" for="totals-input">Report data to include totals?</label>
-                <input id="totals-input" type="text" value.bind="model.reportData.reportIncludeTotals" aria-describedby="totals-descriptor" aria-label="totals-label" />
-                <label id="totals-descriptor" class="descriptor">Should the report include totals?</label>
+                <select value.bind="model.reportData.reportIncludeTotals">
+                     <option repeat.for="tot of model.reportData.options.tot" value.bind="tot">${tot}</option>
+                </select>                
             </div>
 
             <hr />

@@ -25,20 +25,23 @@
 
                 <div>
                     <label id="ct-label" for="ct-input">Chart Type</label>
-                    <input id="ct-input" type="text" value.bind="model.charts.selectedItem.chartType" aria-labelledby="ct-label" aria-describedby="ct-descriptor" />
-                    <label id="ct-descriptor" class="descriptor">Required</label>
+                    <select value.bind="model.charts.selectedItem.chartType">
+                        <option repeat.for="ctype of model.charts.options.ctype" value.bind="ctype">${ctype}</option>
+                    </select>
                 </div>
 
                 <div>
                     <label id="totals-label" for="totals-input">Totals</label>
-                    <input id="totals-input" type="text" value.bind="model.charts.selectedItem.totals" aria-labelledby="totals-label" aria-describedby="totals-descriptor" />
-                    <label id="totals-descriptor" class="descriptor">Required</label>
+                    <select value.bind="model.charts.selectedItem.totals">
+                        <option repeat.for="totals of model.charts.options.ctotals" value.bind="totals">${totals}</option>
+                    </select>                    
                 </div>
 
                 <div>
                     <label id="so-label" for="so-input">Sort Order</label>
-                    <input id="so-input" type="text" value.bind="model.charts.selectedItem.sortOrder" aria-labelledby="so-label" aria-describedby="so-descriptor" />
-                    <label id="so-descriptor" class="descriptor">Required</label>
+                    <select value.bind="model.charts.selectedItem.sortOrder">
+                        <option repeat.for="sortOrder of model.charts.options.sort" value.bind="sortOrder">${sortOrder}</option>
+                    </select>                      
                 </div>
 
 
