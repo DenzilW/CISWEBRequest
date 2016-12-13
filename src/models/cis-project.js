@@ -3,8 +3,6 @@
     Model for holding information about the project
 */
 
-// @flow
-
 import {ReportBase} from './report-base';
 import {projectEmailTemplate} from './templates';
 
@@ -23,7 +21,6 @@ export class CisProject extends ReportBase{
 
     set databaseLocation(value) {
         this._databaseLocation = value;
-        
         const lastOption = this.options.dbl[2];
         this.showOtherInput = value == lastOption;
     }
