@@ -12,8 +12,9 @@
             <div>
                 <label id="totals-label" for="totals-input">Report data to include totals?</label>
                 <select value.bind="model.reportData.reportIncludeTotals">
-                     <option repeat.for="tot of model.reportData.options.tot" value.bind="tot">${tot}</option>
+                     <option repeat.for="totals of model.reportData.options.tot" value.bind="totals">${totals}</option>
                 </select>                
+                <label id="totals-descriptor" class="descriptor">Required</label>
             </div>
 
             <hr />
