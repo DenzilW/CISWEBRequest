@@ -4,7 +4,6 @@
     
     temp chanage for branch
 */
-
 import {ReportBase} from './report-base';
 import {CollectionBase} from './collection-base';
 import {reportDataEmailTemplate} from './templates';
@@ -23,12 +22,12 @@ export class CisReportData extends ReportBase {
 
     _reportIncludeTotals: string;
 
-    get reportIncludeTotals() {
-        this._reportIncludeTotals;
+    get reportTotals() {
+        this._reportIncludeTotals
     }
 
-    set reportIncludeTotals(value) {
-        this._reportIncludeTotals = value;
+    set reportTotals(value) {
+         this._reportIncludeTotals = value;
     }
 
     constructor() {
