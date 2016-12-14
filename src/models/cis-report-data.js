@@ -22,7 +22,6 @@ export class CisReportData extends ReportBase {
 
     _reportIncludeTotals: string;
 
-
     get reportTotals() {
         this._reportIncludeTotals
     }
