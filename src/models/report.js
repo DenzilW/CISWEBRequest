@@ -22,7 +22,7 @@ export class Report extends ReportBase {
     pageLayout: string;
     _usage: string;
 
-    get typeReport(): string {
+    get typeReport() {
         return this._typeReport;
     }
 
