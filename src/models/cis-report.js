@@ -23,14 +23,6 @@ export class CisReport {
         this.email = new Email();
     }
 
-    dispose() {
-        this.project.dispose();
-        this.parameters.dispose();
-        this.report.dispose();
-        this.charts.dispose();
-        this.reportData.dispose();
-    }
-
     saveToEmail() {
         return `
         ${this.project.saveToEmail()}
@@ -40,4 +32,5 @@ export class CisReport {
         ${this.reportData.saveToEmail()}
         `;
     }
+
 }

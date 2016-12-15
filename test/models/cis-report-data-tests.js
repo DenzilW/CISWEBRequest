@@ -60,21 +60,6 @@ describe('CisReportDataGroupingItem Tests', function() {
     beforeEach(function() {
         item = new CisReportDataGroupingItem();
     });
-
-    it('dispose', function() {
-        // Arrange
-        item.screen = "A";
-        item.fieldInOnKey = "B";
-        item.sortOrder = "C";
-
-        // Act
-        item.dispose();
-
-        // Assert
-        expect(item.screen).to.be.null;
-        expect(item.fieldInOnKey).to.be.null;
-        expect(item.sortOrder).to.be.null;
-    });
 });
 
 describe('CisReportDataOnKeyFieldsCollection Tests', function() {
@@ -103,23 +88,6 @@ describe('CisReportDataOnKeyFieldsItem Tests', function() {
     beforeEach(function() {
         item = new CisReportDataOnKeyFieldsItem();
     });
-
-    it('dispose', function() {
-        // Arrange
-        item.screen = "A";
-        item.fieldInOnKey = "B";
-        item.fieldTitle = "C";
-        item.sortOrder = "D";
-
-        // Act
-        item.dispose();
-
-        // Assert
-        expect(item.screen).to.be.null;
-        expect(item.fieldInOnKey).to.be.null;
-        expect(item.fieldTitle).to.be.null;
-        expect(item.sortOrder).to.be.null;
-    })
 });
 
 

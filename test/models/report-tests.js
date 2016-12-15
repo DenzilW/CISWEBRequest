@@ -40,4 +40,36 @@ describe('Report Tests', function() {
         expect(emailTemplate.indexOf('Formatting - specific requirements for colours, fonts: Background:blue')).to.be.above(-1, "formattingRequirements text not set correctly");
     })
 
+    it('validateError', function() {
+        // Arrange
+        const report = new Report();
+
+        // Act
+        const validMessage = report.validate();
+
+        // Assert
+        expect(validMessage.length).to.be.above(0, "validMessage should have some length");
+        expect(validMessage.indexOf('Type Of Report must have a value')).to.be.above(-1, "Type Of Report error not set correctly");
+        expect(validMessage.indexOf('Usage must have a value')).to.be.above(-1, "Usage error not set correctly");
+        expect(validMessage.indexOf('Page Layout must have a value')).to.be.above(-1, "Page Layout error not set correctly");
+        expect(validMessage.indexOf('Purpose Of Report must have a value')).to.be.above(-1, "Purpose Of Report error not set correctly");
+        expect(validMessage.indexOf('Report Title must have a value')).to.be.above(-1, "Report Title error not set correctly");
+    })
+
+    it('validate', function() {
+        // Arrange
+        const report = new Report();
+        report.typeReport = "Analyser Profile";
+        report.usage = "On Key Reports";
+        report.pageLayout = "Potrait";
+        report.purposeOfReport = "To report on Work Order Data";
+        report.reportTitle = "WO Report";
+        report.formattingRequirements = "Background:blue";
+        // Act
+        const validMessage = report.validate();
+
+        // Assert
+        expect(validMessage.length).to.be.eq(0,"validMessage length must zero");
+    })
+
 })

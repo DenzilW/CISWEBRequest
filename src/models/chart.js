@@ -3,7 +3,7 @@
     Model for holding chart data
 */
 
-// @flow
+
 import {ReportBase} from './report-base';
 import {CollectionBase} from './collection-base';
 import {chartEmailTemplate} from './templates';
@@ -17,79 +17,149 @@ export class Charts extends CollectionBase {
         return newChart;
     }
 
-    saveToEmail() {
-        let email = "";
-        for(let char of this.items) {
-            email += char.saveToEmail();
-        }
-        return email;
+    _chartType: string;
+    _totals: string;
+    _sortOrder: string;
+    _yesNo: string;
+    
+    get charttype() {
+        this._chartType
     }
 
+    set chartType(value) {
+         this._chartType = value;
+    }
 
-}
+    get totals() {
+        this._totals
+    }
 
-export class Chart extends ReportBase {
-    isSelected = null;
-    whatAchieve = null;
-    chartType = null;
-    chartTitle = null;
-    xAxisTitle = null;
-    yAxisTitlePrimary = null;
-    yAxisTitleSecondary = null;
-    axisScreen = null;
-    axisFieldInOnkey = null;
-    axisAddDataLabels = null;
-    axisTrendlineRequired = null;
-    fieldToGroupFieldInOnkey = null;
-    fieldToGroupAddDataLabels = null;
-    fieldToGroupTrendlineRequired = null;
-    yAxisPrimaryScreen = null;
-    yAxisPrimaryFieldInOnkey = null;
-    yAxisPrimaryAddDataLabels = null;
-    yAxisPrimaryTrendlineRequired = null;
-    yAxisSecondaryScreen = null;
-    yAxisSecondaryFieldInOnkey = null;
-    yAxisSecondaryAddDataLabels = null;
-    yAxisSecondaryTrendlineRequired = null;
-    totals = null;
-    sortOrder = null;
-    additionalRequirements = null;
+    set totals(value) {
+         this._totals = value;
+    }
+
+    get sortOrder() {
+        this._sortOrder
+    }
+
+    set sortOrder(value) {
+         this._sortOrder = value;
+    }
+
+    get yesNo() {
+        this._yesNo
+    }
+
+    set yesNo(value) {
+         this._yesNo = value;
+    }
+    
 
     constructor(chartTitle: string) {
         super();
         this.chartTitle = chartTitle;
+        this.sortOrder = 'None specified';
         this.isSelected = true;
+        this.options = {
+            ctype: [
+                'Clustered column (vertical)',
+                'Stacked column',
+                '100% stacked column (vertical)',
+                'Line',
+                'Stacked line',
+                '100% Stacked line',  
+                'Column and line combo',
+                'Stacked column and line combo', 
+                'Pie', 
+                'Exploded pie', 
+                'Clustered bar (horizontal)', 
+                'Stacked bar (horizontal)', 
+                '100% stacked bar (horizontal)', 
+                'Area', 
+                'Area stacked', 
+                '100% area stacked',  
+                'Other (please specify)',
+            ],
+            ctotals: [
+                'Display totals on chart',
+                'Show cumulative value on chart',
+                'Show absolute values on chart',
+            ],
+            sort: [
+                'None specified',
+                'X axis category ascending',
+                'X axis category descending',
+                'Y axis value ascending',
+                'Y axis value descending',
+            ],
+            yesNo: [
+                'No',
+                'Yes'
+            ]
+        }
+        this.totals = chartTitle;//this.options.ctotals[0];//'Display totals on chart';
     }
 
-    dispose() {
-        this.isSelected = null;
-        this.whatAchieve = null;
-        this.chartType = null;
-        this.chartTitle = null;
-        this.xAxisTitle = null;
-        this.yAxisTitlePrimary = null;
-        this.yAxisTitleSecondary = null;
-        this.axisScreen = null;
-        this.axisFieldInOnkey = null;
-        this.axisAddDataLabels = null;
-        this.axisTrendlineRequired = null;
-        this.fieldToGroupFieldInOnkey = null;
-        this.fieldToGroupAddDataLabels = null;
-        this.fieldToGroupTrendlineRequired = null;
-        this.yAxisPrimaryScreen = null;
-        this.yAxisPrimaryFieldInOnkey = null;
-        this.yAxisPrimaryAddDataLabels = null;
-        this.yAxisPrimaryTrendlineRequired = null;
-        this.yAxisSecondaryScreen = null;
-        this.yAxisSecondaryFieldInOnkey = null;
-        this.yAxisSecondaryAddDataLabels = null;
-        this.yAxisSecondaryTrendlineRequired = null;
-        this.totals = null;
-        this.sortOrder = null;
-        this.additionalRequirements = null;
+    saveToEmail() {
+        let email = "";
+        for(let chart of this.items) {
+            email += chart.saveToEmail();
+        }
+        return email;
     }
 
-        saveToEmail() {
+    validate() {
+        let validMessage: string;
+        validMessage = "";
+        for (let chart of this.items) {
+            validMessage += chart.validate()
+        }  
+        return validMessage;
+    }
+}
+
+export class Chart extends ReportBase {
+    isSelected: boolean;
+    whatAchieve: string;
+    chartType: string;
+    chartTitle: string;
+    xAxisTitle: string;
+    yAxisTitlePrimary: string;
+    yAxisTitleSecondary: string;
+    xAxisScreen: string;
+    xAxisFieldInOnkey: string;
+    xAxisAddDataLabels: string;
+    xAxisTrendlineRequired: string;
+    fieldToGroupFieldInOnkey: string;
+    fieldToGroupAddDataLabels: string;
+    fieldToGroupTrendlineRequired: string;
+    yAxisPrimaryScreen: string;
+    yAxisPrimaryFieldInOnkey: string;
+    yAxisPrimaryAddDataLabels: string;
+    yAxisPrimaryTrendlineRequired: string;
+    yAxisSecondaryScreen: string;
+    yAxisSecondaryFieldInOnkey: string;
+    yAxisSecondaryAddDataLabels: string;
+    yAxisSecondaryTrendlineRequired: string;
+    totals: string;
+    sortOrder: String;
+    additionalRequirements: string;
+
+    constructor() {
+        super();
+        this.chartType = 'Clustered column (vertical)';
+        this.totals = 'Display totals on chart';
+        this.sortOrder = 'None specified';
+        this.xAxisAddDataLabels = 'No';
+        this.xAxisTrendlineRequired = 'No';
+        this.fieldToGroupAddDataLabels = 'No';
+        this.fieldToGroupTrendlineRequired = 'No';
+        this.yAxisPrimaryAddDataLabels = 'No';
+        this.yAxisPrimaryTrendlineRequired = 'No';
+        this.yAxisSecondaryAddDataLabels = 'No';
+        this.yAxisSecondaryTrendlineRequired = 'No';
+    }
+    saveToEmail() {
         return chartEmailTemplate
             .replace("{chartAchieve}", this.whatAchieve)
             .replace("{chartType}", this.chartType)
@@ -97,12 +167,12 @@ export class Chart extends ReportBase {
             .replace("{xAxisTitle}", this.xAxisTitle)
             .replace("{yAxisTitlePrimary}", this.yAxisTitlePrimary)
             .replace("{yAxisTitleSecondary}", this.yAxisTitleSecondary)
-            .replace("{axisScreen}", this.axisScreen)
+            .replace("{xAxisScreen}", this.xAxisScreen)
             .replace("{yAxisTitleprimary}", this.yAxisTitleprimary)
-            .replace("{axisFieldInOnkey}", this.axisFieldInOnkey)
-            .replace("{axisFieldInOnkey}", this.axisFieldInOnkey)
-            .replace("{axisAddDataLabels}", this.axisAddDataLabels)
-            .replace("{axisTrendlineRequired}", this.axisTrendlineRequired)
+            .replace("{xAxisFieldInOnkey}", this.xAxisFieldInOnkey)
+            .replace("{xAxisFieldInOnkey}", this.xAxisFieldInOnkey)
+            .replace("{xAxisAddDataLabels}", this.xAxisAddDataLabels)
+            .replace("{xAxisTrendlineRequired}", this.xAxisTrendlineRequired)
             .replace("{fieldToGroupFieldInOnkey}", this.fieldToGroupFieldInOnkey)
             .replace("{fieldToGroupAddDataLabels}", this.fieldToGroupAddDataLabels)
             .replace("{fieldToGroupTrendlineRequired}", this.fieldToGroupTrendlineRequired)
@@ -118,4 +188,16 @@ export class Chart extends ReportBase {
             .replace("{sortOrder}", this.sortOrder)
             .replace("{additionalRequirements}", this.additionalRequirements)
     }
+    
+     validate() {
+        let validMessage: string;
+        validMessage = "";
+        if (this.totals == undefined || this.totals.length == 0) {
+            validMessage += "Total must have a value\n";
+        }
+        if (this.sortOrder == undefined || this.sortOrder.length == 0) {
+            validMessage += "Sort Order must have a value\n";
+        }
+        return validMessage;
+     }
 }

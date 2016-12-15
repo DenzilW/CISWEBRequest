@@ -5,14 +5,15 @@
         <div class="flex-body-main">
             <div>
                 <label id="rdt-label" for="rdt-input">Report Data Title</label>
-                <input id="rdt-input" type="text" value.bind="model.report.reportDataTitle" aria-describedby="rdt-descriptor" aria-label="rdt-label" />
+                <input id="rdt-input" type="text" value.bind="model.reportData.reportDataTitle" aria-describedby="rdt-descriptor" aria-label="rdt-label" />
                 <label id="rdt-descriptor" class="descriptor">Required</label>
             </div>
 
             <div>
-                <label id="totals-label" for="rdt-input">Totals</label>
-                <input id="totals-input" type="checkbox" value.bind="model.report.reportDataTitle" aria-describedby="totals-descriptor" aria-label="totals-label" />
-                <label id="totals-descriptor" class="descriptor">Should the report include totals?</label>
+                <label id="totals-label" for="totals-input">Report data to include totals?</label>
+                <select value.bind="model.reportData.reportIncludeTotals">
+                     <option repeat.for="totals of model.reportData.options.tot" value.bind="totals">${totals}</option>
+                </select>                
             </div>
 
             <hr />
@@ -38,17 +39,16 @@
                     <div>
                         <label id="gs-label" for="gs-input">Screen</label>
                         <input id="gs-input" type="text" value.bind="model.reportData.dataGroupings.selectedItem.screen" aria-labelledby="gs-label" aria-describedby="gs-descriptor" />
-                        <label id="gs-descriptor" class="descriptor">Required</label>
                     </div>
                     <div>
                         <label id="gf-label" for="gf-input">Field in On Key</label>
                         <input id="gf-input" type="text" value.bind="model.reportData.dataGroupings.selectedItem.fieldInOnKey" aria-labelledby="gf-label" aria-describedby="gf-descriptor" />
-                        <label id="gf-descriptor" class="descriptor">Required</label>
                     </div>
                     <div>
                         <label id="gsrt-label" for="gsrt-input">Sort Order</label>
-                        <input id="gsrt-input" type="text" value.bind="model.reportData.dataGroupings.selectedItem.sortOrder" aria-labelledby="gsrt-label" aria-describedby="gsrt-descriptor" />
-                        <label id="gsrt-descriptor" class="descriptor">Required</label>
+                        <select value.bind="model.reportData.dataGroupings.selectedItem.sortOrder">
+                            <option repeat.for="sortOrder of model.reportData.options.sortOrder" value.bind="sortOrder">${sortOrder}</option>
+                        </select>                         
                     </div>
 
                 </div>
@@ -78,22 +78,20 @@
                     <div>
                         <label id="fs-label" for="fs-input">Screen</label>
                         <input id="fs-input" type="text" value.bind="model.reportData.onKeyFields.selectedItem.screen" aria-labelledby="fs-label" aria-describedby="fs-descriptor" />
-                        <label id="fs-descriptor" class="descriptor">Required</label>
                     </div>
                     <div>
                         <label id="fiok-label" for="fiok-input">Field in On Key</label>
                         <input id="fiok-input" type="text" value.bind="model.reportData.onKeyFields.selectedItem.fieldInOnKey" aria-labelledby="fiok-label" aria-describedby="fiok-descriptor" />
-                        <label id="fiok-descriptor" class="descriptor">Required</label>
                     </div>
                     <div>
                         <label id="ft-label" for="ft-input">Field Title</label>
                         <input id="ft-input" type="text" value.bind="model.reportData.onKeyFields.selectedItem.fieldTitle" aria-labelledby="ft-label" aria-describedby="ft-descriptor" />
-                        <label id="ft-descriptor" class="descriptor">Required</label>
                     </div>
                     <div>
                         <label id="fsrt-label" for="fsrt-input">Sort Order</label>
-                        <input id="fsrt-input" type="text" value.bind="model.reportData.onKeyFields.selectedItem.sortOrder" aria-labelledby="fsrt-label" aria-describedby="fsrt-descriptor" />
-                        <label id="fsrt-descriptor" class="descriptor">Required</label>
+                        <select value.bind="model.reportData.onKeyFields.selectedItem.sortOrder">
+                            <option repeat.for="sortOrder of model.reportData.options.sortOrder" value.bind="sortOrder">${sortOrder}</option>
+                        </select>                           
                     </div>
 
                 </div>
