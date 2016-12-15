@@ -21,6 +21,7 @@ export class CisReportData extends ReportBase {
     onKeyFields = CisReportDataOnKeyFieldsCollection;
 
     _reportIncludeTotals: string;
+    _sortOrder: string;
 
     get reportTotals() {
         this._reportIncludeTotals
@@ -28,6 +29,14 @@ export class CisReportData extends ReportBase {
 
     set reportTotals(value) {
          this._reportIncludeTotals = value;
+    }
+
+        get sortOrder() {
+        this._sortOrder
+    }
+
+    set sortOrder(value) {
+         this._sortOrder = value;
     }
 
     constructor() {
@@ -41,6 +50,11 @@ export class CisReportData extends ReportBase {
                 'Display totals for each column',
                 'Display totals for each row',
                 'Display totals for columns and rows',
+            ],
+            sortOrder: [
+                'None specified',
+                'Ascending',
+                'Descending',
             ]
         }         
     }
@@ -109,6 +123,11 @@ export class CisReportDataGroupingItem extends ReportBase{
     fieldInOnKey: string;
     sortOrder: string;
 
+   constructor() {
+        super();
+        this.sortOrder = 'None specified';
+   }
+
     saveToEmail() {
         return reportDataGroupingItemEmailTemplate
                 .replace("{screenInOnkey}", this.screen)
@@ -144,6 +163,11 @@ export class CisReportDataOnKeyFieldsItem extends ReportBase {
     fieldInOnKey: string;
     fieldTitle: string;
     sortOrder: string;       // ascending, descending, none 
+
+   constructor() {
+        super();
+        this.sortOrder = 'None specified';
+   }
 
     saveToEmail() {
         return reportDataOnKeyFieldsEmailTemplate

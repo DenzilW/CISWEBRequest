@@ -20,6 +20,7 @@ export class Charts extends CollectionBase {
     _chartType: string;
     _totals: string;
     _sortOrder: string;
+    _yesNo: string;
     
     get charttype() {
         this._chartType
@@ -45,13 +46,23 @@ export class Charts extends CollectionBase {
          this._sortOrder = value;
     }
 
+    get yesNo() {
+        this._yesNo
+    }
+
+    set yesNo(value) {
+         this._yesNo = value;
+    }
+    
+
     constructor(chartTitle: string) {
         super();
         this.chartTitle = chartTitle;
+        this.sortOrder = 'None specified';
         this.isSelected = true;
         this.options = {
             ctype: [
-                '"Clustered column (vertical)',
+                'Clustered column (vertical)',
                 'Stacked column',
                 '100% stacked column (vertical)',
                 'Line',
@@ -80,8 +91,13 @@ export class Charts extends CollectionBase {
                 'X axis category descending',
                 'Y axis value ascending',
                 'Y axis value descending',
+            ],
+            yesNo: [
+                'No',
+                'Yes'
             ]
-        }         
+        }
+        this.totals = chartTitle;//this.options.ctotals[0];//'Display totals on chart';
     }
 
     saveToEmail() {
@@ -100,8 +116,6 @@ export class Charts extends CollectionBase {
         }  
         return validMessage;
     }
-
-
 }
 
 export class Chart extends ReportBase {
@@ -112,10 +126,10 @@ export class Chart extends ReportBase {
     xAxisTitle: string;
     yAxisTitlePrimary: string;
     yAxisTitleSecondary: string;
-    axisScreen: string;
-    axisFieldInOnkey: string;
-    axisAddDataLabels: string;
-    axisTrendlineRequired: string;
+    xAxisScreen: string;
+    xAxisFieldInOnkey: string;
+    xAxisAddDataLabels: string;
+    xAxisTrendlineRequired: string;
     fieldToGroupFieldInOnkey: string;
     fieldToGroupAddDataLabels: string;
     fieldToGroupTrendlineRequired: string;
@@ -130,7 +144,21 @@ export class Chart extends ReportBase {
     totals: string;
     sortOrder: String;
     additionalRequirements: string;
-       
+
+    constructor() {
+        super();
+        this.chartType = 'Clustered column (vertical)';
+        this.totals = 'Display totals on chart';
+        this.sortOrder = 'None specified';
+        this.xAxisAddDataLabels = 'No';
+        this.xAxisTrendlineRequired = 'No';
+        this.fieldToGroupAddDataLabels = 'No';
+        this.fieldToGroupTrendlineRequired = 'No';
+        this.yAxisPrimaryAddDataLabels = 'No';
+        this.yAxisPrimaryTrendlineRequired = 'No';
+        this.yAxisSecondaryAddDataLabels = 'No';
+        this.yAxisSecondaryTrendlineRequired = 'No';
+    }
     saveToEmail() {
         return chartEmailTemplate
             .replace("{chartAchieve}", this.whatAchieve)
@@ -139,12 +167,12 @@ export class Chart extends ReportBase {
             .replace("{xAxisTitle}", this.xAxisTitle)
             .replace("{yAxisTitlePrimary}", this.yAxisTitlePrimary)
             .replace("{yAxisTitleSecondary}", this.yAxisTitleSecondary)
-            .replace("{axisScreen}", this.axisScreen)
+            .replace("{xAxisScreen}", this.xAxisScreen)
             .replace("{yAxisTitleprimary}", this.yAxisTitleprimary)
-            .replace("{axisFieldInOnkey}", this.axisFieldInOnkey)
-            .replace("{axisFieldInOnkey}", this.axisFieldInOnkey)
-            .replace("{axisAddDataLabels}", this.axisAddDataLabels)
-            .replace("{axisTrendlineRequired}", this.axisTrendlineRequired)
+            .replace("{xAxisFieldInOnkey}", this.xAxisFieldInOnkey)
+            .replace("{xAxisFieldInOnkey}", this.xAxisFieldInOnkey)
+            .replace("{xAxisAddDataLabels}", this.xAxisAddDataLabels)
+            .replace("{xAxisTrendlineRequired}", this.xAxisTrendlineRequired)
             .replace("{fieldToGroupFieldInOnkey}", this.fieldToGroupFieldInOnkey)
             .replace("{fieldToGroupAddDataLabels}", this.fieldToGroupAddDataLabels)
             .replace("{fieldToGroupTrendlineRequired}", this.fieldToGroupTrendlineRequired)
@@ -160,7 +188,7 @@ export class Chart extends ReportBase {
             .replace("{sortOrder}", this.sortOrder)
             .replace("{additionalRequirements}", this.additionalRequirements)
     }
-
+    
      validate() {
         let validMessage: string;
         validMessage = "";
