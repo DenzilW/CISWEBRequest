@@ -55,7 +55,7 @@ export class Charts extends CollectionBase {
     }
     
 
-    constructor(chartTitle: string) {
+    constructor(chartTitle: string) { 
         super();
         this.chartTitle = chartTitle;
         this.sortOrder = 'None specified';

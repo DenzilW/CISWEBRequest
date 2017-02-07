@@ -70,6 +70,29 @@ export class Welcome {
     }
 
     gotoPreviousTab() {
+        let validMessage: string;
+        validMessage = "";
+
+        if (this.tabsheet.tabs.visibleTabs.indexOf(this.tabsheet.tabs.selectedTab) === 0) {
+           validMessage = this.validateProjects();
+           validMessage += this.validateReport();
+           if (validMessage != "") {
+               alert(validMessage);
+           }
+        }
+        if (this.tabsheet.tabs.visibleTabs.indexOf(this.tabsheet.tabs.selectedTab) === 2) {
+           validMessage = this.validateCharts();
+           if (validMessage != "") {
+               alert(validMessage);
+           }
+        }
+        if (this.tabsheet.tabs.visibleTabs.indexOf(this.tabsheet.tabs.selectedTab) === 3) {
+           validMessage = this.validateReportData();
+           if (validMessage != "") {
+               alert(validMessage);
+           }
+        }
+
         this.tabsheet.performAction(PragmaTabSheetActions.gotoPreviousTab, null);
     }
 
