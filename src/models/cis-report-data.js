@@ -12,6 +12,7 @@ import {reportDataGroupingItemEmailTemplate} from './templates';
 import {reportDataFooterEmailTemplate} from './templates';
 import {reportDataOnKeyFieldsHeaderEmailTemplate} from './templates';
 import {reportDataOnKeyFieldsEmailTemplate} from './templates';
+import {reportDataGroupingItemEmailTemplateFooter} from './templates';
 
 export class CisReportData extends ReportBase {
     reportDataTitle: string;
@@ -108,11 +109,19 @@ export class CisReportDataGroupingCollection extends CollectionBase {
     }
 
    saveToEmail() {
-        let email = reportDataGroupingItemEmailTemplateHeader;
+        let email = "";
+        let count = this.items.length;
+        if (count > 0)
+        {
+            email =  reportDataGroupingItemEmailTemplateHeader
+        }
 
         for(let param of this.items) {
             email += param.saveToEmail();
-        }
+        };
+
+        email += reportDataGroupingItemEmailTemplateFooter;
+
         return email;
    } 
 }

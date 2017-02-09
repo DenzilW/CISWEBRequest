@@ -10,57 +10,74 @@ mailto:denzil.williams@pragmaword.net?subject={subject}&body={body}
 export const projectEmailTemplate =
 `
 Project
----------------------------------------------
-Project Number: {projectNumber}
-Requester: {requester}
-Type Of Request: {typeOfRequest}
+-------------------------------------------------------------------------------
+Project Number       : {projectNumber}
+Requester            : {requester}
+Type Of Request      : {typeOfRequest}
 Database backup location: {databaseLocation}
 `;
 
 export const reportEmailTemplate =
 `
-Type Of Report: {typeOfReport}
+Type Of Report       : {typeOfReport}
 Usage: {usage}
-Page Layout: {pageLayout}
+Page Layout          : {pageLayout}
 Purpose of the report: {purposeOfReport}
-Report Title: {reportTitle}
+Report Title         : {reportTitle}
 Formatting - specific requirements for colours, fonts: {formattingStyle}
 `
 
 export const parameterHeader =
 `
 Report parameters that you would like to filter the data on
----------------------------------------------
-Parameter               | Show parameter values on report?
----------------------------------------------
 `
 
-export const parameterEmailTemplate = 
+export const parameterEmailTemplate =
 `
-{prameter}                  | {showOnReport}
----------------------------------------------
+-------------------------------------------------------------------------------
+Parameter                           |  {prameter} 
+Show parameter values on report?    | {showOnReport}
+-------------------------------------------------------------------------------
 `;
 
 export const chartEmailTemplate = 
 `
 Chart
 What must the chart display / achieve?: {chartAchieve}
-Chart Type: {chartType}
-Chart Title: {chartTitle}
-X-axis title: {xAxisTitle}
+Chart Type           : {chartType}
+Chart Title          : {chartTitle}
+X-axis title         : {xAxisTitle}
 Y-axis title - primary axis: {yAxisTitlePrimary}
 Y-axis title - secondary axis (if used): {yAxisTitleSecondary}
 On Key fields to be used
----------------------------------------------
-Axis                | Screen in On Key  |  Field in On Key  | Add data labels   | Trendline required
----------------------------------------------
-X axis              | {xAxisScreen}         | {xAxisFieldInOnkey}       | {xAxisAddDataLabels}   |  {xAxisTrendlineRequired}
-Field to group on (for stacked charts only) |       | {fieldToGroupFieldInOnkey}  | {fieldToGroupAddDataLabels} | {fieldToGroupTrendlineRequired}
-Y axis - primary    | {yAxisPrimaryScreen}    | {yAxisPrimaryFieldInOnkey}  | {yAxisPrimaryAddDataLabels} | {yAxisPrimaryTrendlineRequired}
-Y axis - secondary (if used)    | {yAxisSecondaryScreen}  | {yAxisSecondaryFieldInOnkey}    | {yAxisSecondaryAddDataLabels}   | {yAxisSecondaryTrendlineRequired}
-Totals  : {totals}
-Sort Order  : {sortOrder}
-Any additional requirements for the chart? : {additionalRequirements}
+-------------------------------------------------------------------------------
+Axis                 | X axis               
+Screen in On Key     | {xAxisScreen}         
+Field in On Key      | {xAxisFieldInOnkey}       
+Add data labels      | {xAxisAddDataLabels}   
+Trendline required   | {xAxisTrendlineRequired}
+-------------------------------------------------------------------------------
+Axis                 | Field to group on (for stacked charts only)               
+Field in On Key      | {fieldToGroupTrendlineRequired}       
+Add data labels      | {fieldToGroupAddDataLabels}   
+Trendline required   | {fieldToGroupTrendlineRequired}
+-------------------------------------------------------------------------------
+Axis                 | Y axis - primary               
+Screen in On Key     | {yAxisPrimaryScreen}         
+Field in On Key      | {yAxisPrimaryFieldInOnkey}       
+Add data labels      | {yAxisPrimaryAddDataLabels}   
+Trendline required   | {yAxisPrimaryTrendlineRequired}
+-------------------------------------------------------------------------------
+Axis                 | Y axis - secondary (if used)               
+Screen in On Key     | {yAxisSecondaryScreen}         
+Field in On Key      | {yAxisSecondaryFieldInOnkey}       
+Add data labels      | {yAxisSecondaryAddDataLabels}   
+Trendline required   | {yAxisSecondaryTrendlineRequired}
+-------------------------------------------------------------------------------
+Totals               : {totals}
+Sort Order           : {sortOrder}
+Any additional requirements for the chart? : 
+{additionalRequirements}
 `;
 
 export const reportDataEmailTemplate = 
@@ -72,32 +89,44 @@ Report data title: {reportDataTitle}
 export const reportDataGroupingItemEmailTemplateHeader =
 `
 What would you like the report data to be grouped on?
----------------------------------------------
-Screen in On Key    | Field in On Key| Sort order
----------------------------------------------
+
+Grouping Information
+===============================================================================
 `;
 
 export const reportDataGroupingItemEmailTemplate =
 `
-{screenInOnkey}     | {fieldInOnkey}    | {sortOrder}
+-------------------------------------------------------------------------------
+Screen in On Key     |  {screenInOnkey}     
+Screen in On Key     |  {fieldInOnkey}   
+Sort order           |  {sortOrder}
+-------------------------------------------------------------------------------
+`;
+
+export const reportDataGroupingItemEmailTemplateFooter =
+`
+===============================================================================
 `;
 
 export const reportDataOnKeyFieldsHeaderEmailTemplate = 
 `
 On Key fields to be used
----------------------------------------------
-Screen in On Key    | Field in On Key| Field title on report    | Sort order
----------------------------------------------
 `;
 
 export const reportDataOnKeyFieldsEmailTemplate = 
 `
-{screenInOnKey}     | {fieldInOnKey}       |  {fieldTitleOnReport}  | {sortOrder}
+-------------------------------------------------------------------------------
+Screen in On Key     |  {screenInOnKey}     
+Field in On Key      |  {fieldInOnKey}       
+Field title on report|  {fieldTitleOnReport}  
+Sort order           |  {sortOrder}
+-------------------------------------------------------------------------------
 `;
 
 export const reportDataFooterEmailTemplate = 
 `
 Report data to include totals?  : {reportIncludeTotals}
-Any additional requirements for the report data?: {additionalReportData}
+Any additional requirements for the report data?: 
+{additionalReportData}
 `;
 
