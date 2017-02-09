@@ -12,6 +12,7 @@ import {reportDataGroupingItemEmailTemplate} from './templates';
 import {reportDataFooterEmailTemplate} from './templates';
 import {reportDataOnKeyFieldsHeaderEmailTemplate} from './templates';
 import {reportDataOnKeyFieldsEmailTemplate} from './templates';
+import {reportDataGroupingItemEmailTemplateFooter} from './templates';
 
 export class CisReportData extends ReportBase {
     reportDataTitle: string;
@@ -65,17 +66,16 @@ export class CisReportData extends ReportBase {
     }
 
     saveToEmail() {
-        let email = reportDataEmailTemplate
+        let email = "";
+
+        email = reportDataEmailTemplate
             .replace("{reportDataTitle}", this.reportDataTitle);
-
         email += this.dataGroupings.saveToEmail();
-
         email += this.onKeyFields.saveToEmail();
 
         email += reportDataFooterEmailTemplate
                 .replace("{reportIncludeTotals}", this.reportIncludeTotals)
                 .replace("{additionalReportData}", this.additionalReportData)
-
         return email;    
     }
 
@@ -86,7 +86,6 @@ export class CisReportData extends ReportBase {
         if (this.reportDataTitle == undefined || this.reportDataTitle.length == 0) {
             validMessage = "Report title must have a value\n";
         }
-
 
         if (this.reportIncludeTotals == undefined || this.reportIncludeTotals.length == 0) {
             validMessage += "Report totals must have a value\n";
@@ -108,11 +107,19 @@ export class CisReportDataGroupingCollection extends CollectionBase {
     }
 
    saveToEmail() {
-        let email = reportDataGroupingItemEmailTemplateHeader;
+        let email = "";
+        let count = this.items.length;
+        if (count > 0)
+        {
+            email =  reportDataGroupingItemEmailTemplateHeader
+        }
 
         for(let param of this.items) {
             email += param.saveToEmail();
-        }
+        };
+
+        email += reportDataGroupingItemEmailTemplateFooter;
+
         return email;
    } 
 }
@@ -149,8 +156,12 @@ export class CisReportDataOnKeyFieldsCollection extends CollectionBase {
     }
 
    saveToEmail() {
-        let email = reportDataOnKeyFieldsHeaderEmailTemplate;
-
+        let email = "";
+        let count = this.items.length;
+        if (count > 0)
+        {
+            email =  reportDataOnKeyFieldsHeaderEmailTemplate
+        }
         for(let param of this.items) {
             email += param.saveToEmail();
         }

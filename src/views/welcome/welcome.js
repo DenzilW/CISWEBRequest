@@ -93,7 +93,9 @@ export class Welcome {
            }
         }
 
-        this.tabsheet.performAction(PragmaTabSheetActions.gotoPreviousTab, null);
+        if (validMessage === "") { 
+            this.tabsheet.performAction(PragmaTabSheetActions.gotoPreviousTab, null);
+        }
     }
 
     sendEmail() {
@@ -106,7 +108,21 @@ export class Welcome {
     }
 
     createEmailBody() {
-        this.model.email.body = this.model.saveToEmail();
+        let validMessage: string;
+        validMessage = "";
+
+        validMessage = this.validateProjects();
+        validMessage += this.validateReport();
+        validMessage += this.validateCharts();
+        validMessage += this.validateReportData();
+
+        if (validMessage != "") {
+           alert(validMessage);
+        }
+
+        if (validMessage === "") {         
+            this.model.email.body = this.model.saveToEmail();
+        }
     }
 
     validateProjects(){
