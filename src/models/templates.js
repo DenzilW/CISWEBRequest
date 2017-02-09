@@ -111,6 +111,7 @@ export const reportDataGroupingItemEmailTemplateFooter =
 export const reportDataOnKeyFieldsHeaderEmailTemplate = 
 `
 On Key fields to be used
+===============================================================================
 `;
 
 export const reportDataOnKeyFieldsEmailTemplate = 
