@@ -58,7 +58,7 @@ Add data labels      | {xAxisAddDataLabels}
 Trendline required   | {xAxisTrendlineRequired}
 -------------------------------------------------------------------------------
 Axis                 | Field to group on (for stacked charts only)               
-Field in On Key      | {fieldToGroupTrendlineRequired}       
+Field in On Key      | {fieldToGroupFieldInOnkey}       
 Add data labels      | {fieldToGroupAddDataLabels}   
 Trendline required   | {fieldToGroupTrendlineRequired}
 -------------------------------------------------------------------------------
