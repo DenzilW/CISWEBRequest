@@ -44,7 +44,7 @@ Show parameter values on report?    | {showOnReport}
 export const chartEmailTemplate = 
 `
 Chart {chartTitle}
------
+_______________________________________________________________________________
 What must the chart display / achieve?: {chartAchieve}
 Chart Type           : {chartType}
 Chart Title          : {chartTitle}
