@@ -25,6 +25,7 @@ Page Layout          : {pageLayout}
 Purpose of the report: {purposeOfReport}
 Report Title         : {reportTitle}
 Formatting - specific requirements for colours, fonts: {formattingStyle}
+-------------------------------------------------------------------------------
 `
 
 export const parameterHeader =
@@ -43,6 +44,7 @@ Show parameter values on report?    | {showOnReport}
 export const chartEmailTemplate = 
 `
 Chart
+-----
 What must the chart display / achieve?: {chartAchieve}
 Chart Type           : {chartType}
 Chart Title          : {chartTitle}
@@ -78,6 +80,7 @@ Totals               : {totals}
 Sort Order           : {sortOrder}
 Any additional requirements for the chart? : 
 {additionalRequirements}
+-------------------------------------------------------------------------------
 `;
 
 export const reportDataEmailTemplate = 

@@ -14,6 +14,11 @@ export class Charts extends CollectionBase {
         this.items.push(newChart);
         this.selectItem(newChart);
 
+        let count = this.items.length;
+        if (count > 0)
+        {
+            document.getElementById("chart-body").style.visibility = "visible"
+        }
         return newChart;
     }
 
@@ -101,6 +106,16 @@ export class Charts extends CollectionBase {
             validMessage += chart.validate()
         }  
         return validMessage;
+    }
+
+    remove(parameter) {
+        const index = this.items.indexOf(parameter);
+        this.removeAt(index);
+        let count = this.items.length;
+        if (count == 0)
+        {
+            document.getElementById("chart-body").style.visibility = "hidden"
+        }
     }
 }
 
