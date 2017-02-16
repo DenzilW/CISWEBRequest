@@ -25,6 +25,7 @@ Page Layout          : {pageLayout}
 Purpose of the report: {purposeOfReport}
 Report Title         : {reportTitle}
 Formatting - specific requirements for colours, fonts: {formattingStyle}
+-------------------------------------------------------------------------------
 `
 
 export const parameterHeader =
@@ -43,6 +44,7 @@ Show parameter values on report?    | {showOnReport}
 export const chartEmailTemplate = 
 `
 Chart
+-----
 What must the chart display / achieve?: {chartAchieve}
 Chart Type           : {chartType}
 Chart Title          : {chartTitle}
@@ -57,11 +59,6 @@ Field in On Key      | {xAxisFieldInOnkey}
 Add data labels      | {xAxisAddDataLabels}   
 Trendline required   | {xAxisTrendlineRequired}
 -------------------------------------------------------------------------------
-Axis                 | Field to group on (for stacked charts only)               
-Field in On Key      | {fieldToGroupFieldInOnkey}       
-Add data labels      | {fieldToGroupAddDataLabels}   
-Trendline required   | {fieldToGroupTrendlineRequired}
--------------------------------------------------------------------------------
 Axis                 | Y axis - primary               
 Screen in On Key     | {yAxisPrimaryScreen}         
 Field in On Key      | {yAxisPrimaryFieldInOnkey}       
@@ -74,10 +71,16 @@ Field in On Key      | {yAxisSecondaryFieldInOnkey}
 Add data labels      | {yAxisSecondaryAddDataLabels}   
 Trendline required   | {yAxisSecondaryTrendlineRequired}
 -------------------------------------------------------------------------------
+Axis                 | Field to group on (for stacked charts only)               
+Field in On Key      | {fieldToGroupFieldInOnkey}       
+Add data labels      | {fieldToGroupAddDataLabels}   
+Trendline required   | {fieldToGroupTrendlineRequired}
+-------------------------------------------------------------------------------
 Totals               : {totals}
 Sort Order           : {sortOrder}
 Any additional requirements for the chart? : 
 {additionalRequirements}
+-------------------------------------------------------------------------------
 `;
 
 export const reportDataEmailTemplate = 
