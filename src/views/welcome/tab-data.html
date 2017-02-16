@@ -35,7 +35,7 @@
                 </div>
 
                 <!-- details for groups -->
-                <div class="parameter-details" >
+                <div id="parameter-details" class="parameter-details" style="visibility: hidden">
                     <div>
                         <label id="gs-label" for="gs-input">Screen</label>
                         <input id="gs-input" type="text" value.bind="model.reportData.dataGroupings.selectedItem.screen" aria-labelledby="gs-label" aria-describedby="gs-descriptor" />
@@ -74,7 +74,7 @@
                 </div>
 
                 <!-- details for fields -->
-                <div class="parameter-details">
+                <div id="parameter-details-fields" class="parameter-details" style="visibility: hidden">
                     <div>
                         <label id="fs-label" for="fs-input">Screen</label>
                         <input id="fs-input" type="text" value.bind="model.reportData.onKeyFields.selectedItem.screen" aria-labelledby="fs-label" aria-describedby="fs-descriptor" />
