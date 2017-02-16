@@ -4,7 +4,7 @@
 
 export const emailTemplate =
 `
-mailto:denzil.williams@pragmaword.net?subject={subject}&body={body}
+mailto:denzil.williams@pragmaworld.net?subject={subject}&body={body}
 `
 
 export const projectEmailTemplate =
@@ -43,7 +43,7 @@ Show parameter values on report?    | {showOnReport}
 
 export const chartEmailTemplate = 
 `
-Chart
+Chart {chartTitle}
 -----
 What must the chart display / achieve?: {chartAchieve}
 Chart Type           : {chartType}
