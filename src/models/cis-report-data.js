@@ -103,6 +103,12 @@ export class CisReportDataGroupingCollection extends CollectionBase {
         item.fieldInOnKey = "code";
         this.items.push(item);
         this.selectItem(item);
+
+        let count = this.items.length;
+        if (count > 0)
+        {
+            document.getElementById("parameter-details").style.visibility = "visible"
+        }
         return item;
     }
 
@@ -122,6 +128,16 @@ export class CisReportDataGroupingCollection extends CollectionBase {
 
         return email;
    } 
+
+       remove(parameter) {
+        const index = this.items.indexOf(parameter);
+        this.removeAt(index);
+        let count = this.items.length;
+        if (count == 0)
+        {
+            document.getElementById("parameter-details").style.visibility = "hidden"
+        }
+    }
 }
 
 // item
@@ -152,6 +168,12 @@ export class CisReportDataOnKeyFieldsCollection extends CollectionBase {
         item.fieldTitle = "work order code";
         this.items.push(item);
         this.selectItem(item);
+
+        let count = this.items.length;
+        if (count > 0)
+        {
+            document.getElementById("parameter-details-fields").style.visibility = "visible"
+        }        
         return item;
     }
 
@@ -166,7 +188,17 @@ export class CisReportDataOnKeyFieldsCollection extends CollectionBase {
             email += param.saveToEmail();
         }
         return email;
-   }     
+   }  
+   
+   remove(parameter) {
+        const index = this.items.indexOf(parameter);
+        this.removeAt(index);
+        let count = this.items.length;
+        if (count == 0)
+        {
+            document.getElementById("parameter-details-fields").style.visibility = "hidden"
+        }
+   }      
 }
 
 export class CisReportDataOnKeyFieldsItem extends ReportBase {
