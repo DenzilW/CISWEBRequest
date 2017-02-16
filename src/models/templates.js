@@ -57,11 +57,6 @@ Field in On Key      | {xAxisFieldInOnkey}
 Add data labels      | {xAxisAddDataLabels}   
 Trendline required   | {xAxisTrendlineRequired}
 -------------------------------------------------------------------------------
-Axis                 | Field to group on (for stacked charts only)               
-Field in On Key      | {fieldToGroupFieldInOnkey}       
-Add data labels      | {fieldToGroupAddDataLabels}   
-Trendline required   | {fieldToGroupTrendlineRequired}
--------------------------------------------------------------------------------
 Axis                 | Y axis - primary               
 Screen in On Key     | {yAxisPrimaryScreen}         
 Field in On Key      | {yAxisPrimaryFieldInOnkey}       
@@ -73,6 +68,11 @@ Screen in On Key     | {yAxisSecondaryScreen}
 Field in On Key      | {yAxisSecondaryFieldInOnkey}       
 Add data labels      | {yAxisSecondaryAddDataLabels}   
 Trendline required   | {yAxisSecondaryTrendlineRequired}
+-------------------------------------------------------------------------------
+Axis                 | Field to group on (for stacked charts only)               
+Field in On Key      | {fieldToGroupFieldInOnkey}       
+Add data labels      | {fieldToGroupAddDataLabels}   
+Trendline required   | {fieldToGroupTrendlineRequired}
 -------------------------------------------------------------------------------
 Totals               : {totals}
 Sort Order           : {sortOrder}

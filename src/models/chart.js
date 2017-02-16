@@ -20,7 +20,6 @@ export class Charts extends CollectionBase {
     _chartType: string;
     _totals: string;
     _sortOrder: string;
-    _yesNo: string;
     
     get charttype() {
         this._chartType
@@ -45,15 +44,6 @@ export class Charts extends CollectionBase {
     set sortOrder(value) {
          this._sortOrder = value;
     }
-
-    get yesNo() {
-        this._yesNo
-    }
-
-    set yesNo(value) {
-         this._yesNo = value;
-    }
-    
 
     constructor(chartTitle: string) { 
         super();
@@ -92,10 +82,6 @@ export class Charts extends CollectionBase {
                 'Y axis value ascending',
                 'Y axis value descending',
             ],
-            yesNo: [
-                'No',
-                'Yes'
-            ]
         }
         this.totals = chartTitle;//this.options.ctotals[0];//'Display totals on chart';
     }
@@ -128,19 +114,19 @@ export class Chart extends ReportBase {
     yAxisTitleSecondary: string;
     xAxisScreen: string;
     xAxisFieldInOnkey: string;
-    xAxisAddDataLabels: string;
-    xAxisTrendlineRequired: string;
+    xAxisAddDataLabels: boolean;
+    xAxisTrendlineRequired: boolean;
     fieldToGroupFieldInOnkey: string;
-    fieldToGroupAddDataLabels: string;
-    fieldToGroupTrendlineRequired: string;
+    fieldToGroupAddDataLabels: boolean;
+    fieldToGroupTrendlineRequired: boolean;
     yAxisPrimaryScreen: string;
     yAxisPrimaryFieldInOnkey: string;
-    yAxisPrimaryAddDataLabels: string;
-    yAxisPrimaryTrendlineRequired: string;
+    yAxisPrimaryAddDataLabels: boolean;
+    yAxisPrimaryTrendlineRequired: boolean;
     yAxisSecondaryScreen: string;
     yAxisSecondaryFieldInOnkey: string;
-    yAxisSecondaryAddDataLabels: string;
-    yAxisSecondaryTrendlineRequired: string;
+    yAxisSecondaryAddDataLabels: boolean;
+    yAxisSecondaryTrendlineRequired: boolean;
     totals: string;
     sortOrder: String;
     additionalRequirements: string;
@@ -150,14 +136,14 @@ export class Chart extends ReportBase {
         this.chartType = 'Clustered column (vertical)';
         this.totals = 'Display totals on chart';
         this.sortOrder = 'None specified';
-        this.xAxisAddDataLabels = 'No';
-        this.xAxisTrendlineRequired = 'No';
-        this.fieldToGroupAddDataLabels = 'No';
-        this.fieldToGroupTrendlineRequired = 'No';
-        this.yAxisPrimaryAddDataLabels = 'No';
-        this.yAxisPrimaryTrendlineRequired = 'No';
-        this.yAxisSecondaryAddDataLabels = 'No';
-        this.yAxisSecondaryTrendlineRequired = 'No';
+        this.xAxisAddDataLabels = false;
+        this.xAxisTrendlineRequired = false;
+        this.fieldToGroupAddDataLabels = false;
+        this.fieldToGroupTrendlineRequired = false;
+        this.yAxisPrimaryAddDataLabels = false;
+        this.yAxisPrimaryTrendlineRequired = false;
+        this.yAxisSecondaryAddDataLabels = false;
+        this.yAxisSecondaryTrendlineRequired = false;
     }
     saveToEmail() {
         return chartEmailTemplate
@@ -171,19 +157,19 @@ export class Chart extends ReportBase {
             .replace("{yAxisTitleprimary}", this.yAxisTitleprimary)
             .replace("{xAxisFieldInOnkey}", this.xAxisFieldInOnkey)
             .replace("{xAxisFieldInOnkey}", this.xAxisFieldInOnkey)
-            .replace("{xAxisAddDataLabels}", this.xAxisAddDataLabels)
-            .replace("{xAxisTrendlineRequired}", this.xAxisTrendlineRequired)
+            .replace("{xAxisAddDataLabels}", this.getYesOrNo(this.xAxisAddDataLabels))
+            .replace("{xAxisTrendlineRequired}", this.getYesOrNo(this.xAxisTrendlineRequired))
             .replace("{fieldToGroupFieldInOnkey}", this.fieldToGroupFieldInOnkey)
-            .replace("{fieldToGroupAddDataLabels}", this.fieldToGroupAddDataLabels)
-            .replace("{fieldToGroupTrendlineRequired}", this.fieldToGroupTrendlineRequired)
+            .replace("{fieldToGroupAddDataLabels}", this.getYesOrNo(this.fieldToGroupAddDataLabels))
+            .replace("{fieldToGroupTrendlineRequired}", this.getYesOrNo(this.fieldToGroupTrendlineRequired))
             .replace("{yAxisPrimaryScreen}", this.yAxisPrimaryScreen)
             .replace("{yAxisPrimaryFieldInOnkey}", this.yAxisPrimaryFieldInOnkey)
-            .replace("{yAxisPrimaryAddDataLabels}", this.yAxisPrimaryAddDataLabels)
-            .replace("{yAxisPrimaryTrendlineRequired}", this.yAxisPrimaryTrendlineRequired)
+            .replace("{yAxisPrimaryAddDataLabels}", this.getYesOrNo(this.yAxisPrimaryAddDataLabels))
+            .replace("{yAxisPrimaryTrendlineRequired}", this.getYesOrNo(this.yAxisPrimaryTrendlineRequired))
             .replace("{yAxisSecondaryScreen}", this.yAxisSecondaryScreen)
             .replace("{yAxisSecondaryFieldInOnkey}", this.yAxisSecondaryFieldInOnkey)
-            .replace("{yAxisSecondaryAddDataLabels}", this.yAxisSecondaryAddDataLabels)
-            .replace("{yAxisSecondaryTrendlineRequired}", this.yAxisSecondaryTrendlineRequired)
+            .replace("{yAxisSecondaryAddDataLabels}", this.getYesOrNo(this.yAxisSecondaryAddDataLabels))
+            .replace("{yAxisSecondaryTrendlineRequired}", this.getYesOrNo(this.yAxisSecondaryTrendlineRequired))
             .replace("{totals}", this.totals)
             .replace("{sortOrder}", this.sortOrder)
             .replace("{additionalRequirements}", this.additionalRequirements)
@@ -199,5 +185,13 @@ export class Chart extends ReportBase {
             validMessage += "Sort Order must have a value\n";
         }
         return validMessage;
+     }
+
+     getYesOrNo(yesnoStr) {
+         let returnvalue = 'No'
+         if (yesnoStr == true){
+            returnvalue = 'Yes'
+         }
+         return returnvalue;
      }
 }
