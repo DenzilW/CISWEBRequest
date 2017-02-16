@@ -4,7 +4,7 @@
 
 export const emailTemplate =
 `
-mailto:denzil.williams@pragmaword.net?subject={subject}&body={body}
+mailto:denzil.williams@pragmaworld.net?subject={subject}&body={body}
 `
 
 export const projectEmailTemplate =
