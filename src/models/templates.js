@@ -8,7 +8,7 @@ mailto:denzil.williams@pragmaworld.net?subject={subject}&body={body}
 `
 
 export const projectEmailTemplate =
-`
+` 
 Project
 -------------------------------------------------------------------------------
 Project Number       : {projectNumber}
