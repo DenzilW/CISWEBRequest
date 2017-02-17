@@ -16,7 +16,7 @@ Requester            : {requester}
 Type Of Request      : {typeOfRequest}
 Database backup location: {databaseLocation}
 `;
- 
+   
 export const reportEmailTemplate =
 `
 Type Of Report       : {typeOfReport}
