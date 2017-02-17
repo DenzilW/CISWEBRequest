@@ -8,7 +8,7 @@ mailto:denzil.williams@pragmaworld.net?subject={subject}&body={body}
 `
 
 export const projectEmailTemplate =
-`
+` 
 Project
 -------------------------------------------------------------------------------
 Project Number       : {projectNumber}
@@ -16,7 +16,7 @@ Requester            : {requester}
 Type Of Request      : {typeOfRequest}
 Database backup location: {databaseLocation}
 `;
-
+   
 export const reportEmailTemplate =
 `
 Type Of Report       : {typeOfReport}
@@ -44,7 +44,7 @@ Show parameter values on report?    | {showOnReport}
 export const chartEmailTemplate = 
 `
 Chart {chartTitle}
------
+_______________________________________________________________________________
 What must the chart display / achieve?: {chartAchieve}
 Chart Type           : {chartType}
 Chart Title          : {chartTitle}
