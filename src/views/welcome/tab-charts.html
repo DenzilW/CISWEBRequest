@@ -24,14 +24,14 @@
 
                 <div>
                     <label id="ct-label" for="ct-input">Chart Type</label>
-                    <select value.bind="model.charts.selectedItem.chartType">
+                    <select value.bind="model.charts.selectedItem.chartType" class="dropdown-width">
                         <option repeat.for="ctype of model.charts.options.ctype" value.bind="ctype">${ctype}</option>
                     </select>
                 </div>
 
                 <div>
                     <label id="totals-label" for="totals-input">Totals</label>
-                    <select value.bind="model.charts.selectedItem.totals">
+                    <select value.bind="model.charts.selectedItem.totals" class="dropdown-width">
                         <option repeat.for="totals of model.charts.options.ctotals" value.bind="totals">${totals}</option>
                     </select>                    
                 </div>

@@ -11,10 +11,15 @@ export const projectEmailTemplate =
 ` 
 Project
 -------------------------------------------------------------------------------
-Project Number       : {projectNumber}
-Requester            : {requester}
-Type Of Request      : {typeOfRequest}
-Database backup location: {databaseLocation}
+Project Number                                      : {projectNumber}
+Client                                              : {client}
+Requester                                           : {requester}
+Requester Email Address                             : {requesterEmailAddress}
+Type Of Request                                     : {typeOfRequest}
+Onkey Connection Path                               : {onkeyConnectionPath}
+Onkey Username                                      : {onkeyUsername}
+Onkey Password                                      : {onkeyPassword}
+Database backup location                            : {databaseLocation}
 `;
    
 export const reportEmailTemplate =
