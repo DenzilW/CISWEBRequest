@@ -10,6 +10,7 @@ import {reportEmailTemplate} from './templates';
 
 export class Report extends ReportBase {
     typeReport: string;
+    standardcustomreport: string;
     usage: string;
     pageLayout: string;
     purposeOfReport: string;
@@ -19,8 +20,9 @@ export class Report extends ReportBase {
 
     _typeReport: string;
     _usage: string
-    pageLayout: string;
+    _pageLayout: string;
     _usage: string;
+    _standardcustomreport: string;
 
     get typeReport() {
         return this._typeReport;
@@ -46,21 +48,34 @@ export class Report extends ReportBase {
         this._pageLayout = value;
     }      
 
+    get standardcustomreport() {
+        return this._standardcustomreport;
+    }
+
+    set standardcustomreport(value) {
+        this._standardcustomreport = value;
+    }      
+
     constructor() {
         super();
         this.options = {
             tor: [
                 'Analyser Report',
                 'Crystal Report',
-            ],
+                'SSRS Report',
+            ], 
             usage: [
-                'On Key Report',
-                'From a browser usin Stdselection',
-                'From notification received via Notification Manager',
+                'OnKey Parameter Report',
+                'Based on selected items eg WorkOrders',
+                'Notification Manager Report',
             ],
             pgl: [
-                'Potrait',
+                'Portrait',
                 'Landscape'
+            ],
+            scr: [
+                'AC Pack Report',
+                'Custom Report'
             ]
         }
     }
