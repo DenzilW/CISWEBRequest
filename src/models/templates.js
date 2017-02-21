@@ -11,25 +11,34 @@ export const projectEmailTemplate =
 ` 
 Project
 -------------------------------------------------------------------------------
-Project Number                                      : {projectNumber}
-Client                                              : {client}
-Requester                                           : {requester}
-Requester Email Address                             : {requesterEmailAddress}
-Type Of Request                                     : {typeOfRequest}
-Onkey Connection Path                               : {onkeyConnectionPath}
-Onkey Username                                      : {onkeyUsername}
-Onkey Password                                      : {onkeyPassword}
-Database backup location                            : {databaseLocation}
+Project Number                                          : {projectNumber}
+Client                                                  : {client}
+Requester                                               : {requester}
+Requester Email Address                                 : {requesterEmailAddress}
+Type Of Request                                         : {typeOfRequest}
+Onkey Connection Path                                   : {onkeyConnectionPath}
+Onkey Username                                          : {onkeyUsername}
+Onkey Password                                          : {onkeyPassword}
+Database backup location                                : {databaseLocation}
 `;
    
 export const reportEmailTemplate =
 `
-Type Of Report       : {typeOfReport}
-Usage: {usage}
-Page Layout          : {pageLayout}
-Purpose of the report: {purposeOfReport}
-Report Title         : {reportTitle}
-Formatting - specific requirements for colours, fonts: {formattingStyle}
+Type Of Report                                          : {typeOfReport}
+Standard/Custom                                         : {standardcustomreport} 
+Usage                                                   : {usage}
+`
+export const reportManagerReportTemplate =
+`
+Notification Manager Report                             : {notificationManagerReport}
+`
+
+export const reportEmailTemplate2 =
+`
+Page Layout                                             : {pageLayout}
+Purpose of the report                                   : {purposeOfReport}
+Report Title                                            : {reportTitle}
+Formatting - specific requirements for colours, fonts   : {formattingStyle}
 -------------------------------------------------------------------------------
 `
 

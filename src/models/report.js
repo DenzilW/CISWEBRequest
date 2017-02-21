@@ -7,22 +7,27 @@
 import {ReportBase} from './report-base';
 import {CisParameters} from './cis-parameters';
 import {reportEmailTemplate} from './templates';
+import {reportManagerReportTemplate} from './templates';
+import {reportEmailTemplate2} from './templates';
 
 export class Report extends ReportBase {
     typeReport: string;
     standardcustomreport: string;
     usage: string;
+    notificationManagerReport: string;
     pageLayout: string;
     purposeOfReport: string;
     reportTitle: string;
     formattingRequirements: string;
     parameters: string;
+    showOtherInput: boolean = false;
 
     _typeReport: string;
     _usage: string
     _pageLayout: string;
     _usage: string;
     _standardcustomreport: string;
+    _notificationManagerReport: string;
 
     get typeReport() {
         return this._typeReport;
@@ -38,6 +43,8 @@ export class Report extends ReportBase {
 
     set usage(value) {
         this._usage = value;
+        const lastOption = this.options.usage[2];
+        this.showOtherInput = value == lastOption;
     }  
 
     get pageLayout() {
@@ -55,6 +62,14 @@ export class Report extends ReportBase {
     set standardcustomreport(value) {
         this._standardcustomreport = value;
     }      
+
+    get notificationManagerReport() {
+        return this._notificationManagerReport;
+    }
+
+    set notificationManagerReport(value) {
+        this._notificationManagerReport = value;
+    }
 
     constructor() {
         super();
@@ -81,13 +96,24 @@ export class Report extends ReportBase {
     }
 
     saveToEmail() {
-        return reportEmailTemplate
-            .replace("{typeOfReport}", this.typeReport)
-            .replace("{usage}", this.usage)
+        let reportEmailTemplatetmp = '';
+
+        reportEmailTemplatetmp = reportEmailTemplate
+                                 .replace("{typeOfReport}", this.typeReport)
+                                 .replace("{standardcustomreport}", this.standardcustomreport)
+                                 .replace("{usage}", this.usage);
+
+        if (this.usage == "Notification Manager Report") {
+            notificationManagerReport += reportManagerReportTemplate.replace("{notificationManagerReport}", this.notificationManagerReport)
+        }
+
+        reportEmailTemplatetmp += reportEmailTemplate2
             .replace("{pageLayout}", this.pageLayout)
             .replace("{purposeOfReport}", this.purposeOfReport)
             .replace("{reportTitle}", this.reportTitle)
             .replace("{formattingStyle}", this.formattingRequirements)
+
+        return reportEmailTemplatetmp
     }
 
     validate() {
