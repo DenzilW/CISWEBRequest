@@ -73,11 +73,22 @@
                 </select>
             </div>
             <div>
+                <label id="cur-label" for="cur-input">Standard/Custom</label>
+                 <select value.bind="model.report.standardcustomreport">
+                    <option repeat.for="standardcustomreport of model.report.options.scr" value.bind="standardcustomreport">${standardcustomreport}</option>
+                </select>
+            </div>
+            <div>
                 <label id="usage-label" for="usage-input">Usage</label>
                  <select value.bind="model.report.usage" class="project-width">
                     <option repeat.for="usage of model.report.options.usage" value.bind="usage">${usage}</option>
                 </select>
-            </div>
+            </div>  
+            <div if.bind="model.report.showOtherInput">
+                <label id="rep-label" for="rep-input">Notification Manager Details</label>
+                <textarea id="rep-input" value.bind="model.report.notificationManagerReport" class="memoformat"></textarea>                
+                <label id="rep-descriptor" class="descriptor">Required</label>                
+            </div>                      
             <div>
                 <label id="pgl-label" for="pgl-input">Page Layout</label>
                  <select value.bind="model.report.pageLayout">
@@ -91,13 +102,13 @@
             </div>            
             <div>
                 <label id="por-label" for="por-input">Purpose of the report</label>
-                <label id="por-descriptor" class="descriptor">Required</label>
                 <textarea id="por-input" value.bind="model.report.purposeOfReport" class="memoformat"></textarea>                
+                <label id="por-descriptor" class="descriptor">Required</label>
             </div>            
             <div>
                 <label id="frm-label" for="frm-input">Formatting</label>
-                <label id="frm-descriptor" class="descriptor">specific requirements for colours, fonts: {formattingStyle}</label>
                 <textarea id="frm-input" value.bind="model.report.formattingRequirements" class="memoformat"></textarea>                
+                <label id="frm-descriptor" class="descriptor">specific requirements for colours, fonts: {formattingStyle}</label>
             </div>            
         </div>
 
