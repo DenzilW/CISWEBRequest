@@ -50,8 +50,9 @@ Report parameters that you would like to filter the data on
 export const parameterEmailTemplate =
 `
 -------------------------------------------------------------------------------
-Parameter                           |  {prameter} 
-Show parameter values on report?    | {showOnReport}
+Parameter                                               | {prameter} 
+Onkey field                                             | {onkeyfield} 
+Show parameter values on report?                        | {showOnReport}
 -------------------------------------------------------------------------------
 `;
 

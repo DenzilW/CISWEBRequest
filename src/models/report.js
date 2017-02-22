@@ -104,7 +104,7 @@ export class Report extends ReportBase {
                                  .replace("{usage}", this.usage);
 
         if (this.usage == "Notification Manager Report") {
-            notificationManagerReport += reportManagerReportTemplate.replace("{notificationManagerReport}", this.notificationManagerReport)
+            reportEmailTemplatetmp += reportManagerReportTemplate.replace("{notificationManagerReport}", this.notificationManagerReport)
         }
 
         reportEmailTemplatetmp += reportEmailTemplate2
