@@ -8,102 +8,25 @@
                 <input id="rdt-input" type="text" value.bind="model.reportData.reportDataTitle" aria-describedby="rdt-descriptor" aria-label="rdt-label" />
                 <label id="rdt-descriptor" class="descriptor">Required</label>
             </div>
-
             <div>
-                <label id="totals-label" for="totals-input">Report data to include totals?</label>
-                <select value.bind="model.reportData.reportIncludeTotals">
-                     <option repeat.for="totals of model.reportData.options.tot" value.bind="totals">${totals}</option>
-                </select>                
+            <div class="parameters-heading">
+                <button click.delegate="actions.addDataOnKeyFields()" title="add fields">+</button>
+                <label class="column1">Onkey Field</label>
+                <label class="column3">Group</label>
+                <label class="column3">Show Total</label>
+                <label class="column3">Show On Report</label>    
             </div>
-
-            <hr />
-
-            <div class="flex-row">
-                <!-- collection for groups -->
-                <div>
-                    <div class="parameters-heading">
-                        <button click.delegate="actions.addDataGroup()" title="add grouping">+</button>
-                        <label class="column1">Grouping Information</label>
-                    </div>
-
-                    <ul class="list">
-                        <li repeat.for="group of model.reportData.dataGroupings.items" click.delegate="model.reportData.dataGroupings.selectItem(group)" class="${group.isSelected ? 'selected' : ''}">
-                            <span class="list-item">${group.screen} : ${group.fieldInOnKey}</span>
-                            <button click.delegate="model.reportData.dataGroupings.remove(group)" class="remove-button" title="remove group" class="group-column4">Delete</button>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- details for groups -->
-                <div id="parameter-details" class="parameter-details" style="visibility: hidden">
-                    <div>
-                        <label id="gs-label" for="gs-input">Screen</label>
-                        <input id="gs-input" type="text" value.bind="model.reportData.dataGroupings.selectedItem.screen" aria-labelledby="gs-label" aria-describedby="gs-descriptor" />
-                    </div>
-                    <div>
-                        <label id="gf-label" for="gf-input">Field in On Key</label>
-                        <input id="gf-input" type="text" value.bind="model.reportData.dataGroupings.selectedItem.fieldInOnKey" aria-labelledby="gf-label" aria-describedby="gf-descriptor" />
-                    </div>
-                    <div>
-                        <label id="gsrt-label" for="gsrt-input">Sort Order</label>
-                        <select value.bind="model.reportData.dataGroupings.selectedItem.sortOrder">
-                            <option repeat.for="sortOrder of model.reportData.options.sortOrder" value.bind="sortOrder">${sortOrder}</option>
-                        </select>                         
-                    </div>
-
-                </div>
-            </div>
-
-            <hr />
-
-            <div class="flex-row">
-                <!-- collection for fields in on key -->
-                <div>
-                    <div class="parameters-heading">
-                        <button click.delegate="actions.addDataOnKeyFields()" title="add on key field">+</button>
-                        <label class="column1">On Key Fields</label>
-                    </div>
-
-                    <ul class="list">
-                        <li repeat.for="field of model.reportData.onKeyFields.items" click.delegate="model.reportData.onKeyFields.selectItem(field)" class="${field.isSelected ? 'selected' : ''}">
-                            <span class="list-item">${field.fieldTitle}</span>
-                            <button click.delegate="model.reportData.onKeyFields.remove(field)" class="remove-button" title="remove group" class="group-column4">Delete</button>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- details for fields -->
-                <div id="parameter-details-fields" class="parameter-details" style="visibility: hidden">
-                    <div>
-                        <label id="fs-label" for="fs-input">Screen</label>
-                        <input id="fs-input" type="text" value.bind="model.reportData.onKeyFields.selectedItem.screen" aria-labelledby="fs-label" aria-describedby="fs-descriptor" />
-                    </div>
-                    <div>
-                        <label id="fiok-label" for="fiok-input">Field in On Key</label>
-                        <input id="fiok-input" type="text" value.bind="model.reportData.onKeyFields.selectedItem.fieldInOnKey" aria-labelledby="fiok-label" aria-describedby="fiok-descriptor" />
-                    </div>
-                    <div>
-                        <label id="ft-label" for="ft-input">Field Title</label>
-                        <input id="ft-input" type="text" value.bind="model.reportData.onKeyFields.selectedItem.fieldTitle" aria-labelledby="ft-label" aria-describedby="ft-descriptor" />
-                    </div>
-                    <div>
-                        <label id="fsrt-label" for="fsrt-input">Sort Order</label>
-                        <select value.bind="model.reportData.onKeyFields.selectedItem.sortOrder">
-                            <option repeat.for="sortOrder of model.reportData.options.sortOrder" value.bind="sortOrder">${sortOrder}</option>
-                        </select>                           
-                    </div>
-
-                </div>
-            </div>
+            <ol>
+                <li repeat.for="parameter of model.reportData.onKeyFields.items">
+                    <input type="text" class="column1" value.bind="parameter.fieldInOnKey" />
+                    <input type="checkbox" class="column3" value.bind="parameter.group" />
+                    <input type="checkbox" class="column2" checked.bind="parameter.total" />
+                    <input type="checkbox" class="column2" checked.bind="parameter.showonreport" />
+                    <button click.delegate="model.reportData.onKeyFields.remove(parameter)" class="remove-button" title="remove group">Delete</button>
+                </li>
+            </ol>
         </div>
-
-        <hr />
-
-        <div class="padded">
-            <label>Additional Information</label>
-            <textarea value.bind="model.reportData.additionalReportData" class="memo"></textarea>
         </div>
-
         <div class="bottom-toolbar">
             <button click.delegate="actions.gotoPreviousTab()" class="tab-nav-button previous-button">Prior</button>
             <button click.delegate="actions.gotoNextTab()" class="tab-nav-button next-button">Preview</button>

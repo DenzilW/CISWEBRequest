@@ -16,52 +16,15 @@ import {reportDataGroupingItemEmailTemplateFooter} from './templates';
 
 export class CisReportData extends ReportBase {
     reportDataTitle: string;
-    reportIncludeTotals: string;
-    additionalReportData: string;
-    dataGroupings = CisReportDataGroupingCollection;
     onKeyFields = CisReportDataOnKeyFieldsCollection;
-
-    _reportIncludeTotals: string;
-    _sortOrder: string;
-
-    get reportTotals() {
-        this._reportIncludeTotals
-    }
-
-    set reportTotals(value) {
-         this._reportIncludeTotals = value;
-    }
-
-        get sortOrder() {
-        this._sortOrder
-    }
-
-    set sortOrder(value) {
-         this._sortOrder = value;
-    }
 
     constructor() {
         super();
-        this.dataGroupings = new CisReportDataGroupingCollection();
         this.onKeyFields = new CisReportDataOnKeyFieldsCollection();
 
-         this.options = {
-            tot: [
-                'Don\'t include totals',
-                'Display totals for each column',
-                'Display totals for each row',
-                'Display totals for columns and rows',
-            ],
-            sortOrder: [
-                'None specified',
-                'Ascending',
-                'Descending',
-            ]
-        }         
     }
 
     dispose() {
-        this.dataGroupings.dispose();
         this.onKeyFields.dispose();
     }
 
@@ -70,12 +33,8 @@ export class CisReportData extends ReportBase {
 
         email = reportDataEmailTemplate
             .replace("{reportDataTitle}", this.reportDataTitle);
-        email += this.dataGroupings.saveToEmail();
         email += this.onKeyFields.saveToEmail();
 
-        email += reportDataFooterEmailTemplate
-                .replace("{reportIncludeTotals}", this.reportIncludeTotals)
-                .replace("{additionalReportData}", this.additionalReportData)
         return email;    
     }
 
@@ -87,103 +46,25 @@ export class CisReportData extends ReportBase {
             validMessage = "Report title must have a value\n";
         }
 
-        if (this.reportIncludeTotals == undefined || this.reportIncludeTotals.length == 0) {
-            validMessage += "Report totals must have a value\n";
-        }
-
         return validMessage
     }     
-}
-
-// collection
-export class CisReportDataGroupingCollection extends CollectionBase {
-    add() {
-        const item = new CisReportDataGroupingItem();
-        item.screen = "work orders";
-        item.fieldInOnKey = "code";
-        this.items.push(item);
-        this.selectItem(item);
-
-        let count = this.items.length;
-        if (count > 0)
-        {
-            document.getElementById("parameter-details").style.visibility = "visible"
-        }
-        return item;
-    }
-
-   saveToEmail() {
-        let email = "";
-        let count = this.items.length;
-        if (count > 0)
-        {
-            email =  reportDataGroupingItemEmailTemplateHeader
-        }
-
-        for(let param of this.items) {
-            email += param.saveToEmail();
-        };
-
-        email += reportDataGroupingItemEmailTemplateFooter;
-
-        return email;
-   } 
-
-       remove(parameter) {
-        const index = this.items.indexOf(parameter);
-        this.removeAt(index);
-        let count = this.items.length;
-        if (count == 0)
-        {
-            document.getElementById("parameter-details").style.visibility = "hidden"
-        }
-    }
-}
-
-// item
-export class CisReportDataGroupingItem extends ReportBase{
-    screen: string;
-    fieldInOnKey: string;
-    sortOrder: string;
-
-   constructor() {
-        super();
-        this.sortOrder = 'None specified';
-   }
-
-    saveToEmail() {
-        return reportDataGroupingItemEmailTemplate
-                .replace("{screenInOnkey}", this.screen)
-                .replace("{fieldInOnkey}", this.fieldInOnKey)
-                .replace("{sortOrder}", this.sortOrder);
-    }
-
 }
 
 export class CisReportDataOnKeyFieldsCollection extends CollectionBase {
     add() {
         const item = new CisReportDataOnKeyFieldsItem();
-        item.screen = "work orders";
         item.fieldInOnKey = "code";
-        item.fieldTitle = "work order code";
+        item.group = false;
+        item.total = false;
+        item.showonreport = false;
         this.items.push(item);
         this.selectItem(item);
 
-        let count = this.items.length;
-        if (count > 0)
-        {
-            document.getElementById("parameter-details-fields").style.visibility = "visible"
-        }        
         return item;
     }
 
    saveToEmail() {
         let email = "";
-        let count = this.items.length;
-        if (count > 0)
-        {
-            email =  reportDataOnKeyFieldsHeaderEmailTemplate
-        }
         for(let param of this.items) {
             email += param.saveToEmail();
         }
@@ -193,23 +74,21 @@ export class CisReportDataOnKeyFieldsCollection extends CollectionBase {
    remove(parameter) {
         const index = this.items.indexOf(parameter);
         this.removeAt(index);
-        let count = this.items.length;
-        if (count == 0)
-        {
-            document.getElementById("parameter-details-fields").style.visibility = "hidden"
-        }
    }      
 }
 
 export class CisReportDataOnKeyFieldsItem extends ReportBase {
-    screen: string;          // list of onkey screens? : todo later.
     fieldInOnKey: string;
-    fieldTitle: string;
-    sortOrder: string;       // ascending, descending, none 
+    group: boolean; 
+    total: boolean;  
+    showonreport: boolean;
 
    constructor() {
         super();
-        this.sortOrder = 'None specified';
+        this.fieldInOnKey = "";
+        this.group = false;
+        this.total = false;
+        this.showonreport = false;
    }
 
     saveToEmail() {
