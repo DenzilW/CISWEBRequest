@@ -29,15 +29,18 @@ export class CisParameters extends CollectionBase {
 export class CisParameter {
     value: string;
     showOnReport: boolean;
+    onkeyField: string;
 
     constructor() {
         this.value = "";
+        this.onkeyField = "";
         this.showOnReport = true;
     }
 
     saveToEmail() {
         return parameterEmailTemplate
             .replace("{prameter}", this.value)
+            .replace("{onkeyField}", this.value)
             .replace("{showOnReport}", this.showOnReport)
     }
    

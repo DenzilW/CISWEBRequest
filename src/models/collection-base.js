@@ -26,7 +26,10 @@ export class CollectionBase {
     }
 
     removeAt(index) {
-        this.items[index].dispose();
+        if (typeof this.items[index].dispose ===  "function"){
+            this.items[index].dispose
+        }
+
         return this.items.splice(index, 1); 
     }
 

@@ -5,11 +5,13 @@
             <div class="parameters-heading">
                 <button click.delegate="actions.addParameter()" title="add parameter">+</button>
                 <label class="column1">Parameters</label>
-                <label class="column2">Show On Report</label>    
+                <label class="column3">Onkey Field</label>
+                <label class="column3">Show On Report</label>    
             </div>
             <ol>
                 <li repeat.for="parameter of model.parameters.items">
                     <input type="text" class="column1" value.bind="parameter.value" />
+                    <input type="text" class="column3" value.bind="parameter.onkeyField" />
                     <input type="checkbox" class="column2" checked.bind="parameter.showOnReport" />
                     <button click.delegate="model.parameters.remove(parameter)" class="remove-button" title="remove parameter">Delete</button>
                 </li>

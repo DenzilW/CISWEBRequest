@@ -8,8 +8,13 @@ import {projectEmailTemplate} from './templates';
 
 export class CisProject extends ReportBase{
     projectNumber: string;
+    client: sring;
     requester: string;
     typeOfRequest: string;
+    requesteremailaddress: string;
+    onkeyconnectionpath: string;
+    onkeyusername: string;
+    onkeypassword: string;
     options: any;
     showOtherInput: boolean = false;
 
@@ -27,12 +32,16 @@ export class CisProject extends ReportBase{
 
     constructor() {
         super();
-        this.typeOfRequest = "New Report";
         this.options = {
             dbl: [
-                'We will arrange for a backup on ftp',
+                'We will arrange for a backup on sftp',
                 'This database in available on the ASP server',
-                'Other (please specify'
+                'Other (please specify)'
+            ],
+            tor: [
+                'New Report',
+                'Modification',
+                'Bug'                
             ]
         }
     }
@@ -44,8 +53,13 @@ export class CisProject extends ReportBase{
     saveToEmail() {
         return projectEmailTemplate
             .replace("{projectNumber}", this.projectNumber)
+            .replace("{client}", this.client)
             .replace("{requester}", this.requester)
+            .replace("{requesterEmailAddress}", this.requesteremailaddress)
             .replace("{typeOfRequest}", this.typeOfRequest)
+            .replace("{onkeyConnectionPath}", this.onkeyconnectionpath)
+            .replace("{onkeyUsername}", this.onkeyusername)
+            .replace("{onkeyPassword}", this.onkeypassword)
             .replace("{databaseLocation}", this.databaseLocation)
     }
 

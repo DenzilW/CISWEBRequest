@@ -17,7 +17,6 @@ export class Welcome {
             sendEmail: this.sendEmail.bind(this),
             addParameter: this.model.parameters.add.bind(this.model.parameters),
             addChart: this.model.charts.add.bind(this.model.charts),
-            addDataGroup: this.model.reportData.dataGroupings.add.bind(this.model.reportData.dataGroupings),
             addDataOnKeyFields: this.model.reportData.onKeyFields.add.bind(this.model.reportData.onKeyFields),
             refreshEmail: this.createEmailBody.bind(this)
         }
@@ -70,11 +69,38 @@ export class Welcome {
     }
 
     gotoPreviousTab() {
-        this.tabsheet.performAction(PragmaTabSheetActions.gotoPreviousTab, null);
+        let validMessage: string;
+        validMessage = "";
+
+        if (this.tabsheet.tabs.visibleTabs.indexOf(this.tabsheet.tabs.selectedTab) === 0) {
+           validMessage = this.validateProjects();
+           validMessage += this.validateReport();
+           if (validMessage != "") {
+               alert(validMessage);
+           }
+        }
+        if (this.tabsheet.tabs.visibleTabs.indexOf(this.tabsheet.tabs.selectedTab) === 2) {
+           validMessage = this.validateCharts();
+           if (validMessage != "") {
+               alert(validMessage);
+           }
+        }
+        if (this.tabsheet.tabs.visibleTabs.indexOf(this.tabsheet.tabs.selectedTab) === 3) {
+           validMessage = this.validateReportData();
+           if (validMessage != "") {
+               alert(validMessage);
+           }
+        }
+
+        if (validMessage === "") { 
+            this.tabsheet.performAction(PragmaTabSheetActions.gotoPreviousTab, null);
+        }
     }
 
     sendEmail() {
-        const body = encodeURIComponent(this.model.saveToEmail());
+        //const body = encodeURIComponent(this.model.saveToEmail());
+        const body = encodeURIComponent(document.getElementById("flex-body-main").innerText);
+        //const body = encodeURIComponent(document.innerText);        
         const subjectMessage = encodeURIComponent("CIS Report Request");
 
         const mail = emailTemplate.replace("{subject}", subjectMessage).replace("{body}", body);
@@ -83,7 +109,21 @@ export class Welcome {
     }
 
     createEmailBody() {
-        this.model.email.body = this.model.saveToEmail();
+        let validMessage: string;
+        validMessage = "";
+
+        validMessage = this.validateProjects();
+        validMessage += this.validateReport();
+        validMessage += this.validateCharts();
+        validMessage += this.validateReportData();
+
+        if (validMessage != "") {
+           alert(validMessage);
+        }
+
+        if (validMessage === "") {         
+            this.model.email.body = this.model.saveToEmail();
+        }
     }
 
     validateProjects(){

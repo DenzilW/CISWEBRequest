@@ -1,4 +1,5 @@
 <template bindable="model,actions">
+<require from="./tab-project.css"></require>
     <div class="flex-body">
         <div class="flex-body-main">
 
@@ -8,67 +9,105 @@
 
             <div>
                 <label id="pn-label" for="pn-input">Project Number</label>
-                <input id="pn-input" type="text" value.bind="model.project.projectNumber" aria-labelledby="pn-label" aria-describedby="pn-descriptor" required="true"/>
+                <input class="input-margin" id="pn-input" type="text" value.bind="model.project.projectNumber" aria-labelledby="pn-label" aria-describedby="pn-descriptor" required="true"/>
                 <label id="pn-descriptor" class="descriptor">Required</label>
             </div>
 
             <div>
+                <label id="cl-label" for="cl-input">Client</label>
+                <input class="input-margin"  id="cl-input" type="text" value.bind="model.project.client" aria-labelledby="cl-label" aria-describedby="cl-descriptor" required="true"/>
+                <label id="cl-descriptor" class="descriptor">Required</label>
+            </div>
+
+            <div>
                 <label id="req-label" for="req-input">Requester</label>
-                <input id="req-input" type="text" value.bind="model.project.requester" aria-labelledby="req-label" aria-describedby="req-descriptor" />
+                <input class="input-margin"  id="req-input" type="text" value.bind="model.project.requester" aria-labelledby="req-label" aria-describedby="req-descriptor" />
                 <label id="req-descriptor" class="descriptor">Required</label>
             </div>
 
             <div>
-                <label id="tor-label" for="tor-input">Type Of Request</label>
-                <input id="tor-input" type="text" value.bind="model.project.typeOfRequest" aria-labelledby="tor-label" aria-describedby="tor-descriptor" />
-                <label id="tor-descriptor" class="descriptor">Required</label>
+                <label id="rea-label" for="rea-input">Requester Email Address</label>
+                <input class="input-margin"  id="rea-input" type="text" value.bind="model.project.requesteremailaddress" aria-labelledby="rea-label" aria-describedby="rea-descriptor" />
+                <label id="rea-descriptor" class="descriptor">Required</label>
             </div>
+
+            <div>
+                <label id="tor-label" for="tor-input">Type Of Request</label>
+                 <select value.bind="model.project.typeOfRequest" class="input-margin" >
+                    <option repeat.for="typeOfRequest of model.project.options.tor" value.bind="typeOfRequest">${typeOfRequest}</option>
+                </select>
+            </div>
+
+            <div>
+                <label id="cop-label" for="cop-input">Onkey Connection Path</label>
+                <input class="input-margin"  id="cop-input" type="text" value.bind="model.project.onkeyconnectionpath" aria-labelledby="cop-label" aria-describedby="cop-descriptor" />
+                <label id="cop-descriptor" class="descriptor">Required</label>
+            </div>
+
+            <div>
+                <label id="unm-label" for="unm-input">Onkey Username</label>
+                <input class="input-margin"  id="unm-input" type="text" value.bind="model.project.onkeyusername" aria-labelledby="unm-label" aria-describedby="unm-descriptor" />
+                <label id="unm-descriptor" class="descriptor">Required</label>
+            </div>
+
+            <div>
+                <label id="pwd-label" for="pwd-input">Onkey Password</label>
+                <input class="input-margin"  id="pwd-input" type="text" value.bind="model.project.onkeypassword" aria-labelledby="pwd-label" aria-describedby="pwd-descriptor" />
+                <label id="pwd-descriptor" class="descriptor">Required</label>
+            </div>            
 
             <div>
                 <label id="db-label" for="db-input">Database backup location</label>
-
-                <select value.bind="model.project.databaseLocation">
+                <select class="input-margin"  value.bind="model.project.databaseLocation" class="project-width">
                     <option repeat.for="location of model.project.options.dbl" value.bind="location">${location}</option>
                 </select>
-
                 <textarea if.bind="model.project.showOtherInput" value.bind="model.project.databaseLocationOther" class="memo"></textarea>
             </div>
-
             <div>
                 <h3>Report Information</h3>
             </div>
-
             <div>
                 <label id="tore-label" for="tore-input">Type Of Report</label>
-                 <select value.bind="model.report.typeReport">
+                 <select class="input-margin"  value.bind="model.report.typeReport">
                     <option repeat.for="typeOfReport of model.report.options.tor" value.bind="typeOfReport">${typeOfReport}</option>
                 </select>
             </div>
             <div>
-                <label id="usage-label" for="usage-input">Usage</label>
-                 <select value.bind="model.report.usage">
-                    <option repeat.for="usage of model.report.options.usage" value.bind="usage">${usage}</option>
+                <label id="cur-label" for="cur-input">Standard/Custom</label>
+                 <select class="input-margin"  value.bind="model.report.standardcustomreport">
+                    <option repeat.for="standardcustomreport of model.report.options.scr" value.bind="standardcustomreport">${standardcustomreport}</option>
                 </select>
             </div>
             <div>
+                <label id="usage-label" for="usage-input">Usage</label>
+                 <select class="input-margin"  value.bind="model.report.usage" class="project-width">
+                    <option repeat.for="usage of model.report.options.usage" value.bind="usage">${usage}</option>
+                </select>
+            </div>  
+            <div if.bind="model.report.showOtherInput">
+                <label id="rep-label" for="rep-input">Notification Manager Details</label>
+                <textarea id="rep-input" value.bind="model.report.notificationManagerReport" class="memoformat"></textarea>                
+                <label id="rep-descriptor" class="descriptor">Required</label>                
+            </div>                      
+            <div>
                 <label id="pgl-label" for="pgl-input">Page Layout</label>
-                 <select value.bind="model.report.pageLayout">
+                 <select class="input-margin" value.bind="model.report.pageLayout">
                     <option repeat.for="pgl of model.report.options.pgl" value.bind="pgl">${pgl}</option>
                 </select>
             </div>
             <div>
+                <label id="rpt-label" for="rpt-input">Report Title</label>
+                <input class="input-margin" id="rpt-input" type="text" value.bind="model.report.reportTitle" aria-labelledby="rpt-label" aria-describedby="rpt-descriptor" />
+                <label id="rpt-descriptor" class="descriptor">Required</label>
+            </div>            
+            <div>
                 <label id="por-label" for="por-input">Purpose of the report</label>
-                <input id="por-input" type="text" value.bind="model.report.purposeOfReport" aria-labelledby="por-label" aria-describedby="por-descriptor" />
+                <textarea id="por-input" value.bind="model.report.purposeOfReport" class="memoformat"></textarea>                
                 <label id="por-descriptor" class="descriptor">Required</label>
             </div>            
             <div>
-                <label id="rpt-label" for="rpt-input">Report Title</label>
-                <input id="rpt-input" type="text" value.bind="model.report.reportTitle" aria-labelledby="rpt-label" aria-describedby="rpt-descriptor" />
-                <label id="rpt-descriptor" class="descriptor">Required</label>
-            </div>
-            <div>
                 <label id="frm-label" for="frm-input">Formatting</label>
-                <input id="frm-input" type="text" value.bind="model.report.formattingRequirements" aria-labelledby="frm-label" aria-describedby="frm-descriptor" />
+                <textarea id="frm-input" value.bind="model.report.formattingRequirements" class="memoformat"></textarea>                
                 <label id="frm-descriptor" class="descriptor">specific requirements for colours, fonts: {formattingStyle}</label>
             </div>            
         </div>

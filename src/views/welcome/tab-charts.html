@@ -14,7 +14,7 @@
                     </li>
                 </ol>
             </div>
-            <div class="chart-body">
+            <div id="chart-body" class="chart-body" style="visibility: hidden">
                 <h3>Chart Properties</h3>
 
                 <div>
@@ -24,14 +24,14 @@
 
                 <div>
                     <label id="ct-label" for="ct-input">Chart Type</label>
-                    <select value.bind="model.charts.selectedItem.chartType">
+                    <select value.bind="model.charts.selectedItem.chartType" class="dropdown-width">
                         <option repeat.for="ctype of model.charts.options.ctype" value.bind="ctype">${ctype}</option>
                     </select>
                 </div>
 
                 <div>
                     <label id="totals-label" for="totals-input">Totals</label>
-                    <select value.bind="model.charts.selectedItem.totals">
+                    <select value.bind="model.charts.selectedItem.totals" class="dropdown-width">
                         <option repeat.for="totals of model.charts.options.ctotals" value.bind="totals">${totals}</option>
                     </select>                    
                 </div>
@@ -42,7 +42,6 @@
                         <option repeat.for="sortOrder of model.charts.options.sort" value.bind="sortOrder">${sortOrder}</option>
                     </select>                      
                 </div>
-
 
                 <hr />
                 <h3>Chart General</h3>
@@ -83,16 +82,12 @@
 
                 <div>
                     <label id="xal-label" for="xal-input">Add Data Labels</label>
-                    <select value.bind="model.charts.selectedItem.xAxisAddDataLabels">
-                        <option repeat.for="yesNo of model.charts.options.yesNo" value.bind="yesNo">${yesNo}</option>
-                    </select>                    
+                    <input type="checkbox" class="xAxisAddDataLabels" checked.bind="model.charts.selectedItem.xAxisAddDataLabels" />
                 </div>
 
                 <div>
                     <label id="xatl-label" for="xatl-input">Trend Line Required</label>
-                    <select value.bind="model.charts.selectedItem.xAxisTrendlineRequired">
-                        <option repeat.for="yesNo of model.charts.options.yesNo" value.bind="yesNo">${yesNo}</option>
-                    </select>                      
+                    <input type="checkbox" class="xAxisTrendlineRequired" checked.bind="model.charts.selectedItem.xAxisTrendlineRequired" />
                 </div>
 
                 <hr />
@@ -111,16 +106,12 @@
 
                 <div>
                     <label id="yal-label" for="yal-input">Add Data Labels</label>
-                    <select value.bind="model.charts.selectedItem.yAxisPrimaryAddDataLabels">
-                        <option repeat.for="yesNo of model.charts.options.yesNo" value.bind="yesNo">${yesNo}</option>
-                    </select>                      
+                    <input type="checkbox" class="column4" checked.bind="model.charts.selectedItem.yAxisPrimaryAddDataLabels" />
                 </div>
 
                 <div>
                     <label id="yatl-label" for="yatl-input">Trend Line Required</label>
-                    <select value.bind="model.charts.selectedItem.yAxisPrimaryTrendlineRequired">
-                        <option repeat.for="yesNo of model.charts.options.yesNo" value.bind="yesNo">${yesNo}</option>
-                    </select>                     
+                    <input type="checkbox" class="column4" checked.bind="model.charts.selectedItem.yAxisPrimaryTrendlineRequired" />
                 </div>
 
                 <hr />
@@ -139,16 +130,12 @@
 
                 <div>
                     <label id="yals-label" for="yals-input">Add Data Labels</label>
-                    <select value.bind="model.charts.selectedItem.yAxisSecondaryAddDataLabels">
-                        <option repeat.for="yesNo of model.charts.options.yesNo" value.bind="yesNo">${yesNo}</option>
-                    </select>                     
+                    <input type="checkbox" class="column4" checked.bind="model.charts.selectedItem.yAxisSecondaryAddDataLabels" />
                 </div>
 
                 <div>
                     <label id="yatls-label" for="yatls-input">Trend Line Required</label>
-                    <select value.bind="model.charts.selectedItem.yAxisSecondaryTrendlineRequired">
-                        <option repeat.for="yesNo of model.charts.options.yesNo" value.bind="yesNo">${yesNo}</option>
-                    </select>                     
+                    <input type="checkbox" class="column4" checked.bind="model.charts.selectedItem.yAxisSecondaryTrendlineRequired" />
                 </div>
 
                 <hr />
@@ -162,16 +149,12 @@
 
                 <div>
                     <label id="ftgl-label" for="ftgl-input">Add Data Labels</label>
-                    <select value.bind="model.charts.selectedItem.fieldToGroupAddDataLabels">
-                        <option repeat.for="yesNo of model.charts.options.yesNo" value.bind="yesNo">${yesNo}</option>
-                    </select>                    
+                    <input type="checkbox" class="column4" checked.bind="model.charts.selectedItem.fieldToGroupAddDataLabels" />
                 </div>
 
                 <div>
                     <label id="ftglr-label" for="ftglr-input">Trend Line Required</label>
-                    <select value.bind="model.charts.selectedItem.fieldToGroupTrendlineRequired">
-                        <option repeat.for="yesNo of model.charts.options.yesNo" value.bind="yesNo">${yesNo}</option>
-                    </select>
+                    <input type="checkbox" class="column4" checked.bind="model.charts.selectedItem.fieldToGroupTrendlineRequired" />
                 </div>
 
                 <hr />
