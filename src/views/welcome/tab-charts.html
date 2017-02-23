@@ -28,6 +28,17 @@
                 <label for="ctype" class="label-width">Chart Type</label>
             </div>
         </div>
+
+        <div id="chartOther-composite" class="input-group" if.bind="model.chart.showOtherInput">
+            <div class="input">
+                <textarea id="chartOther" value.bind="model.chart.chartTypeOther" required="true"></textarea>
+                <label for="chartOther" class="label-width">Other Chart Details</label>
+            </div>
+            <div>
+                <div class="suppressed label-width requiredLabel">(required)</div>
+                <div id="chartOther-descriptor" class="suppressed"></div>
+            </div>
+        </div>
     </div>
 
     <div class="group" id="dimension">

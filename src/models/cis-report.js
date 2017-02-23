@@ -24,13 +24,13 @@ export class CisReport {
     }
 
     saveToEmail() {
-        return `
-        ${this.project.saveToEmail()}
-        ${this.report.saveToEmail()}
-        ${this.parameters.saveToEmail()}
-        ${this.chart.saveToEmail()}
-        ${this.reportData.saveToEmail()}
-        `;
+        let result = [];
+        result.push(this.project.saveToEmail());
+        result.push(this.report.saveToEmail());
+        result.push(this.parameters.saveToEmail());
+        result.push(this.chart.saveToEmail());
+        result.push(this.reportData.saveToEmail());
+        return result.join("\n");
     }
 
 }

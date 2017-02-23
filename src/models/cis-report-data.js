@@ -96,7 +96,6 @@ export class CisReportDataOnKeyFieldsItem extends ReportBase {
                 .replace("{fieldInOnKey}", this.fieldInOnKey)
                 .replace("{group}", this.group)
                 .replace("{total}", this.total)
-                .replace("{showonreport}", this.showonreport)
-                .trim();
-    }   
+                .replace("{showonreport}", this.showonreport);
+    }
 }

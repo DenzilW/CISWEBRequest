@@ -4,7 +4,7 @@
 */
 
 import {ReportBase} from './report-base';
-import {projectEmailTemplate} from './templates';
+import {projectEmailTemplate, otherDBLocation} from './templates';
 
 export class CisProject extends ReportBase{
     projectNumber: string;
@@ -17,6 +17,7 @@ export class CisProject extends ReportBase{
     onkeypassword: string;
     options: any;
     showOtherInput: boolean = false;
+    databaseLocationOther: string;
 
     _databaseLocation: string;
 
@@ -67,7 +68,11 @@ export class CisProject extends ReportBase{
             .replace("{onkeyPassword}", this.onkeypassword)
             .replace("{databaseLocation}", this.databaseLocation);
 
-        return projectEmailTemplatetmp.trim()
+        if (this.databaseLocationOther) {
+            projectEmailTemplatetmp += otherDBLocation.replace("{otherDatabaseLocation}", this.databaseLocationOther)
+        }
+
+        return projectEmailTemplatetmp;
     }
 
     validate() {
