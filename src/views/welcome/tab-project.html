@@ -78,6 +78,7 @@
                     <option repeat.for="location of model.project.options.dbl" value.bind="location">${location}</option>
                 </select>
                 <label for="db" class="label-width">Database backup location</label>
+                <textarea if.bind="model.project.showOtherInput" value.bind="model.project.databaseLocationOther"></textarea>
             </div>
         </div>
     </div>
@@ -112,7 +113,7 @@
             </div>
         </div>
 
-        <div id="rep-composite" class="input-group">
+        <div id="rep-composite" class="input-group" if.bind="model.report.showOtherInput">
             <div class="input">
                 <textarea id="rep" value.bind="model.report.notificationManagerReport"></textarea>
                 <label for="rep" class="label-width">Notification Manger Details</label>
