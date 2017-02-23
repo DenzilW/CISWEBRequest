@@ -93,9 +93,9 @@ export class CisReportDataOnKeyFieldsItem extends ReportBase {
 
     saveToEmail() {
         return reportDataOnKeyFieldsEmailTemplate
-                .replace("{screenInOnKey}", this.screen)
                 .replace("{fieldInOnKey}", this.fieldInOnKey)
-                .replace("{fieldTitleOnReport}", this.fieldTitle)
-                .replace("{sortOrder}", this.sortOrder);
+                .replace("{group}", this.group)
+                .replace("{total}", this.total)
+                .replace("{showonreport}", this.showonreport);
     }   
 }
