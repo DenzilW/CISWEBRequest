@@ -24,13 +24,21 @@ export class CisReport {
     }
 
     saveToEmail() {
-        return `
-        ${this.project.saveToEmail()}
-        ${this.report.saveToEmail()}
-        ${this.parameters.saveToEmail()}
-        ${this.chart.saveToEmail()}
-        ${this.reportData.saveToEmail()}
-        `;
+        let result = [];
+        result.push(this.project.saveToEmail().trim());
+        result.push(this.report.saveToEmail().trim());
+        result.push(this.parameters.saveToEmail().trim());
+        result.push(this.chart.saveToEmail().trim());
+        result.push(this.reportData.saveToEmail().trim());
+        return result.join("\n");
+
+        // return `
+        // ${this.project.saveToEmail().trim()}
+        // ${this.report.saveToEmail().trim()}
+        // ${this.parameters.saveToEmail().trim()}
+        // ${this.chart.saveToEmail().trim()}
+        // ${this.reportData.saveToEmail().trim()}
+        // `.trim();
     }
 
 }
