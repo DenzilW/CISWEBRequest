@@ -22,3 +22,7 @@
 @import 'lib/buttons';
 @import 'lib/layout-table';
 @import 'lib/switch';
+
+.table-cell input[type="text"] {
+  width: 100%;
+}
