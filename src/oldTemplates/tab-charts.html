@@ -2,173 +2,69 @@
     <require from="./tab-charts.css"></require>
     <div class="flex-body">
         <div class="flex-body-main flex-row">
-            <div class="chart-left">
-                <div class="parameters-heading">
-                    <button click.delegate="actions.addChart()" title="add chart">+</button>
-                    <label class="column1">Charts</label>
-                </div>
-                <ol class="list">
-                    <li repeat.for="chart of model.charts.items" click.delegate="model.charts.selectItem(chart)" class="${chart.isSelected ? 'selected' : ''}">
-                        <span class="list-item">${chart.chartTitle}</span>
-                        <button click.delegate="model.charts.remove(chart)" class="remove-button" title="remove chart">Delete</button>
-                    </li>
-                </ol>
-            </div>
-            <div id="chart-body" class="chart-body" style="visibility: hidden">
+            <div id="chart-body" class="chart-body">
                 <h3>Chart Properties</h3>
-
-                <div>
-                    <label id="wa-label" for="wa-input">What to achive with this chart</label>
-                    <input id="wa-input" type="text" value.bind="model.charts.selectedItem.whatAchieve" aria-labelledby="wa-label" aria-describedby="wa-descriptor" />
-                </div>
-
-                <div>
-                    <label id="ct-label" for="ct-input">Chart Type</label>
-                    <select value.bind="model.charts.selectedItem.chartType" class="dropdown-width">
-                        <option repeat.for="ctype of model.charts.options.ctype" value.bind="ctype">${ctype}</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label id="totals-label" for="totals-input">Totals</label>
-                    <select value.bind="model.charts.selectedItem.totals" class="dropdown-width">
-                        <option repeat.for="totals of model.charts.options.ctotals" value.bind="totals">${totals}</option>
-                    </select>                    
-                </div>
-
-                <div>
-                    <label id="so-label" for="so-input">Sort Order</label>
-                    <select value.bind="model.charts.selectedItem.sortOrder">
-                        <option repeat.for="sortOrder of model.charts.options.sort" value.bind="sortOrder">${sortOrder}</option>
-                    </select>                      
-                </div>
-
                 <hr />
-                <h3>Chart General</h3>
-
                 <div>
                     <label id="cTitle-label" for="cTitle-input">Chart Title</label>
-                    <input id="cTitle-input" type="text" value.bind="model.charts.selectedItem.chartTitle" aria-labelledby="cTitle-label" aria-describedby="cTitle-descriptor" />
+                    <input id="cTitle-input" type="text" value.bind="model.chart.chartTitle" aria-labelledby="cTitle-label" aria-describedby="cTitle-descriptor" />
                 </div>
-
                 <div>
-                    <label id="xat-label" for="xat-input">X Axis Title</label>
-                    <input id="xat-input" type="text" value.bind="model.charts.selectedItem.xAxisTitle" aria-labelledby="xat-label" aria-describedby="xat-descriptor" />
+                    <label id="cpur-label" for="cpur-input">Purpose of Chart</label>
+                    <input id="cpur-input" type="text" value.bind="model.chart.purposeOfChart" aria-labelledby="cpur-label" aria-describedby="cpur-descriptor" />
                 </div>
-
                 <div>
-                    <label id="yat-label" for="yat-input">Y Axis Title</label>
-                    <input id="yat-input" type="text" value.bind="model.charts.selectedItem.yAxisTitlePrimary" aria-labelledby="yat-label" aria-describedby="yat-descriptor" />
-                </div>
-
-                <div>
-                    <label id="yast-label" for="yast-input">Y Axis Secondary</label>
-                    <input id="yast-input" type="text" value.bind="model.charts.selectedItem.yAxisTitleSecondary" aria-labelledby="yast-label" aria-describedby="yast-descriptor" />
-                </div>
-
+                    <label id="cType-label" for="ctype-input">Chart Type</label>
+                    <select  value.bind="model.chart.chartType">
+                        <option repeat.for="chartType of model.chart.options.ctype" value.bind="chartType">${chartType}</option>
+                    </select>
+                    <textarea if.bind="model.chart.showOtherInput" value.bind="model.chart.chartTypeOther" class="memo"></textarea>
+                </div>                
                 <hr />
-
-                <h3>X Axis</h3>
-
+                <h3>Dimension</h3>
                 <div>
-                    <label id="xas-label" for="xas-input">Screen</label>
-                    <input id="xas-input" type="text" value.bind="model.charts.selectedItem.xAxisScreen" aria-labelledby="xas-label" aria-describedby="xas-descriptor" />
-                </div>
-
+                    <label id="cdo-label" for="cdo-input">OnKey Field Name</label>
+                    <input id="cdo-input" type="text" value.bind="model.chart.dimensionOnkeyFieldName" aria-labelledby="cdo-label" aria-describedby="cdo-descriptor" />
+                </div>                                
                 <div>
-                    <label id="xaf-label" for="xaf-input">Field In On Key</label>
-                    <input id="xaf-input" type="text" value.bind="model.charts.selectedItem.xAxisFieldInOnkey" aria-labelledby="xaf-label" aria-describedby="xaf-descriptor" />
-                </div>
-
-                <div>
-                    <label id="xal-label" for="xal-input">Add Data Labels</label>
-                    <input type="checkbox" class="xAxisAddDataLabels" checked.bind="model.charts.selectedItem.xAxisAddDataLabels" />
-                </div>
-
-                <div>
-                    <label id="xatl-label" for="xatl-input">Trend Line Required</label>
-                    <input type="checkbox" class="xAxisTrendlineRequired" checked.bind="model.charts.selectedItem.xAxisTrendlineRequired" />
-                </div>
-
+                    <label id="cdx-label" for="cdx-input">Axis Labels</label>
+                    <input id="cdx-input" type="checkbox" value.bind="model.chart.dimensionyAxisLabels" aria-labelledby="cdx-label" aria-describedby="cdx-descriptor" />
+                </div>                
                 <hr />
-
-                <h3>Y Axis Primary</h3>
-
+                <h3>Measure</h3>                
                 <div>
-                    <label id="yas-label" for="yas-input">Screen</label>
-                    <input id="yas-input" type="text" value.bind="model.charts.selectedItem.yAxisPrimaryScreen" aria-labelledby="yas-label" aria-describedby="yas-descriptor" />
-                </div>
-
+                    <label id="cmo-label" for="cmo-input">OnKey Field</label>
+                    <input id="cmo-input" type="text" value.bind="model.chart.measureOnkeyField" aria-labelledby="cmo-label" aria-describedby="cmo-descriptor" />
+                </div>                                
                 <div>
-                    <label id="yaf-label" for="yaf-input">Field In On Key</label>
-                    <input id="yaf-input" type="text" value.bind="model.charts.selectedItem.yAxisPrimaryFieldInOnkey" aria-labelledby="yaf-label" aria-describedby="yaf-descriptor" />
-                </div>
-
+                    <label id="cmc-label" for="cmc-input">Calculation for measure</label>
+                    <input id="cmc-input" type="text" value.bind="model.chart.measureCalculation" aria-labelledby="cmc-label" aria-describedby="cmc-descriptor" />
+                </div>     
                 <div>
-                    <label id="yal-label" for="yal-input">Add Data Labels</label>
-                    <input type="checkbox" class="column4" checked.bind="model.charts.selectedItem.yAxisPrimaryAddDataLabels" />
+                    <label id="cmxl-label" for="cmxl-input">Axis Labels</label>
+                    <input id="cmxl-input" type="checkbox" value.bind="model.chart.measureAxisLabels" aria-labelledby="cmxl-label" aria-describedby="cmxl-descriptor" />
                 </div>
-
                 <div>
-                    <label id="yatl-label" for="yatl-input">Trend Line Required</label>
-                    <input type="checkbox" class="column4" checked.bind="model.charts.selectedItem.yAxisPrimaryTrendlineRequired" />
-                </div>
-
-                <hr />
-
-                <h3>Y Axis Secondary</h3>
-
-                <div>
-                    <label id="yass-label" for="yass-input">Screen</label>
-                    <input id="yass-input" type="text" value.bind="model.charts.selectedItem.yAxisSecondaryScreen" aria-labelledby="yass-label" aria-describedby="yass-descriptor" />
-                </div>
-
-                <div>
-                    <label id="yafs-label" for="yafs-input">Field In On Key</label>
-                    <input id="yafs-input" type="text" value.bind="model.charts.selectedItem.yAxisSecondaryFieldInOnkey" aria-labelledby="yafs-label" aria-describedby="yafs-descriptor" />
-                </div>
-
-                <div>
-                    <label id="yals-label" for="yals-input">Add Data Labels</label>
-                    <input type="checkbox" class="column4" checked.bind="model.charts.selectedItem.yAxisSecondaryAddDataLabels" />
-                </div>
-
-                <div>
-                    <label id="yatls-label" for="yatls-input">Trend Line Required</label>
-                    <input type="checkbox" class="column4" checked.bind="model.charts.selectedItem.yAxisSecondaryTrendlineRequired" />
-                </div>
-
-                <hr />
-
-                <h3>Field to group</h3>
-
-                <div>
-                    <label id="ftg-label" for="ftg-input">In On Key</label>
-                    <input id="ftg-input" type="text" value.bind="model.charts.selectedItem.fieldToGroupFieldInOnkey" aria-labelledby="ftg-label" aria-describedby="ftg-descriptor" />
-                </div>
-
-                <div>
-                    <label id="ftgl-label" for="ftgl-input">Add Data Labels</label>
-                    <input type="checkbox" class="column4" checked.bind="model.charts.selectedItem.fieldToGroupAddDataLabels" />
-                </div>
-
-                <div>
-                    <label id="ftglr-label" for="ftglr-input">Trend Line Required</label>
-                    <input type="checkbox" class="column4" checked.bind="model.charts.selectedItem.fieldToGroupTrendlineRequired" />
-                </div>
-
+                    <label id="cmxd-label" for="cmxd-input">Data Labels</label>
+                    <input id="cmxd-input" type="checkbox" value.bind="model.chart.measureAxisDataLabels" aria-labelledby="cmxd-label" aria-describedby="cmxd-descriptor" />
+                </div>                                           
                 <hr />
 
                 <div>
-                    <h3 id="ar-label">Additional Information</h3>
-                    <textarea id="ar-input" value.bind="model.charts.selectedItem.additionalRequirements" aria-labelledby="ar-label" aria-describedby="ar-descriptor" class="memo"></textarea>
-                </div>
-
+                    <label id="srt-label" for="srt-input">Sort Order</label>
+                    <select  value.bind="model.chart.sortOrder">
+                        <option repeat.for="sortOrder of model.chart.options.sort" value.bind="sortOrder">${sortOrder}</option>
+                    </select>
+                </div>                
+                <div>
+                    <label id="req-label" for="req-input">Additional Information</label>
+                    <textarea id="req-input" value.bind="model.chart.additionalRequirements" class="memo"></textarea>                
+                </div>                 
             </div>
         </div>
 
         <div class="bottom-toolbar">
-            <button click.delegate="actions.gotoPreviousTab()" class="tab-nav-button previous-button">Prior</button>
+            <button click.delegate="actions.gotoPreviousTab()" class="tab-nav-button previous-button">Back</button>
             <button click.delegate="actions.gotoNextTab()" class="tab-nav-button next-button">Next</button>
         </div>
     </div>

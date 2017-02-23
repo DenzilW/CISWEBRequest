@@ -26,3 +26,8 @@
 .table-cell input[type="text"] {
   width: 100%;
 }
+
+.suppressed {
+  font-size: $rem-3;
+  opacity: $suppressed-opacity;
+}
