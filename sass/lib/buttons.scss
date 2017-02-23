@@ -1,5 +1,4 @@
-button.action {
-  background: $button-action-background;
+button.secondary-action, button.action {
   padding-left: 1rem;
   padding-right: 1rem;
   border-width: 0;
@@ -7,6 +6,15 @@ button.action {
   -webkit-appearance: none;
   -webkit-border-radius: 0px;
   border-radius: $button-border-radius;
+  cursor: pointer;
+}
+
+button.action {
+  background: $button-action-background;
+}
+
+button.secondary-action {
+  background: transparent;
 }
 
 .icon-button {
