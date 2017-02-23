@@ -8,7 +8,7 @@ mailto:support@pragmaworld.net?subject={subject}&body={body}
 `
 
 export const projectEmailTemplate =
-` 
+`
 Project
 ===================================================================================================
 Project Number                                          : {projectNumber}
@@ -39,7 +39,6 @@ Page Layout                                             : {pageLayout}
 Purpose Of The Report                                   : {purposeOfReport}
 Report Title                                            : {reportTitle}
 Formatting - specific requirements for colours, fonts   : {formattingStyle}
----------------------------------------------------------------------------------------------------
 `
 
 export const parameterHeader =
@@ -53,7 +52,6 @@ export const parameterEmailTemplate =
 Parameter                                               : {prameter} 
 On Key Field                                            : {onkeyField} 
 Show Parameter Values On Report?                        : {showOnReport}
----------------------------------------------------------------------------------------------------
 `;
 
 export const chartEmailTemplate = 
@@ -78,7 +76,6 @@ Data Labels                                             : {measureAxisDataLabels
 Sort Order                                              : {sortOrder}
 Any additional requirements for the chart? : 
 {additionalRequirements}
---------------------------------------------------------------------------------------------------
 `;
 
 export const reportDataEmailTemplate = 
@@ -95,5 +92,4 @@ Field In On Key                                         : {fieldInOnKey}
 Group                                                   : {group}  
 Total                                                   : {total}
 Show On Report                                          : {showonreport}
----------------------------------------------------------------------------------------------------
 `;

@@ -28,7 +28,6 @@
             <div>
                 <label id="rea-label" for="rea-input">Requester Email Address</label>
                 <input class="input-margin"  id="rea-input" type="text" value.bind="model.project.requesteremailaddress" aria-labelledby="rea-label" aria-describedby="rea-descriptor" />
-                <label id="rea-descriptor" class="descriptor">Required</label>
             </div>
 
             <div>
@@ -41,19 +40,16 @@
             <div>
                 <label id="cop-label" for="cop-input">Onkey Connection Path</label>
                 <input class="input-margin"  id="cop-input" type="text" value.bind="model.project.onkeyconnectionpath" aria-labelledby="cop-label" aria-describedby="cop-descriptor" />
-                <label id="cop-descriptor" class="descriptor">Required</label>
             </div>
 
             <div>
                 <label id="unm-label" for="unm-input">Onkey Username</label>
                 <input class="input-margin"  id="unm-input" type="text" value.bind="model.project.onkeyusername" aria-labelledby="unm-label" aria-describedby="unm-descriptor" />
-                <label id="unm-descriptor" class="descriptor">Required</label>
             </div>
 
             <div>
                 <label id="pwd-label" for="pwd-input">Onkey Password</label>
                 <input class="input-margin"  id="pwd-input" type="text" value.bind="model.project.onkeypassword" aria-labelledby="pwd-label" aria-describedby="pwd-descriptor" />
-                <label id="pwd-descriptor" class="descriptor">Required</label>
             </div>            
 
             <div>
@@ -87,7 +83,6 @@
             <div if.bind="model.report.showOtherInput">
                 <label id="rep-label" for="rep-input">Notification Manager Details</label>
                 <textarea id="rep-input" value.bind="model.report.notificationManagerReport" class="memoformat"></textarea>                
-                <label id="rep-descriptor" class="descriptor">Required</label>                
             </div>                      
             <div>
                 <label id="pgl-label" for="pgl-input">Page Layout</label>

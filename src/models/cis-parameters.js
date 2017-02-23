@@ -42,6 +42,7 @@ export class CisParameter {
             .replace("{prameter}", this.value)
             .replace("{onkeyField}", this.onkeyField)
             .replace("{showOnReport}", this.showOnReport)
+            .trim()
     }
    
 }   

@@ -74,6 +74,7 @@ export class Chart extends ReportBase {
             .replace("{measureAxisDataLabels}", this.measureAxisDataLabels)
             .replace("{sortOrder}", this.sortOrder)
             .replace("{additionalRequirements}", this.additionalRequirements)
+            .trim()
     }
     
      validate() {

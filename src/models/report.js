@@ -104,10 +104,11 @@ export class Report extends ReportBase {
         reportEmailTemplatetmp = reportEmailTemplate
                                  .replace("{typeOfReport}", this.typeReport)
                                  .replace("{standardcustomreport}", this.standardcustomreport)
-                                 .replace("{usage}", this.usage);
+                                 .replace("{usage}", this.usage)
+                                 .trim();
 
         if (this.usage == "Notification Manager Report") {
-            reportEmailTemplatetmp += reportManagerReportTemplate.replace("{notificationManagerReport}", this.notificationManagerReport)
+            reportEmailTemplatetmp += reportManagerReportTemplate.replace("{notificationManagerReport}", this.notificationManagerReport).trim()
         }
 
         reportEmailTemplatetmp += reportEmailTemplate2
@@ -116,7 +117,7 @@ export class Report extends ReportBase {
             .replace("{reportTitle}", this.reportTitle)
             .replace("{formattingStyle}", this.formattingRequirements)
 
-        return reportEmailTemplatetmp
+        return reportEmailTemplatetmp.trim()
     }
 
     validate() {

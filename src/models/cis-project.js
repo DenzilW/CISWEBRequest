@@ -56,7 +56,7 @@ export class CisProject extends ReportBase{
     }
 
     saveToEmail() {
-        return projectEmailTemplate
+        let projectEmailTemplatetmp = projectEmailTemplate
             .replace("{projectNumber}", this.projectNumber)
             .replace("{client}", this.client)
             .replace("{requester}", this.requester)
@@ -65,7 +65,9 @@ export class CisProject extends ReportBase{
             .replace("{onkeyConnectionPath}", this.onkeyconnectionpath)
             .replace("{onkeyUsername}", this.onkeyusername)
             .replace("{onkeyPassword}", this.onkeypassword)
-            .replace("{databaseLocation}", this.databaseLocation)
+            .replace("{databaseLocation}", this.databaseLocation);
+
+        return projectEmailTemplatetmp.trim()
     }
 
     validate() {
