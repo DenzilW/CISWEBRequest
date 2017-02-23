@@ -1,0 +1,10 @@
+.master-detail {
+  @include fullsize();
+  @include flex();
+  @include flex-row();
+
+  .detail {
+    margin-left: $default-padding;
+    margin-right: $default-padding;
+  }
+}

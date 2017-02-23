@@ -1,71 +1,113 @@
 <template bindable="model,actions">
-    <require from="./tab-charts.css"></require>
-    <div class="flex-body">
-        <div class="flex-body-main flex-row">
-            <div id="chart-body" class="chart-body">
-                <h3>Chart Properties</h3>
-                <hr />
-                <div>
-                    <label id="cTitle-label" for="cTitle-input">Chart Title</label>
-                    <input id="cTitle-input" type="text" value.bind="model.chart.chartTitle" aria-labelledby="cTitle-label" aria-describedby="cTitle-descriptor" />
-                </div>
-                <div>
-                    <label id="cpur-label" for="cpur-input">Purpose of Chart</label>
-                    <input id="cpur-input" type="text" value.bind="model.chart.purposeOfChart" aria-labelledby="cpur-label" aria-describedby="cpur-descriptor" />
-                </div>
-                <div>
-                    <label id="cType-label" for="ctype-input">Chart Type</label>
-                    <select  value.bind="model.chart.chartType">
-                        <option repeat.for="chartType of model.chart.options.ctype" value.bind="chartType">${chartType}</option>
-                    </select>
-                    <textarea if.bind="model.chart.showOtherInput" value.bind="model.chart.chartTypeOther" class="memo"></textarea>
-                </div>                
-                <hr />
-                <h3>Dimension</h3>
-                <div>
-                    <label id="cdo-label" for="cdo-input">OnKey Field Name</label>
-                    <input id="cdo-input" type="text" value.bind="model.chart.dimensionOnkeyFieldName" aria-labelledby="cdo-label" aria-describedby="cdo-descriptor" />
-                </div>                                
-                <div>
-                    <label id="cdx-label" for="cdx-input">Axis Labels</label>
-                    <input id="cdx-input" type="checkbox" value.bind="model.chart.dimensionyAxisLabels" aria-labelledby="cdx-label" aria-describedby="cdx-descriptor" />
-                </div>                
-                <hr />
-                <h3>Measure</h3>                
-                <div>
-                    <label id="cmo-label" for="cmo-input">OnKey Field</label>
-                    <input id="cmo-input" type="text" value.bind="model.chart.measureOnkeyField" aria-labelledby="cmo-label" aria-describedby="cmo-descriptor" />
-                </div>                                
-                <div>
-                    <label id="cmc-label" for="cmc-input">Calculation for measure</label>
-                    <input id="cmc-input" type="text" value.bind="model.chart.measureCalculation" aria-labelledby="cmc-label" aria-describedby="cmc-descriptor" />
-                </div>     
-                <div>
-                    <label id="cmxl-label" for="cmxl-input">Axis Labels</label>
-                    <input id="cmxl-input" type="checkbox" value.bind="model.chart.measureAxisLabels" aria-labelledby="cmxl-label" aria-describedby="cmxl-descriptor" />
-                </div>
-                <div>
-                    <label id="cmxd-label" for="cmxd-input">Data Labels</label>
-                    <input id="cmxd-input" type="checkbox" value.bind="model.chart.measureAxisDataLabels" aria-labelledby="cmxd-label" aria-describedby="cmxd-descriptor" />
-                </div>                                           
-                <hr />
-
-                <div>
-                    <label id="srt-label" for="srt-input">Sort Order</label>
-                    <select  value.bind="model.chart.sortOrder">
-                        <option repeat.for="sortOrder of model.chart.options.sort" value.bind="sortOrder">${sortOrder}</option>
-                    </select>
-                </div>                
-                <div>
-                    <label id="req-label" for="req-input">Additional Information</label>
-                    <textarea id="req-input" value.bind="model.chart.additionalRequirements" class="memo"></textarea>                
-                </div>                 
+    <div class="group" id="chartProperties">
+        <h3>Chart Properties</h3>
+        
+        <div id="ctitle-composite" class="input-group">
+            <div class="input">
+                <input id="ctitle" type="text" value.bind="model.chart.chartTitle" required="true"/>
+                <label for="ctitle" class="label-width">Chart Title</label>
+            </div>
+            <div>
+                <div class="suppressed label-width">(required)</div>
+                <div id="ctitle-descriptor" class="suppressed"></div>
             </div>
         </div>
 
-        <div class="bottom-toolbar">
-            <button click.delegate="actions.gotoPreviousTab()" class="tab-nav-button previous-button">Back</button>
-            <button click.delegate="actions.gotoNextTab()" class="tab-nav-button next-button">Next</button>
+        <div id="cpur-composite" class="input-group">
+            <div class="input">
+                <input id="cpur" type="text" value.bind="model.chart.purposeOfChart"/>
+                <label for="cpur" class="label-width">Purpose of Chart</label>
+            </div>
+        </div>
+
+        <div id="ctype-composite" class="input-group">
+            <div class="input">
+                <select id="ctype" value.bind="model.chart.chartType">
+                    <option repeat.for="chartType of model.chart.options.ctype" value.bind="chartType">${chartType}</option>
+                </select>
+                <label for="ctype" class="label-width">Chart Type</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="group" id="dimension">
+        <h3>Dimension</h3>
+        
+        <div id="cdo-composite" class="input-group">
+            <div class="input">
+                <input id="cdo" type="text" value.bind="model.chart.dimensionOnkeyFieldName"/>
+                <label for="cdo" class="label-width">On Key Field Name</label>
+            </div>
+        </div>
+
+        <div id="cdx-composite" class="input-group">
+            <div class="input">
+                <input id="cdx" type="checkbox" checked.bind="model.chart.dimensionyAxisLabels" class="switch" />
+                <label for="cdx" class="label-width">Axis Labels</label>
+                <div id="cdx-descriptor" class="suppressed">${model.chart.dimensionyAxisLabels ? "Yes" : "No"}</div>
+            </div>
+            <div>
+                <div class="suppressed label-width">(required)</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="group" id="measure">
+        <h3>Measure</h3>
+
+        <div id="cmo-composite" class="input-group">
+            <div class="input">
+                <input id="cmo" type="text" value.bind="model.chart.measureOnkeyField"/>
+                <label for="cmo" class="label-width" >On Key Field</label>
+            </div>
+        </div>
+
+        <div id="cmc-composite" class="input-group">
+            <div class="input">
+                <input id="cmc" type="text" value.bind="model.chart.measureCalculation"/>
+                <label for="cmc" class="label-width">Calculation of measure</label>
+            </div>
+        </div>
+
+        <div id="cmxl-composite" class="input-group">
+            <div class="input">
+                <input id="cmxl" type="checkbox" class="switch" checked.bind="model.chart.measureAxisLabels"/>
+                <label for="cmxl" class="label-width">Axis Labels</label>
+                <div id="cmxl-descriptor" class="suppressed">${model.chart.measureAxisLabels ? "Yes" : "No"}</div>
+            </div>
+            <div>
+                <div class="suppressed label-width">(required)</div>
+            </div>
+        </div>
+
+        <div id="cmxd-composite" class="input-group">
+            <div class="input">
+                <input id="cmxd" type="checkbox" class="switch" checked.bind="model.chart.measureAxisDataLabels"/>
+                <label for="cmxd" class="label-width">Data Labels</label>
+                <div id="cmxd-descriptor" class="suppressed">${model.chart.measureAxisDataLabels ? "Yes" : "No"}</div>
+            </div>
+            <div>
+                <div class="suppressed label-width">(required)</div>
+            </div>
+        </div>
+
+        <div id="srt-composite" class="input-group">
+            <div class="input">
+                <select id="srt" value.bind="model.chart.sortOrder">
+                    <option repeat.for="sortOrder of model.chart.options.sort" value.bind="sortOrder">${sortOrder}</option>
+                </select>
+                <label for="srt" class="label-width">Sort Order</label>
+            </div>
+        </div>
+
+        <div id="req-composite" class="input-group">
+            <div class="input">
+                <textarea id="req" value.bind="model.chart.additionalRequirements"></textarea>
+                <label for="req" class="label-width">Additional Information</label>
+            </div>
         </div>
     </div>
 </template>
+
+
+

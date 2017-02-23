@@ -1,0 +1,68 @@
+/*
+  APPLICATION OBJECTS
+ */
+
+$app-toolbar-height: 3.375rem;
+$border-radius: 0.4rem;
+$suppressed-opacity: 0.4;
+$input-label-width: 11.5rem;
+
+/*
+ FONT SIZES:
+ REM = 16px;
+ rem-1 = 15;
+ rem-2 = 14; ...
+*/
+$rem-2 : 0.875rem;
+$rem-3 : 0.8125rem;
+
+/*
+  BORDER VARIABLES
+ */
+
+$group-border-width: 1px;
+$group-border-style: solid;
+$group-border-radius: $border-radius;
+
+/*
+  VARIABLES
+ */
+
+$default-padding: 1rem;
+
+/*
+  TABSHEET
+ */
+
+$tab-highlight-height: 0.2rem;
+$tab-highlight-style: solid;
+
+/*
+  LIST
+ */
+
+$list-border-width: 1px;
+$list-border-style: solid;
+
+/*
+  CARD
+ */
+
+$card-border-radius: $border-radius;
+$card-border-width: 1px;
+$card-border-style: solid;
+
+/*
+  BUTTONS
+ */
+
+$button-border-radius: 0.2rem;
+
+/*
+  SWITCH
+ */
+
+$switch-width-before: 40px;
+$switch-width-after: $switch-width-before / 2;
+$switch-height: 20px;
+$switch-corner-radius: 10px;

@@ -1,0 +1,35 @@
+<template bindable="model,actions">
+    <require from="./tab-data.css"></require>
+
+    <div class="flex-body">
+        <div class="flex-body-main">
+            <div>
+                <label id="rdt-label" for="rdt-input">Report Data Title</label>
+                <input id="rdt-input" type="text" value.bind="model.reportData.reportDataTitle" aria-describedby="rdt-descriptor" aria-label="rdt-label" />
+                <label id="rdt-descriptor" class="descriptor">Required</label>
+            </div>
+            <div>
+            <div class="parameters-heading">
+                <button click.delegate="actions.addDataOnKeyFields()" title="add fields">+</button>
+                <label class="column1">Onkey Field</label>
+                <label class="column3">Group</label>
+                <label class="column3">Show Total</label>
+                <label class="column3">Show On Report</label>    
+            </div>
+            <ol>
+                <li repeat.for="parameter of model.reportData.onKeyFields.items">
+                    <input type="text" class="column1" value.bind="parameter.fieldInOnKey" />
+                    <input type="checkbox" class="column3" value.bind="parameter.group" />
+                    <input type="checkbox" class="column2" checked.bind="parameter.total" />
+                    <input type="checkbox" class="column2" checked.bind="parameter.showonreport" />
+                    <button click.delegate="model.reportData.onKeyFields.remove(parameter)" class="remove-button" title="remove group">Delete</button>
+                </li>
+            </ol>
+        </div>
+        </div>
+        <div class="bottom-toolbar">
+            <button click.delegate="actions.gotoPreviousTab()" class="tab-nav-button previous-button">Prior</button>
+            <button click.delegate="actions.gotoNextTab()" class="tab-nav-button next-button">Preview</button>
+        </div>
+    </div>
+</template>

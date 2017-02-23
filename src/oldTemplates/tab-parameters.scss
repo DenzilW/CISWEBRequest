@@ -1,0 +1,26 @@
+.parameters-heading {
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.column1, .column2, .column3 {
+    display: inline-block;
+}
+
+.column1 {
+    width: 20rem;
+}
+
+.column2 {
+    margin-left: 4rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+.remove-button {
+    margin-left: 4rem;
+}

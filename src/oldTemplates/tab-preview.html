@@ -1,0 +1,14 @@
+<template bindable="model,actions">
+    <div class="flex-body">
+        
+        <pre class="flex-body-main" id="flex-body-main" contenteditable="true">
+            ${model.email.body}
+        </pre>
+
+        <div class="bottom-toolbar">
+            <button click.delegate="actions.gotoPreviousTab()" class="tab-nav-button previous-button">Prior</button>
+            <button click.delegate="actions.refreshEmail()" class="tab-nav-button add-button">Refresh</button>
+            <button click.delegate="actions.sendEmail()" class="tab-nav-button next-button">Send Email</button>
+        </div>
+    </div>
+</template>
