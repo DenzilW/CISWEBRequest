@@ -37,9 +37,15 @@ export class Chart extends ReportBase {
 
     constructor() {
         super();
+        this.chartTitle = "";
+        this.purposeOfChart = "";
         this.dimensionyAxisLabels = false;
         this.measureAxisLabels = false;
         this.measureAxisDataLabels = false;
+        this.chartTypeOther = "";
+        this.dimensionOnkeyFieldName = "";
+        this.measureOnkeyField = "";
+        this.measureCalculation = "";
         this.options = {
             ctype: [
                 'Line',
