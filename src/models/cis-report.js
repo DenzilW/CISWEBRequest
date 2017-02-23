@@ -25,20 +25,12 @@ export class CisReport {
 
     saveToEmail() {
         let result = [];
-        result.push(this.project.saveToEmail().trim());
-        result.push(this.report.saveToEmail().trim());
-        result.push(this.parameters.saveToEmail().trim());
-        result.push(this.chart.saveToEmail().trim());
-        result.push(this.reportData.saveToEmail().trim());
+        result.push(this.project.saveToEmail());
+        result.push(this.report.saveToEmail());
+        result.push(this.parameters.saveToEmail());
+        result.push(this.chart.saveToEmail());
+        result.push(this.reportData.saveToEmail());
         return result.join("\n");
-
-        // return `
-        // ${this.project.saveToEmail().trim()}
-        // ${this.report.saveToEmail().trim()}
-        // ${this.parameters.saveToEmail().trim()}
-        // ${this.chart.saveToEmail().trim()}
-        // ${this.reportData.saveToEmail().trim()}
-        // `.trim();
     }
 
 }

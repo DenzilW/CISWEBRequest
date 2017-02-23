@@ -72,7 +72,7 @@ export class CisProject extends ReportBase{
             projectEmailTemplatetmp += otherDBLocation.replace("{otherDatabaseLocation}", this.databaseLocationOther)
         }
 
-        return projectEmailTemplatetmp.trim()
+        return projectEmailTemplatetmp;
     }
 
     validate() {

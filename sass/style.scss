@@ -31,3 +31,8 @@
   font-size: $rem-3;
   opacity: $suppressed-opacity;
 }
+
+pre {
+  outline-width: $group-border-width;
+  outline-color: $focus-color;
+}
