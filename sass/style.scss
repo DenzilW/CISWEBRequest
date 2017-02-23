@@ -1,177 +1,21 @@
-@import './normalize';
-@import './normalize';
-@import './colors.scss';
-@import './layout.scss';
+// Normalize css so that these styles will work the same on all browsers
+@import 'normalize';
 
-pragma-tabsheet {
-  display:block;
-  position:relative;
-  width:100%;
-  height:100%;
-}
+// Required utility css
+@import 'lib/variables';
+@import 'lib/colors';
+@import 'lib/mixins';
 
-[aria-hidden="true"] {
-  display:none;
-}
-
-[aria-hidden="false"] {
-  display:block;
-}
-
-body {
-  font-size: 16px;
-  background: $toolbar-color;
-}
-
-h1 {
-  padding: 0;
-  margin: 0;
-  font-size: 2rem;
-}
-
-header {
-  background: $toolbar-color;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: $header-height;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
-
-  h1 {
-    line-height: $header-height;
-    text-align: center;
-  }
-}
-
-footer {
-  background: $toolbar-color;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: $footer-height;
-  line-height: $footer-height;
-  text-align: center;
-}
-
-router-view {
-  background: $primary-background;
-  position: absolute;
-  top: $header-height + 0.5;
-  bottom: $footer-height;
-  left: 0;
-  right: 0;
-}
-
-label {
-  display: inline-block;
-  width: 12rem;
-  margin-left: 1rem;
-}
-
-.body {
-  position: relative;
-  display:block;
-  width: 100%;
-  height: 100%;
-}
-
-.flex-body {
-  display: flex;
-  flex-direction: column;
-  position:absolute;
-  top:2rem;
-  bottom:0;
-  left:0;
-  right:0;
-}
-
-.flex-body-main {
-  flex: 1;
-  padding: 1rem;
-  overflow: auto;
-}
-
-.flex-row {
-  display:flex;
-  flex-direction: row;
-}
-
-.bottom-toolbar {
-  display:flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: $bottom-toolbar-height;
-}
-
-.tab-nav-button {
-  width: 7rem;
-  height: 2rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  display: block;
-  border-width: 0;
-  color: $button-text-color;
-}
-
-.next-button {
-  background: $next-button-background;
-}
-
-.previous-button {
-  background: $previous-button-background;
-}
-
-.add-button {
-  background: $add-button-background;
-}
-
-.descriptor {
-  color: $descriptor-color;
-  width: auto;
-}
-
-.list {
-  overflow-y: auto;
-  flex: 1;
-  padding: 0;
-
-  li {
-    cursor: pointer;
-  }
-}
-
-.selected {
-  background: $selected-background;
-}
-
-ul {
-  margin: 0;
-  padding: 1rem;
-  list-style: none;
-  background: $primary-background;
-}
-
-.list-item {
-  width: 14rem;
-  display: inline-block;
-}
-
-.parameter-details {
-  margin-top: 2.5rem;
-}
-
-.memo {
-  display: block;
-  height: 10rem;
-  width: 100%;
-}
-
-.padded {
-  padding: 1rem;
-}
-
-select {
-  width: 12.4rem;
-}
+// Application spesific css
+@import 'lib/app';
+@import 'lib/layout';
+@import 'lib/typography';
+@import 'lib/pragma-tabsheet';
+@import 'lib/group';
+@import 'lib/input-group';
+@import 'lib/input';
+@import 'lib/select';
+@import 'lib/textarea';
+@import 'lib/master-detail';
+@import 'lib/list';
+@import 'lib/card';

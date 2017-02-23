@@ -1,0 +1,18 @@
+.app-toolbar {
+  height: $app-toolbar-height;
+  background: $group-background;
+
+  display: flex;
+  align-items: center;
+  padding-left: $default-padding;
+  padding-right: $default-padding;
+}
+
+router-view {
+  position: absolute;
+  top: $app-toolbar-height;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow:auto;
+}

@@ -1,0 +1,37 @@
+.input-group {
+  @include flex();
+  @include flex-column();
+  margin-bottom: 1rem;
+
+  .input {
+    label {
+      font-size: $rem-2;
+    }
+
+    input, select, textarea {
+      @include stretch();
+      order: 1;
+    }
+
+    select:focus + label, input:focus + label, textarea:focus + label {
+      color: $focus-color;
+    }
+  }
+
+  .label-width {
+    width: 10rem;
+    order: 0;
+    display: block;
+  }
+
+  div {
+    @include flex();
+    @include flex-row();
+  }
+
+  .suppressed {
+    font-size: $rem-3;
+    opacity: $suppressed-opacity;
+  }
+
+}

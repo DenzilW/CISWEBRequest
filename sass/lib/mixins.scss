@@ -1,0 +1,37 @@
+@mixin stretch {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+@mixin flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin flex-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@mixin flex-row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+@mixin fullsize {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin box-shadow($x, $y, $blur, $spread, $r, $g, $b, $a) {
+  -webkit-box-shadow: $x $y $blur $spread rgba($r, $g, $b, $a);
+  -moz-box-shadow: $x $y $blur $spread rgba($r, $g, $b, $a);
+  box-shadow: $x $y $blur $spread rgba($r, $g, $b, $a);
+}
