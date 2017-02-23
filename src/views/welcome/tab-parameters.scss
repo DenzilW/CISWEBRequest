@@ -1,26 +1,19 @@
-.parameters-heading {
-    height: 2rem;
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
+.col1 {
 }
 
-.column1, .column2, .column3 {
-    display: inline-block;
+.col2 {
 }
 
-.column1 {
-    width: 20rem;
+.col3 {
+  width: 9rem;
+  text-align: center;
 }
 
-.column2 {
-    margin-left: 4rem;
+.col4 {
+  width: 4rem;
+  text-align: center;
 }
 
-li {
-    margin-bottom: 0.5rem;
-}
-
-.remove-button {
-    margin-left: 4rem;
+.table-cell input[type="text"] {
+  width: 100%;
 }

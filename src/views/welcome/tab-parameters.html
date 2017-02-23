@@ -1,26 +1,45 @@
 <template bindable="model,actions">
     <require from="./tab-parameters.css"></require>
-    <div class="flex-body">
-        <div class="flex-body-main">
-            <div class="parameters-heading">
-                <button click.delegate="actions.addParameter()" title="add parameter">+</button>
-                <label class="column1">Parameters</label>
-                <label class="column3">Onkey Field</label>
-                <label class="column3">Show On Report</label>    
-            </div>
-            <ol>
-                <li repeat.for="parameter of model.parameters.items">
-                    <input type="text" class="column1" value.bind="parameter.value" />
-                    <input type="text" class="column3" value.bind="parameter.onkeyField" />
-                    <input type="checkbox" class="column2" checked.bind="parameter.showOnReport" />
-                    <button click.delegate="model.parameters.remove(parameter)" class="remove-button" title="remove parameter">Delete</button>
-                </li>
-            </ol>
-        </div>
 
-        <div class="bottom-toolbar">
-            <button click.delegate="actions.gotoPreviousTab()" class="tab-nav-button previous-button">Prior</button>
-            <button click.delegate="actions.gotoNextTab()" class="tab-nav-button next-button">Next</button>
+    <div class="group" id="toolbar">
+        <div class="container default-padding-left default-padding-right">
+            <h3 class="stretch">Parameters</h3>
+            <button click.delegate="actions.addParameter()" class="action">Add Parameter</button>
         </div>
     </div>
+
+    <div class="group" id="parameters">
+        <div class="table">
+            <div class="table-column col1"></div>
+            <div class="table-column col2"></div>
+            <div class="table-column col3"></div>
+            <div class="table-column col4"></div>
+
+            <div class="table-header-group">
+                <div class="table-cell">Parameters</div>
+                <div class="table-cell">Onkey Field</div>
+                <div class="table-cell">Show On Report</div>
+                <div class="table-cell"></div>
+            </div>
+
+            <div class="table-row" repeat.for="parameter of model.parameters.items">
+                <div class="table-cell"><input type="text" value.bind="parameter.value" /></div>
+                <div class="table-cell"><input type="text" value.bind="parameter.onkeyField" /></div>
+
+                <div class="table-cell">
+                    <div class="container stretch space-around">
+                        <input type="checkbox" checked.bind="parameter.showOnReport" class="switch"/>
+                        <div class="suppressed">${parameter.showOnReport ? "Yes" : "No"}</div>
+                    </div>
+                </div>
+
+                <div class="table-cell">
+                    <button click.delegate="model.parameters.remove(parameter)" title="remove parameter" class="icon-button">
+                        <svg width="12px" height="14px" viewBox="3 2 12 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M4.49999973,14.2499991 C4.49999973,15.0749993 5.17499976,15.7499991 5.99999964,15.7499991 L11.9999993,15.7499991 C12.8249995,15.7499991 13.4999992,15.0749993 13.4999992,14.2499991 L13.4999992,5.24999969 L4.49999973,5.24999969 L4.49999973,14.2499991 Z M14.2499991,2.99999982 L11.6249993,2.99999982 L10.8749993,2.24999987 L7.12499957,2.24999987 L6.37499962,2.99999982 L3.74999978,2.99999982 L3.74999978,4.49999973 L14.2499991,4.49999973 L14.2499991,2.99999982 Z" id="Fill-2" stroke="none" fill="#2E3944" fill-rule="evenodd"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </template>

@@ -50,3 +50,18 @@ $list-border-style: solid;
 $card-border-radius: $border-radius;
 $card-border-width: 1px;
 $card-border-style: solid;
+
+/*
+  BUTTONS
+ */
+
+$button-border-radius: 0.2rem;
+
+/*
+  SWITCH
+ */
+
+$switch-width-before: 40px;
+$switch-width-after: $switch-width-before / 2;
+$switch-height: 20px;
+$switch-corner-radius: 10px;

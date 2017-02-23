@@ -1,0 +1,16 @@
+button.action {
+  background: $button-action-background;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-width: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  border-radius: $button-border-radius;
+}
+
+.icon-button {
+  cursor: pointer;
+  border-width: 0;
+  background: transparent;
+}

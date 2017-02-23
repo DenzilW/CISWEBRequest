@@ -30,6 +30,11 @@
   height: 100%;
 }
 
+@mixin space-around {
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
 @mixin box-shadow($x, $y, $blur, $spread, $r, $g, $b, $a) {
   -webkit-box-shadow: $x $y $blur $spread rgba($r, $g, $b, $a);
   -moz-box-shadow: $x $y $blur $spread rgba($r, $g, $b, $a);

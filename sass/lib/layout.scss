@@ -33,10 +33,22 @@ body {
   @include flex-row();
 }
 
+.space-around {
+  @include space-around();
+}
+
 .stretch {
   @include stretch();
 }
 
 .default-padding {
   padding: $default-padding;
+}
+
+.default-padding-left {
+  padding-left: $default-padding;
+}
+
+.default-padding-right {
+  padding-right: $default-padding;
 }
