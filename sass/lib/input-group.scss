@@ -13,6 +13,15 @@
       order: 1;
     }
 
+    input[type="checkbox"] {
+      @include flex-size(0);
+      margin-right: $default-padding;
+    }
+
+    .suppressed {
+      order: 2;
+    }
+
     select:focus + label, input:focus + label, textarea:focus + label {
       color: $focus-color;
     }

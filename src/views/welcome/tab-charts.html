@@ -44,10 +44,10 @@
             <div class="input">
                 <input id="cdx" type="checkbox" checked.bind="model.chart.dimensionyAxisLabels" class="switch" />
                 <label for="cdx" class="label-width">Axis Labels</label>
+                <div id="cdx-descriptor" class="suppressed">${model.chart.dimensionyAxisLabels ? "Yes" : "No"}</div>
             </div>
             <div>
                 <div class="suppressed label-width">(required)</div>
-                <div id="cdx-descriptor" class="suppressed">${model.chart.dimensionyAxisLabels}</div>
             </div>
         </div>
     </div>
@@ -73,10 +73,10 @@
             <div class="input">
                 <input id="cmxl" type="checkbox" class="switch" checked.bind="model.chart.measureAxisLabels"/>
                 <label for="cmxl" class="label-width">Axis Labels</label>
+                <div id="cmxl-descriptor" class="suppressed">${model.chart.measureAxisLabels ? "Yes" : "No"}</div>
             </div>
             <div>
                 <div class="suppressed label-width">(required)</div>
-                <div id="cmxl-descriptor" class="suppressed">${model.chart.measureAxisLabels}</div>
             </div>
         </div>
 
@@ -84,10 +84,10 @@
             <div class="input">
                 <input id="cmxd" type="checkbox" class="switch" checked.bind="model.chart.measureAxisDataLabels"/>
                 <label for="cmxd" class="label-width">Data Labels</label>
+                <div id="cmxd-descriptor" class="suppressed">${model.chart.measureAxisDataLabels ? "Yes" : "No"}</div>
             </div>
             <div>
                 <div class="suppressed label-width">(required)</div>
-                <div id="cmxd-descriptor" class="suppressed">${model.chart.measureAxisDataLabels}</div>
             </div>
         </div>
 
@@ -108,3 +108,6 @@
         </div>
     </div>
 </template>
+
+
+

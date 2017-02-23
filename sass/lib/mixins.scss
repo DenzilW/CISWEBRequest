@@ -4,6 +4,12 @@
   flex: 1;
 }
 
+@mixin flex-size($size) {
+  -webkit-box-flex: $size;
+  -ms-flex: $size;
+  flex: $size;
+}
+
 @mixin flex {
   display: -webkit-box;
   display: -ms-flexbox;
