@@ -40,7 +40,7 @@ export class CisParameter {
     saveToEmail() {
         return parameterEmailTemplate
             .replace("{prameter}", this.value)
-            .replace("{onkeyField}", this.value)
+            .replace("{onkeyField}", this.onkeyField)
             .replace("{showOnReport}", this.showOnReport)
     }
    
