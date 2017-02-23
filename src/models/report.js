@@ -73,6 +73,9 @@ export class Report extends ReportBase {
 
     constructor() {
         super();
+        this.notificationManagerReport = "";
+        this.purposeOfReport = "";
+        this.formattingRequirements= "";
         this.options = {
             tor: [
                 'Analyser Report',
@@ -80,7 +83,7 @@ export class Report extends ReportBase {
                 'SSRS Report',
             ], 
             usage: [
-                'OnKey Parameter Report',
+                'On Key Parameter Report',
                 'Based on selected items eg WorkOrders',
                 'Notification Manager Report',
             ],

@@ -10,15 +10,15 @@ mailto:support@pragmaworld.net?subject={subject}&body={body}
 export const projectEmailTemplate =
 ` 
 Project
--------------------------------------------------------------------------------
+===================================================================================================
 Project Number                                          : {projectNumber}
 Client                                                  : {client}
 Requester                                               : {requester}
 Requester Email Address                                 : {requesterEmailAddress}
 Type Of Request                                         : {typeOfRequest}
-Onkey Connection Path                                   : {onkeyConnectionPath}
-Onkey Username                                          : {onkeyUsername}
-Onkey Password                                          : {onkeyPassword}
+On Key Connection Path                                   : {onkeyConnectionPath}
+On Key Username                                         : {onkeyUsername}
+On Key Password                                         : {onkeyPassword}
 Database backup location                                : {databaseLocation}
 `;
    
@@ -36,10 +36,10 @@ Notification Manager Report                             : {notificationManagerRe
 export const reportEmailTemplate2 =
 `
 Page Layout                                             : {pageLayout}
-Purpose of the report                                   : {purposeOfReport}
+Purpose Of The Report                                   : {purposeOfReport}
 Report Title                                            : {reportTitle}
 Formatting - specific requirements for colours, fonts   : {formattingStyle}
--------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 `
 
 export const parameterHeader =
@@ -49,52 +49,51 @@ Report parameters that you would like to filter the data on
 
 export const parameterEmailTemplate =
 `
--------------------------------------------------------------------------------
-Parameter                                               | {prameter} 
-Onkey field                                             | {onkeyfield} 
-Show parameter values on report?                        | {showOnReport}
--------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
+Parameter                                               : {prameter} 
+On Key Field                                            : {onkeyField} 
+Show Parameter Values On Report?                        : {showOnReport}
+---------------------------------------------------------------------------------------------------
 `;
 
 export const chartEmailTemplate = 
 `
 Chart Properties
-----------------
+===================================================================================================
 Chart                                                   : {chartTitle}
 What must the chart display / achieve?                  : {purposeOfChart}
 Chart Type                                              : {chartType}
 Other                                                   : {chartTypeOther}
 Dimension
--------------------------------------------------------------------------------
-OnKey Field Name                                        : {dimensionOnkeyFieldName}               
+---------------------------------------------------------------------------------------------------
+On Key Field Name                                       : {dimensionOnkeyFieldName}               
 Axis Label                                              : {dimensionyAxisLabels}         
--------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 Measure
--------------------------------------------------------------------------------
-OnKey Field                                             : {measureOnkeyField}               
-Calculation for measure                                 : {measureCalculation}         
+---------------------------------------------------------------------------------------------------
+On Key Field                                            : {measureOnkeyField}               
+Calculation For Measure                                 : {measureCalculation}         
 Axis Labels                                             : {measureAxisLabels}       
-Data labels                                             : {measureAxisDataLabels}   
--------------------------------------------------------------------------------
+Data Labels                                             : {measureAxisDataLabels}   
 Sort Order                                              : {sortOrder}
 Any additional requirements for the chart? : 
 {additionalRequirements}
--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
 `;
 
 export const reportDataEmailTemplate = 
 `
-Report data
------------
-Report data title                                       : {reportDataTitle}
+Report Data
+===================================================================================================
+Report Data Title                                       : {reportDataTitle}
 `;
 
 export const reportDataOnKeyFieldsEmailTemplate = 
 `
--------------------------------------------------------------------------------
-Field in On Key                                         :  {fieldInOnKey}       
-Group                                                   :  {group}  
-Total                                                   :  {total}
-Show onreport                                           :  {showonreport}
--------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
+Field In On Key                                         : {fieldInOnKey}       
+Group                                                   : {group}  
+Total                                                   : {total}
+Show On Report                                          : {showonreport}
+---------------------------------------------------------------------------------------------------
 `;

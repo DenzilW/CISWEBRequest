@@ -53,7 +53,7 @@ export class CisReportData extends ReportBase {
 export class CisReportDataOnKeyFieldsCollection extends CollectionBase {
     add() {
         const item = new CisReportDataOnKeyFieldsItem();
-        item.fieldInOnKey = "code";
+        item.fieldInOnKey = "";
         item.group = false;
         item.total = false;
         item.showonreport = false;
