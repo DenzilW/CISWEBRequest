@@ -1,19 +1,13 @@
 .data-col1 {
 }
 
-.data-col2 {
+.data-col2, .data-col3, .data-col4 {
   width: 9rem;
-  text-align: center;
 }
 
-.data-col3 {
-  width: 9rem;
-  text-align: center;
-}
-
-.data-col4 {
-  width: 9rem;
-  text-align: center;
+yes-no {
+  display: block;
+  width: 2rem;
 }
 
 .data-col5 {
