@@ -16,7 +16,7 @@ Client                                                  : {client}
 Requester                                               : {requester}
 Requester Email Address                                 : {requesterEmailAddress}
 Type Of Request                                         : {typeOfRequest}
-On Key Connection Path                                   : {onkeyConnectionPath}
+On Key Connection Path                                  : {onkeyConnectionPath}
 On Key Username                                         : {onkeyUsername}
 On Key Password                                         : {onkeyPassword}
 Database backup location                                : {databaseLocation}
