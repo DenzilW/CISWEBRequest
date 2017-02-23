@@ -43,30 +43,15 @@ export class Chart extends ReportBase {
     }
     saveToEmail() {
         return chartEmailTemplate
-            .replace("{chartAchieve}", this.whatAchieve)
-            .replace("{chartType}", this.chartType)
             .replace("{chartTitle}", this.chartTitle)
-            .replace("{xAxisTitle}", this.xAxisTitle)
-            .replace("{yAxisTitlePrimary}", this.yAxisTitlePrimary)
-            .replace("{yAxisTitleSecondary}", this.yAxisTitleSecondary)
-            .replace("{xAxisScreen}", this.xAxisScreen)
-            .replace("{yAxisTitleprimary}", this.yAxisTitleprimary)
-            .replace("{xAxisFieldInOnkey}", this.xAxisFieldInOnkey)
-            .replace("{xAxisFieldInOnkey}", this.xAxisFieldInOnkey)
-            .replace("{xAxisAddDataLabels}", this.getYesOrNo(this.xAxisAddDataLabels))
-            .replace("{xAxisTrendlineRequired}", this.getYesOrNo(this.xAxisTrendlineRequired))
-            .replace("{fieldToGroupFieldInOnkey}", this.fieldToGroupFieldInOnkey)
-            .replace("{fieldToGroupAddDataLabels}", this.getYesOrNo(this.fieldToGroupAddDataLabels))
-            .replace("{fieldToGroupTrendlineRequired}", this.getYesOrNo(this.fieldToGroupTrendlineRequired))
-            .replace("{yAxisPrimaryScreen}", this.yAxisPrimaryScreen)
-            .replace("{yAxisPrimaryFieldInOnkey}", this.yAxisPrimaryFieldInOnkey)
-            .replace("{yAxisPrimaryAddDataLabels}", this.getYesOrNo(this.yAxisPrimaryAddDataLabels))
-            .replace("{yAxisPrimaryTrendlineRequired}", this.getYesOrNo(this.yAxisPrimaryTrendlineRequired))
-            .replace("{yAxisSecondaryScreen}", this.yAxisSecondaryScreen)
-            .replace("{yAxisSecondaryFieldInOnkey}", this.yAxisSecondaryFieldInOnkey)
-            .replace("{yAxisSecondaryAddDataLabels}", this.getYesOrNo(this.yAxisSecondaryAddDataLabels))
-            .replace("{yAxisSecondaryTrendlineRequired}", this.getYesOrNo(this.yAxisSecondaryTrendlineRequired))
-            .replace("{totals}", this.totals)
+            .replace("{puposeOfChart}", this.whatAchieve)
+            .replace("{chartType}", this.chartType)
+            .replace("{dimensionOnkeyFieldName}", this.dimensionOnkeyFieldName)
+            .replace("{dimensionyAxisLabels}", this.dimensionyAxisLabels)
+            .replace("{measureOnkeyField}", this.measureOnkeyField)
+            .replace("{measureCalculation}", this.measureCalculation)
+            .replace("{measureAxisLabels}", this.measureAxisLabels)
+            .replace("{measureAxisDataLabels}", this.measureAxisDataLabels)
             .replace("{sortOrder}", this.sortOrder)
             .replace("{additionalRequirements}", this.additionalRequirements)
     }
@@ -74,20 +59,9 @@ export class Chart extends ReportBase {
      validate() {
         let validMessage: string;
         validMessage = "";
-        if (this.totals == undefined || this.totals.length == 0) {
-            validMessage += "Total must have a value\n";
-        }
-        if (this.sortOrder == undefined || this.sortOrder.length == 0) {
-            validMessage += "Sort Order must have a value\n";
+        if (this.chartTitle == undefined || this.chartTitle.length == 0) {
+            validMessage += "Chart Title must have a value\n";
         }
         return validMessage;
-     }
-
-     getYesOrNo(yesnoStr) {
-         let returnvalue = 'No'
-         if (yesnoStr == true){
-            returnvalue = 'Yes'
-         }
-         return returnvalue;
      }
 }

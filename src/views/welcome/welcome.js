@@ -137,6 +137,6 @@ export class Welcome {
         return this.model.reportData.validate();
     } 
     validateCharts() {
-        return this.model.charts.validate();
+        return this.model.chart.validate();
     }
 }
