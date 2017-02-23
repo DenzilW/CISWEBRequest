@@ -2,14 +2,14 @@
 import {CisReportData} from './cis-report-data';
 import {CisProject} from './cis-project';
 import {Report} from './report';
-import {Charts} from './chart';
+import {Chart} from './chart';
 import {CisParameters} from './cis-parameters'
 import {Email} from './email';
 
 export class CisReport {
     project: CisProject;
     report: CisReport;
-    charts: Charts;
+    chart: Chart;
     reportData: CisReportData;
     parameters: CisParameters;
     email: Email;
@@ -18,7 +18,7 @@ export class CisReport {
         this.project = new  CisProject();
         this.parameters = new CisParameters();
         this.report = new Report();
-        this.charts = new Charts();
+        this.chart = new Chart();
         this.reportData = new CisReportData();
         this.email = new Email();
     }
@@ -28,7 +28,7 @@ export class CisReport {
         ${this.project.saveToEmail()}
         ${this.report.saveToEmail()}
         ${this.parameters.saveToEmail()}
-        ${this.charts.saveToEmail()}
+        ${this.chart.saveToEmail()}
         ${this.reportData.saveToEmail()}
         `;
     }

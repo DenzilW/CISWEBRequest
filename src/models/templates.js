@@ -4,7 +4,7 @@
 
 export const emailTemplate =
 `
-mailto:denzil.williams@pragmaworld.net?subject={subject}&body={body}
+mailto:support@pragmaworld.net?subject={subject}&body={body}
 `
 
 export const projectEmailTemplate =
@@ -58,41 +58,24 @@ Show parameter values on report?                        | {showOnReport}
 
 export const chartEmailTemplate = 
 `
-Chart {chartTitle}
-_______________________________________________________________________________
-What must the chart display / achieve?: {chartAchieve}
-Chart Type           : {chartType}
-Chart Title          : {chartTitle}
-X-axis title         : {xAxisTitle}
-Y-axis title - primary axis: {yAxisTitlePrimary}
-Y-axis title - secondary axis (if used): {yAxisTitleSecondary}
-On Key fields to be used
+Chart Properties
+----------------
+Chart                                                   : {chartTitle}
+What must the chart display / achieve?                  : {puposeOfChart}
+Chart Type                                              : {chartType}
+Dimension
 -------------------------------------------------------------------------------
-Axis                 | X axis               
-Screen in On Key     | {xAxisScreen}         
-Field in On Key      | {xAxisFieldInOnkey}       
-Add data labels      | {xAxisAddDataLabels}   
-Trendline required   | {xAxisTrendlineRequired}
+OnKey Field Name                                        : {dimensionOnkeyFieldName}               
+Axis Label                                              : {dimensionyAxisLabels}         
 -------------------------------------------------------------------------------
-Axis                 | Y axis - primary               
-Screen in On Key     | {yAxisPrimaryScreen}         
-Field in On Key      | {yAxisPrimaryFieldInOnkey}       
-Add data labels      | {yAxisPrimaryAddDataLabels}   
-Trendline required   | {yAxisPrimaryTrendlineRequired}
+Measure
 -------------------------------------------------------------------------------
-Axis                 | Y axis - secondary (if used)               
-Screen in On Key     | {yAxisSecondaryScreen}         
-Field in On Key      | {yAxisSecondaryFieldInOnkey}       
-Add data labels      | {yAxisSecondaryAddDataLabels}   
-Trendline required   | {yAxisSecondaryTrendlineRequired}
+OnKey Field                                             : {measureOnkeyField}               
+Calculation for measure                                 : {measureCalculation}         
+Axis Labels                                             : {measureAxisLabels}       
+Data labels                                             : {measureAxisDataLabels}   
 -------------------------------------------------------------------------------
-Axis                 | Field to group on (for stacked charts only)               
-Field in On Key      | {fieldToGroupFieldInOnkey}       
-Add data labels      | {fieldToGroupAddDataLabels}   
-Trendline required   | {fieldToGroupTrendlineRequired}
--------------------------------------------------------------------------------
-Totals               : {totals}
-Sort Order           : {sortOrder}
+Sort Order                                              : {sortOrder}
 Any additional requirements for the chart? : 
 {additionalRequirements}
 -------------------------------------------------------------------------------
@@ -101,51 +84,16 @@ Any additional requirements for the chart? :
 export const reportDataEmailTemplate = 
 `
 Report data
-Report data title: {reportDataTitle}
-`;
-
-export const reportDataGroupingItemEmailTemplateHeader =
-`
-What would you like the report data to be grouped on?
-
-Grouping Information
-===============================================================================
-`;
-
-export const reportDataGroupingItemEmailTemplate =
-`
--------------------------------------------------------------------------------
-Screen in On Key     |  {screenInOnkey}     
-Screen in On Key     |  {fieldInOnkey}   
-Sort order           |  {sortOrder}
--------------------------------------------------------------------------------
-`;
-
-export const reportDataGroupingItemEmailTemplateFooter =
-`
-===============================================================================
-`;
-
-export const reportDataOnKeyFieldsHeaderEmailTemplate = 
-`
-On Key fields to be used
-===============================================================================
+-----------
+Report data title                                       : {reportDataTitle}
 `;
 
 export const reportDataOnKeyFieldsEmailTemplate = 
 `
 -------------------------------------------------------------------------------
-Screen in On Key     |  {screenInOnKey}     
-Field in On Key      |  {fieldInOnKey}       
-Field title on report|  {fieldTitleOnReport}  
-Sort order           |  {sortOrder}
+Field in On Key                                         :  {fieldInOnKey}       
+Group                                                   :  {group}  
+Total                                                   :  {total}
+Show onreport                                           :  {showonreport}
 -------------------------------------------------------------------------------
 `;
-
-export const reportDataFooterEmailTemplate = 
-`
-Report data to include totals?  : {reportIncludeTotals}
-Any additional requirements for the report data?: 
-{additionalReportData}
-`;
-
