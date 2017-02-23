@@ -9,21 +9,34 @@ import {chartEmailTemplate} from './templates';
 
 export class Chart extends ReportBase {
     chartTitle: string;
-    puposeOfChart: string;
+    purposeOfChart: string;
     chartType: string;
+    chartTypeOther: string;
     dimensionOnkeyFieldName: string;
     dimensionyAxisLabels: boolean;
     measureOnkeyField: string;
     measureCalculation: string;
     measureAxisLabels: boolean;
     measureAxisDataLabels: boolean;
-    sortOrder: String;
+    sortOrder: string;
     additionalRequirements: string;
+    options: any;
+    showOtherInput: boolean = false;
+
+    _chartType: string;
+
+    get chartType() {
+        return this._chartType;
+    }
+
+    set chartType(value) {
+        this._chartType = value;
+        const lastOption = this.options.ctype[2];
+        this.showOtherInput = value == lastOption;
+    }
 
     constructor() {
         super();
-        this.chartType = 'Clustered column (vertical)';
-        this.sortOrder = 'Dimension (A-Z)';
         this.dimensionyAxisLabels = false;
         this.measureAxisLabels = false;
         this.measureAxisDataLabels = false;
@@ -31,20 +44,21 @@ export class Chart extends ReportBase {
             ctype: [
                 'Line',
                 'Bar',
-                'Other (please specify)',
+                'Other (please specify)'
             ],
             sort: [
                 'Dimension (A-Z)',
                 'Dimension (Z-A)',
                 'Value (0-9)',
-                'Value (9-0)',
-            ],
+                'Value (9-0)'
+            ]
         }
     }
     saveToEmail() {
         return chartEmailTemplate
             .replace("{chartTitle}", this.chartTitle)
-            .replace("{puposeOfChart}", this.whatAchieve)
+            .replace("{purposeOfChart}", this.purposeOfChart)
+            .replace("{chartTypeOther}", this.chartTypeOther)
             .replace("{chartType}", this.chartType)
             .replace("{dimensionOnkeyFieldName}", this.dimensionOnkeyFieldName)
             .replace("{dimensionyAxisLabels}", this.dimensionyAxisLabels)
