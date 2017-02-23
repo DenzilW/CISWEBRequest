@@ -16,7 +16,6 @@ export class Welcome {
             gotoPreviousTab: this.gotoPreviousTab.bind(this),
             sendEmail: this.sendEmail.bind(this),
             addParameter: this.model.parameters.add.bind(this.model.parameters),
-            addChart: this.model.charts.add.bind(this.model.charts),
             addDataOnKeyFields: this.model.reportData.onKeyFields.add.bind(this.model.reportData.onKeyFields),
             refreshEmail: this.createEmailBody.bind(this)
         }
