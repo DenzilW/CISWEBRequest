@@ -61,8 +61,9 @@ export const chartEmailTemplate =
 Chart Properties
 ----------------
 Chart                                                   : {chartTitle}
-What must the chart display / achieve?                  : {puposeOfChart}
+What must the chart display / achieve?                  : {purposeOfChart}
 Chart Type                                              : {chartType}
+Other                                                   : {chartTypeOther}
 Dimension
 -------------------------------------------------------------------------------
 OnKey Field Name                                        : {dimensionOnkeyFieldName}               

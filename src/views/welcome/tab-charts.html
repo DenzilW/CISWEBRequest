@@ -10,42 +10,43 @@
                     <input id="cTitle-input" type="text" value.bind="model.chart.chartTitle" aria-labelledby="cTitle-label" aria-describedby="cTitle-descriptor" />
                 </div>
                 <div>
-                    <label id="cTitle-label" for="cTitle-input">Purpose of Chart</label>
-                    <input id="cTitle-input" type="text" value.bind="model.chart.puposeOfChart" aria-labelledby="cTitle-label" aria-describedby="cTitle-descriptor" />
+                    <label id="cpur-label" for="cpur-input">Purpose of Chart</label>
+                    <input id="cpur-input" type="text" value.bind="model.chart.purposeOfChart" aria-labelledby="cpur-label" aria-describedby="cpur-descriptor" />
                 </div>
                 <div>
-                    <label id="cTitle-label" for="cTitle-input">Chart Type</label>
+                    <label id="cType-label" for="ctype-input">Chart Type</label>
                     <select  value.bind="model.chart.chartType">
                         <option repeat.for="chartType of model.chart.options.ctype" value.bind="chartType">${chartType}</option>
                     </select>
+                    <textarea if.bind="model.chart.showOtherInput" value.bind="model.chart.chartTypeOther" class="memo"></textarea>
                 </div>                
                 <hr />
                 <h3>Dimension</h3>
                 <div>
-                    <label id="cTitle-label" for="cTitle-input">OnKey Field Name</label>
-                    <input id="cTitle-input" type="text" value.bind="model.chart.dimensionOnkeyFieldName" aria-labelledby="cTitle-label" aria-describedby="cTitle-descriptor" />
+                    <label id="cdo-label" for="cdo-input">OnKey Field Name</label>
+                    <input id="cdo-input" type="text" value.bind="model.chart.dimensionOnkeyFieldName" aria-labelledby="cdo-label" aria-describedby="cdo-descriptor" />
                 </div>                                
                 <div>
-                    <label id="cTitle-label" for="cTitle-input">Axis Labels</label>
-                    <input id="cTitle-input" type="checkbox" value.bind="model.chart.dimensionyAxisLabels" aria-labelledby="cTitle-label" aria-describedby="cTitle-descriptor" />
+                    <label id="cdx-label" for="cdx-input">Axis Labels</label>
+                    <input id="cdx-input" type="checkbox" value.bind="model.chart.dimensionyAxisLabels" aria-labelledby="cdx-label" aria-describedby="cdx-descriptor" />
                 </div>                
                 <hr />
                 <h3>Measure</h3>                
                 <div>
-                    <label id="cTitle-label" for="cTitle-input">OnKey Field</label>
-                    <input id="cTitle-input" type="text" value.bind="model.chart.measureOnkeyField" aria-labelledby="cTitle-label" aria-describedby="cTitle-descriptor" />
+                    <label id="cmo-label" for="cmo-input">OnKey Field</label>
+                    <input id="cmo-input" type="text" value.bind="model.chart.measureOnkeyField" aria-labelledby="cmo-label" aria-describedby="cmo-descriptor" />
                 </div>                                
                 <div>
-                    <label id="cTitle-label" for="cTitle-input">Calculation for measure</label>
-                    <input id="cTitle-input" type="text" value.bind="model.chart.measureCalculation" aria-labelledby="cTitle-label" aria-describedby="cTitle-descriptor" />
+                    <label id="cmc-label" for="cmc-input">Calculation for measure</label>
+                    <input id="cmc-input" type="text" value.bind="model.chart.measureCalculation" aria-labelledby="cmc-label" aria-describedby="cmc-descriptor" />
                 </div>     
                 <div>
-                    <label id="cTitle-label" for="cTitle-input">Axis Labels</label>
-                    <input id="cTitle-input" type="checkbox" value.bind="model.chart.measureAxisLabels" aria-labelledby="cTitle-label" aria-describedby="cTitle-descriptor" />
+                    <label id="cmxl-label" for="cmxl-input">Axis Labels</label>
+                    <input id="cmxl-input" type="checkbox" value.bind="model.chart.measureAxisLabels" aria-labelledby="cmxl-label" aria-describedby="cmxl-descriptor" />
                 </div>
                 <div>
-                    <label id="cTitle-label" for="cTitle-input">Data Labels</label>
-                    <input id="cTitle-input" type="checkbox" value.bind="model.chart.measureAxisDataLabels" aria-labelledby="cTitle-label" aria-describedby="cTitle-descriptor" />
+                    <label id="cmxd-label" for="cmxd-input">Data Labels</label>
+                    <input id="cmxd-input" type="checkbox" value.bind="model.chart.measureAxisDataLabels" aria-labelledby="cmxd-label" aria-describedby="cmxd-descriptor" />
                 </div>                                           
                 <hr />
 
