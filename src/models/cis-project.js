@@ -32,6 +32,11 @@ export class CisProject extends ReportBase{
 
     constructor() {
         super();
+        this.client = "";
+        this.requesteremailaddress = "";
+        this.onkeyconnectionpath = "";
+        this.onkeyusername = "";
+        this.onkeypassword = "";
         this.options = {
             dbl: [
                 'We will arrange for a backup on sftp',
