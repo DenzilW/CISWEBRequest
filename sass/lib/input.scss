@@ -11,3 +11,7 @@ input {
 input:focus {
   border-color: $focus-color;
 }
+
+input:invalid {
+  border-color: $error-foreground;
+}

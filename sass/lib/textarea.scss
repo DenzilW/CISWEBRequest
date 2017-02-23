@@ -7,3 +7,7 @@ textarea {
 textarea:focus {
   border-color: $focus-color;
 }
+
+textarea:invalid {
+  border-color: $error-foreground;
+}

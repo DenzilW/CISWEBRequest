@@ -26,7 +26,7 @@
         
         <div id="req-composite" class="input-group">
             <div class="input">
-                <input id="req" type="text" value.bind="model.project.requester"/>
+                <input id="req" type="text" value.bind="model.project.requester" required="true"/>
                 <label for="req" class="label-width">Requester</label>
             </div>
             <div>
@@ -130,7 +130,7 @@
 
         <div id="rpt-composite" class="input-group">
             <div class="input">
-                <input id="rpt" type="text" value.bind="model.report.reportTitle"/>
+                <input id="rpt" type="text" value.bind="model.report.reportTitle" required="true"/>
                 <label for="rpt" class="label-width">Report Title</label>
             </div>
             <div>
@@ -141,11 +141,11 @@
 
         <div id="por-composite" class="input-group">
             <div class="input">
-                <textarea id="por" value.bind="model.report.purposeOfReport" class="memoformat"></textarea>
+                <textarea id="por" value.bind="model.report.purposeOfReport" class="memoformat" required="true"></textarea>
                 <label for="por" class="label-width">Purpose of the report</label>
             </div>
             <div>
-                <div class="suppressed label-width">(required)</div>
+                <div class="suppressed label-width requiredLabel">(required)</div>
                 <div id="por-descriptor" class="suppressed"></div>
             </div>
         </div>

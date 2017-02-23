@@ -1,4 +1,5 @@
 .input-group {
+  position: relative;
   @include flex();
   @include flex-column();
   margin-bottom: 1rem;
@@ -25,10 +26,14 @@
     select:focus + label, input:focus + label, textarea:focus + label {
       color: $focus-color;
     }
+
+    textarea:invalid + label, input:invalid + label {
+      color: $error-foreground;
+    }
   }
 
   .label-width {
-    width: 10rem;
+    width: $input-label-width;
     order: 0;
     display: block;
   }
@@ -43,4 +48,9 @@
     opacity: $suppressed-opacity;
   }
 
+  .requiredLabel {
+    position: absolute;
+    top: 1.5rem;
+    left: 0;
+  }
 }
