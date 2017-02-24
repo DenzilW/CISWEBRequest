@@ -1,0 +1,33 @@
+<template>
+    <require from="pragma-tabsheet/pragma-tabsheet"></require>
+    <require from="./tab-project.html"></require>
+    <require from="./tab-parameters.html"></require>
+    <require from="./tab-charts.html"></require>
+    <require from="./tab-data.html"></require>
+    <require from="./tab-preview.html"></require>
+
+    <div class="body">
+        <pragma-tabsheet>
+            <div id="tab-project" data-tab="Project">
+                <div>${model.name}</div>
+                <tab-project class="tab-body" model.bind="model" actions.bind="actions"></tab-project>
+            </div>
+
+            <div id="tab-parameters" data-tab="Parameters">
+                <tab-parameters class="tab-body" model.bind="model" actions.bind="actions"></tab-parameters>
+            </div>
+
+            <div id="tab-charts" data-tab="Charts">
+                <tab-charts class="tab-body" model.bind="model" actions.bind="actions"></tab-charts>
+            </div>
+
+            <div id="tab-data" data-tab="Data">
+                <tab-data class="tab-body" model.bind="model" actions.bind="actions"></tab-data>
+            </div>
+
+            <div id="tab-preview" data-tab="Preview">
+                <tab-preview class="tab-preview" model.bind="model" actions.bind="actions"></tab-preview>
+            </div>
+        </pragma-tabsheet>
+    </div>
+</template>

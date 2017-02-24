@@ -43,7 +43,7 @@ export class CisReportData extends ReportBase {
         validMessage = "";
     
         if (this.reportDataTitle == undefined || this.reportDataTitle.length == 0) {
-            validMessage = "Report title must have a value\n";
+            validMessage = "Report data title must have a value\n";
         }
 
         return validMessage
@@ -96,7 +96,6 @@ export class CisReportDataOnKeyFieldsItem extends ReportBase {
                 .replace("{fieldInOnKey}", this.fieldInOnKey)
                 .replace("{group}", this.group)
                 .replace("{total}", this.total)
-                .replace("{showonreport}", this.showonreport)
-                .trim();
-    }   
+                .replace("{showonreport}", this.showonreport);
+    }
 }

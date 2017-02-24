@@ -1,0 +1,56 @@
+.input-group {
+  position: relative;
+  @include flex();
+  @include flex-column();
+  margin-bottom: 1rem;
+
+  .input {
+    label {
+      font-size: $rem-2;
+    }
+
+    input, select, textarea {
+      @include stretch();
+      order: 1;
+    }
+
+    input[type="checkbox"] {
+      @include flex-size(0);
+      margin-right: $default-padding;
+    }
+
+    .suppressed {
+      order: 2;
+    }
+
+    select:focus + label, input:focus + label, textarea:focus + label {
+      color: $focus-color;
+    }
+
+    textarea:invalid + label, input:invalid + label {
+      color: $error-foreground;
+    }
+  }
+
+  .label-width {
+    width: $input-label-width;
+    order: 0;
+    display: block;
+  }
+
+  div {
+    @include flex();
+    @include flex-row();
+  }
+
+  .suppressed {
+    font-size: $rem-3;
+    opacity: $suppressed-opacity;
+  }
+
+  .requiredLabel {
+    position: absolute;
+    top: 1.5rem;
+    left: 0;
+  }
+}

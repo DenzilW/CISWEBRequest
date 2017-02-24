@@ -46,6 +46,8 @@ export class Chart extends ReportBase {
         this.dimensionOnkeyFieldName = "";
         this.measureOnkeyField = "";
         this.measureCalculation = "";
+        this.additionalRequirements = "";
+
         this.options = {
             ctype: [
                 'Line',
@@ -74,7 +76,7 @@ export class Chart extends ReportBase {
             .replace("{measureAxisDataLabels}", this.measureAxisDataLabels)
             .replace("{sortOrder}", this.sortOrder)
             .replace("{additionalRequirements}", this.additionalRequirements)
-            .trim()
+            .replace("{hasAdditionalRequirements}", this.additionalRequirements ? "Yes" : "No");
     }
     
      validate() {

@@ -3,9 +3,7 @@
  */
 
 export const emailTemplate =
-`
-mailto:support@pragmaworld.net?subject={subject}&body={body}
-`
+`mailto:support@pragmaworld.net?subject={subject}&body={body}`;
 
 export const projectEmailTemplate =
 `
@@ -21,6 +19,9 @@ On Key Username                                         : {onkeyUsername}
 On Key Password                                         : {onkeyPassword}
 Database backup location                                : {databaseLocation}
 `;
+
+export const otherDBLocation =
+`Other database location                                 : {otherDatabaseLocation}`;
    
 export const reportEmailTemplate =
 `
@@ -28,6 +29,7 @@ Type Of Report                                          : {typeOfReport}
 Standard/Custom                                         : {standardcustomreport} 
 Usage                                                   : {usage}
 `
+
 export const reportManagerReportTemplate =
 `
 Notification Manager Report                             : {notificationManagerReport}
@@ -44,11 +46,11 @@ Formatting - specific requirements for colours, fonts   : {formattingStyle}
 export const parameterHeader =
 `
 Report parameters that you would like to filter the data on
+===================================================================================================
 `
 
 export const parameterEmailTemplate =
 `
----------------------------------------------------------------------------------------------------
 Parameter                                               : {prameter} 
 On Key Field                                            : {onkeyField} 
 Show Parameter Values On Report?                        : {showOnReport}
@@ -62,11 +64,12 @@ Chart                                                   : {chartTitle}
 What must the chart display / achieve?                  : {purposeOfChart}
 Chart Type                                              : {chartType}
 Other                                                   : {chartTypeOther}
+
 Dimension
 ---------------------------------------------------------------------------------------------------
 On Key Field Name                                       : {dimensionOnkeyFieldName}               
 Axis Label                                              : {dimensionyAxisLabels}         
----------------------------------------------------------------------------------------------------
+
 Measure
 ---------------------------------------------------------------------------------------------------
 On Key Field                                            : {measureOnkeyField}               
@@ -74,7 +77,7 @@ Calculation For Measure                                 : {measureCalculation}
 Axis Labels                                             : {measureAxisLabels}       
 Data Labels                                             : {measureAxisDataLabels}   
 Sort Order                                              : {sortOrder}
-Any additional requirements for the chart? : 
+Any additional requirements for the chart?              : {hasAdditionalRequirements}
 {additionalRequirements}
 `;
 
@@ -82,12 +85,12 @@ export const reportDataEmailTemplate =
 `
 Report Data
 ===================================================================================================
+
 Report Data Title                                       : {reportDataTitle}
 `;
 
 export const reportDataOnKeyFieldsEmailTemplate = 
 `
----------------------------------------------------------------------------------------------------
 Field In On Key                                         : {fieldInOnKey}       
 Group                                                   : {group}  
 Total                                                   : {total}

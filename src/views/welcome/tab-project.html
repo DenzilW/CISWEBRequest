@@ -1,114 +1,174 @@
 <template bindable="model,actions">
-<require from="./tab-project.css"></require>
-    <div class="flex-body">
-        <div class="flex-body-main">
+    <div class="group" id="projectInformation">
+        <h3>Project Information</h3>
 
-            <div>
-                <h3>Project Information</h3>
-            </div>
-
-            <div>
-                <label id="pn-label" for="pn-input">Project Number</label>
-                <input class="input-margin" id="pn-input" type="text" value.bind="model.project.projectNumber" aria-labelledby="pn-label" aria-describedby="pn-descriptor" required="true"/>
-                <label id="pn-descriptor" class="descriptor">Required</label>
-            </div>
-
-            <div>
-                <label id="cl-label" for="cl-input">Client</label>
-                <input class="input-margin"  id="cl-input" type="text" value.bind="model.project.client" aria-labelledby="cl-label" aria-describedby="cl-descriptor" required="true"/>
-                <label id="cl-descriptor" class="descriptor">Required</label>
-            </div>
-
-            <div>
-                <label id="req-label" for="req-input">Requester</label>
-                <input class="input-margin"  id="req-input" type="text" value.bind="model.project.requester" aria-labelledby="req-label" aria-describedby="req-descriptor" />
-                <label id="req-descriptor" class="descriptor">Required</label>
-            </div>
-
-            <div>
-                <label id="rea-label" for="rea-input">Requester Email Address</label>
-                <input class="input-margin"  id="rea-input" type="text" value.bind="model.project.requesteremailaddress" aria-labelledby="rea-label" aria-describedby="rea-descriptor" />
-            </div>
-
-            <div>
-                <label id="tor-label" for="tor-input">Type Of Request</label>
-                 <select value.bind="model.project.typeOfRequest" class="input-margin" >
-                    <option repeat.for="typeOfRequest of model.project.options.tor" value.bind="typeOfRequest">${typeOfRequest}</option>
-                </select>
-            </div>
-
-            <div>
-                <label id="cop-label" for="cop-input">Onkey Connection Path</label>
-                <input class="input-margin"  id="cop-input" type="text" value.bind="model.project.onkeyconnectionpath" aria-labelledby="cop-label" aria-describedby="cop-descriptor" />
-            </div>
-
-            <div>
-                <label id="unm-label" for="unm-input">Onkey Username</label>
-                <input class="input-margin"  id="unm-input" type="text" value.bind="model.project.onkeyusername" aria-labelledby="unm-label" aria-describedby="unm-descriptor" />
-            </div>
-
-            <div>
-                <label id="pwd-label" for="pwd-input">Onkey Password</label>
-                <input class="input-margin"  id="pwd-input" type="text" value.bind="model.project.onkeypassword" aria-labelledby="pwd-label" aria-describedby="pwd-descriptor" />
-            </div>            
-
-            <div>
-                <label id="db-label" for="db-input">Database backup location</label>
-                <select class="input-margin"  value.bind="model.project.databaseLocation" class="project-width">
-                    <option repeat.for="location of model.project.options.dbl" value.bind="location">${location}</option>
-                </select>
-                <textarea if.bind="model.project.showOtherInput" value.bind="model.project.databaseLocationOther" class="memo"></textarea>
+        <div id="pn-composite" class="input-group">
+            <div class="input">
+                <input id="pn" type="text" value.bind="model.project.projectNumber" required="true"/>
+                <label for="pn" class="label-width">Project Number</label>
             </div>
             <div>
-                <h3>Report Information</h3>
+                <div class="suppressed label-width">(required)</div>
+                <div id="pn-descriptor" class="suppressed"></div>
             </div>
-            <div>
-                <label id="tore-label" for="tore-input">Type Of Report</label>
-                 <select class="input-margin"  value.bind="model.report.typeReport">
-                    <option repeat.for="typeOfReport of model.report.options.tor" value.bind="typeOfReport">${typeOfReport}</option>
-                </select>
-            </div>
-            <div>
-                <label id="cur-label" for="cur-input">Standard/Custom</label>
-                 <select class="input-margin"  value.bind="model.report.standardcustomreport">
-                    <option repeat.for="standardcustomreport of model.report.options.scr" value.bind="standardcustomreport">${standardcustomreport}</option>
-                </select>
-            </div>
-            <div>
-                <label id="usage-label" for="usage-input">Usage</label>
-                 <select class="input-margin"  value.bind="model.report.usage" class="project-width">
-                    <option repeat.for="usage of model.report.options.usage" value.bind="usage">${usage}</option>
-                </select>
-            </div>  
-            <div if.bind="model.report.showOtherInput">
-                <label id="rep-label" for="rep-input">Notification Manager Details</label>
-                <textarea id="rep-input" value.bind="model.report.notificationManagerReport" class="memoformat"></textarea>                
-            </div>                      
-            <div>
-                <label id="pgl-label" for="pgl-input">Page Layout</label>
-                 <select class="input-margin" value.bind="model.report.pageLayout">
-                    <option repeat.for="pgl of model.report.options.pgl" value.bind="pgl">${pgl}</option>
-                </select>
-            </div>
-            <div>
-                <label id="rpt-label" for="rpt-input">Report Title</label>
-                <input class="input-margin" id="rpt-input" type="text" value.bind="model.report.reportTitle" aria-labelledby="rpt-label" aria-describedby="rpt-descriptor" />
-                <label id="rpt-descriptor" class="descriptor">Required</label>
-            </div>            
-            <div>
-                <label id="por-label" for="por-input">Purpose of the report</label>
-                <textarea id="por-input" value.bind="model.report.purposeOfReport" class="memoformat"></textarea>                
-                <label id="por-descriptor" class="descriptor">Required</label>
-            </div>            
-            <div>
-                <label id="frm-label" for="frm-input">Formatting</label>
-                <textarea id="frm-input" value.bind="model.report.formattingRequirements" class="memoformat"></textarea>                
-                <label id="frm-descriptor" class="descriptor">specific requirements for colours, fonts: {formattingStyle}</label>
-            </div>            
         </div>
 
-        <div class="bottom-toolbar">
-            <button click.delegate="actions.gotoNextTab()" class="tab-nav-button next-button">Next</button>
+        <div id="-composite" class="input-group">
+            <div class="input">
+                <input id="" type="text" value.bind="model.project.client" required="true"/>
+                <label for="" class="label-width">Client</label>
+            </div>
+            <div>
+                <div class="suppressed label-width">(required)</div>
+                <div id="-descriptor" class="suppressed"></div>
+            </div>
+        </div>
+        
+        <div id="req-composite" class="input-group">
+            <div class="input">
+                <input id="req" type="text" value.bind="model.project.requester" required="true"/>
+                <label for="req" class="label-width">Requester</label>
+            </div>
+            <div>
+                <div class="suppressed label-width">(required)</div>
+                <div id="req-descriptor" class="suppressed"></div>
+            </div>
+        </div>
+        
+        <div id="rea-composite" class="input-group">
+            <div class="input">
+                <input id="rea" type="text" value.bind="model.project.requesteremailaddress"/>
+                <label for="rea" class="label-width">Requester Email Address</label>
+            </div>
+        </div>
+
+        <div id="tor-composite" class="input-group">
+            <div class="input">
+                <select id="tor" value.bind="model.project.typeOfRequest">
+                    <option repeat.for="typeOfRequest of model.project.options.tor" value.bind="typeOfRequest">${typeOfRequest}</option>
+                </select>
+                <label for="tor" class="label-width">Type of Request</label>
+            </div>
+        </div>
+
+        <div id="cop-composite" class="input-group">
+            <div class="input">
+                <input id="cop" type="text" value.bind="model.project.onkeyconnectionpath"/>
+                <label for="cop" class="label-width">Onkey Connection Path</label>
+            </div>
+        </div>
+        
+        <div id="unm-composite" class="input-group">
+            <div class="input">
+                <input id="unm" type="text" value.bind="model.project.onkeyusername"/>
+                <label for="unm" class="label-width">Onkey Username</label>
+            </div>
+        </div>
+
+        <div id="pwd-composite" class="input-group">
+            <div class="input">
+                <input id="pwd" type="text" value.bind="model.project.onkeypassword"/>
+                <label for="pwd" class="label-width">Onkey password</label>
+            </div>
+        </div>
+
+        <div id="db-composite" class="input-group">
+            <div class="input">
+                <select id="db" value.bind="model.project.databaseLocation">
+                    <option repeat.for="location of model.project.options.dbl" value.bind="location">${location}</option>
+                </select>
+                <label for="db" class="label-width">Database backup location</label>
+            </div>
+        </div>
+
+        <div id="otherdb-composite" class="input-group" if.bind="model.project.showOtherInput">
+            <div class="input">
+                <textarea value.bind="model.project.databaseLocationOther" id="otherdb" required="true"></textarea>
+                <label for="otherdb" class="label-width">Other Database Details</label>
+            </div>
+            <div>
+                <div class="suppressed label-width requiredLabel" >(required)</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="group" id="reportInformation">
+        <h3>Report Information</h3>
+
+        <div id="tore-composite" class="input-group">
+            <div class="input">
+                <select id="tore" value.bind="model.report.typeReport">
+                    <option repeat.for="typeOfReport of model.report.options.tor" value.bind="typeOfReport">${typeOfReport}</option>
+                </select>
+                <label for="tore" class="label-width">Type of Report</label>
+            </div>
+        </div>
+
+        <div id="cur-composite" class="input-group">
+            <div class="input">
+                <select id="cur" value.bind="model.report.standardcustomreport">
+                    <option repeat.for="standardcustomreport of model.report.options.scr" value.bind="standardcustomreport">${standardcustomreport}</option>
+                </select>
+                <label for="cur" class="label-width">Standard / Custom</label>
+            </div>
+        </div>
+
+        <div id="usage-composite" class="input-group">
+            <div class="input">
+                <select id="usage" value.bind="model.report.usage">
+                    <option repeat.for="usage of model.report.options.usage" value.bind="usage">${usage}</option>
+                </select>
+                <label for="usage" class="label-width">Usage</label>
+            </div>
+        </div>
+
+        <div id="rep-composite" class="input-group" if.bind="model.report.showOtherInput">
+            <div class="input">
+                <textarea id="rep" value.bind="model.report.notificationManagerReport" required></textarea>
+                <label for="rep" class="label-width">Notification Manger Details</label>
+            </div>
+            <div>
+                <div class="suppressed label-width requiredLabel" >(required)</div>
+            </div>
+        </div>
+
+        <div id="pgl-composite" class="input-group">
+            <div class="input">
+                <select id="pgl" value.bind="model.report.pageLayout">
+                    <option repeat.for="pgl of model.report.options.pgl" value.bind="pgl">${pgl}</option>
+                </select>
+                <label for="pgl" class="label-width">Page Layout</label>
+            </div>
+        </div>
+
+        <div id="rpt-composite" class="input-group">
+            <div class="input">
+                <input id="rpt" type="text" value.bind="model.report.reportTitle" required="true"/>
+                <label for="rpt" class="label-width">Report Title</label>
+            </div>
+            <div>
+                <div class="suppressed label-width">(required)</div>
+                <div id="rpt-descriptor" class="suppressed"></div>
+            </div>
+        </div>
+
+        <div id="por-composite" class="input-group">
+            <div class="input">
+                <textarea id="por" value.bind="model.report.purposeOfReport" class="memoformat" required="true"></textarea>
+                <label for="por" class="label-width">Purpose of the report</label>
+            </div>
+            <div>
+                <div class="suppressed label-width requiredLabel">(required)</div>
+                <div id="por-descriptor" class="suppressed"></div>
+            </div>
+        </div>
+
+        <div id="frm-composite" class="input-group">
+            <div class="input">
+                <textarea id="frm" value.bind="model.report.formattingRequirements" class="memoformat"></textarea>
+                <label for="frm" class="label-width">Formatting</label>
+            </div>
         </div>
     </div>
 </template>

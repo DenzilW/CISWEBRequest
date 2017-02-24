@@ -1,0 +1,25 @@
+button.secondary-action, button.action {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-width: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  border-radius: $button-border-radius;
+  cursor: pointer;
+  height: 2rem;
+}
+
+button.action {
+  background: $button-action-background;
+}
+
+button.secondary-action {
+  background: transparent;
+}
+
+.icon-button {
+  cursor: pointer;
+  border-width: 0;
+  background: transparent;
+}
