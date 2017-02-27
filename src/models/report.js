@@ -116,7 +116,7 @@ export class Report extends ReportBase {
             .replace("{reportTitle}", this.reportTitle)
             .replace("{formattingStyle}", this.formattingRequirements);
 
-        return reportEmailTemplatetmp.trim()
+        return reportEmailTemplatetmp;
     }
 
     validate() {

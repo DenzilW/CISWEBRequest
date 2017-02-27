@@ -2,6 +2,7 @@
  * Created by Johan Rabie on 2016/11/25.
  */
 
+
 export const emailTemplate =
 `mailto:support@pragmaworld.net?subject={subject}&body={body}`;
 
@@ -51,8 +52,8 @@ Report parameters that you would like to filter the data on
 
 export const parameterEmailTemplate =
 `
-Parameter                                               : {prameter} 
-On Key Field                                            : {onkeyField} 
+Parameter                                               : {prameter}
+On Key Field                                            : {onkeyField}
 Show Parameter Values On Report?                        : {showOnReport}
 `;
 
@@ -91,6 +92,7 @@ Report Data Title                                       : {reportDataTitle}
 
 export const reportDataOnKeyFieldsEmailTemplate = 
 `
+---------------------------------------------------------------------------------------------------
 Field In On Key                                         : {fieldInOnKey}       
 Group                                                   : {group}  
 Total                                                   : {total}
