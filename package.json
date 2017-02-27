@@ -25,6 +25,7 @@
     "dependencies": {
       "aurelia-bootstrapper": "npm:aurelia-bootstrapper@^1.0.0",
       "aurelia-framework": "npm:aurelia-framework@^1.0.1",
+      "aurelia-polyfills": "npm:aurelia-polyfills@^1.2.0",
       "pragma-tabsheet": "npm:pragma-tabsheet@^1.0.23"
     },
     "devDependencies": {}

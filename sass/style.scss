@@ -36,3 +36,9 @@ pre {
   outline-width: $group-border-width;
   outline-color: $focus-color;
 }
+
+article {
+  margin: $default-padding;
+  background: white;
+  padding: $default-padding;
+}
