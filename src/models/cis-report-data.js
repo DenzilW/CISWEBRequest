@@ -35,7 +35,7 @@ export class CisReportData extends ReportBase {
             .replace("{reportDataTitle}", this.reportDataTitle);
         email += this.onKeyFields.saveToEmail();
 
-        return email;    
+        return email.trim();    
     }
 
     validate() {
