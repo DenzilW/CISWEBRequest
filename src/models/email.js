@@ -3,6 +3,6 @@ export class Email {
     body = null;
 
     constructor() {
-        this.body = "not defined yet, please click refresh button";
+        this.body = "not defined yet, please click preview button";
     }
 }
