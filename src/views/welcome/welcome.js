@@ -1,3 +1,5 @@
+import "aurelia-polyfills";
+
 import {CisReport} from './../../models/cis-report';
 import {PragmaTabSheetActions} from 'pragma-tabsheet';
 import {emailTemplate} from './../../models/templates';
