@@ -42,7 +42,7 @@ gulp.task("build:dist", ["build:all"], function() {
         },
         {
             src: ["fonts/**/*.*"],
-            dest: "dist/fonts"
+            dest: "dist/styles/fonts"
         }
     ])
 });
