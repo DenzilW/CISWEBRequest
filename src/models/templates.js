@@ -2,6 +2,7 @@
  * Created by Johan Rabie on 2016/11/25.
  */
 
+
 export const emailTemplate =
 `mailto:support@pragmaworld.net?subject={subject}&body={body}`;
 
