@@ -2,10 +2,16 @@
   height: $app-toolbar-height;
   background: $group-background;
 
-  display: flex;
+  @include flex();
+  @include flex-row();
+
   align-items: center;
   padding-left: $default-padding;
   padding-right: $default-padding;
+
+  h1 {
+    @include stretch();
+  }
 }
 
 router-view {

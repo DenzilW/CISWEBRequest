@@ -39,6 +39,10 @@ gulp.task("build:dist", ["build:all"], function() {
         {
             src: ["manifest.json"],
             dest: "dist"
+        },
+        {
+            src: ["fonts/**/*.*"],
+            dest: "dist/styles/fonts"
         }
     ])
 });
