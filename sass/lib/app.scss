@@ -9,7 +9,7 @@
   padding-left: $default-padding;
   padding-right: $default-padding;
 
-  h1 {
+  h2 {
     @include stretch();
   }
 }
@@ -20,5 +20,6 @@ router-view {
   left: 0;
   right: 0;
   bottom: 0;
-  overflow:auto;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
