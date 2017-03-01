@@ -99,16 +99,8 @@ export class Welcome {
     }
 
     sendEmail() {
-        //const body = encodeURIComponent(this.model.saveToEmail());
-        //const body = encodeURIComponent(document.getElementById("flex-body-main").innerText);
-        var subject= "Interesting Information";
-        //var body =document.getElementById("flex-body-main").innerText;
-        var body = "<";
-        body += window.location.href;
-        body += ">";
-        //const body = "sdfsdf" ///encodeURIComponent(document.innerText);        
+        const body = encodeURIComponent(document.getElementById("flex-body-main").innerText);
         const subjectMessage = encodeURIComponent("CIS Report Request");
-
         const mail = emailTemplate.replace("{subject}", subjectMessage).replace("{body}", body);
 
        window.open(mail);
