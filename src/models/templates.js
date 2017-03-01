@@ -85,8 +85,8 @@ Report Data Title -  {reportDataTitle}
 
 export const reportDataOnKeyFieldsEmailTemplate = 
 `
-Field In On Key - {fieldInOnKey}       
-Group - {group}  
+Field In On Key - {fieldInOnKey}
+Group - {group}
 Total - {total}
 Show On Report - {showonreport}
 `;
