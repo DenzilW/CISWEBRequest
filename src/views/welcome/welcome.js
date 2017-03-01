@@ -99,16 +99,11 @@ export class Welcome {
     }
 
     sendEmail() {
-        //const body = encodeURIComponent(this.model.saveToEmail());
         const body = encodeURIComponent(document.getElementById("flex-body-main").innerText);
-        //const body = encodeURIComponent(document.innerText);   
-        //const body = "Copy report and paste it here."; 
-            
         const subjectMessage = encodeURIComponent("CIS Report Request");
-
         const mail = emailTemplate.replace("{subject}", subjectMessage).replace("{body}", body);
 
-        window.open(mail);
+       window.open(mail);
     }
 
     createEmailBody() {
