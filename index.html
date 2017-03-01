@@ -11,14 +11,19 @@
 </head>
 <body aurelia-app="main">
     <script>
-        if (!window.chrome) {
+        var ui = window.navigator.userAgent;
+        var isIE = ui.indexOf("/MSIE") > 0 || ui.indexOf("Trident") > 0;
+    </script>
+
+    <script>
+        if (isIE) {
             document.write("please run this application in the latest version of chrome");
         }
     </script>
 
 
     <script>
-        if (window.chrome) {
+        if (!isIE) {
             if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.register('./service-worker.js', {scope: '/'})
                     .then(function(reg) {
