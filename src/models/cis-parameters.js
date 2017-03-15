@@ -9,6 +9,18 @@ export class CisParameters extends CollectionBase {
     add() {
         const newParameter = new CisParameter();
         this.items.push(newParameter);
+
+        const interval = setInterval(function() {
+            const rows = Array.prototype.slice.call(document.querySelectorAll('[data-type="parameter"]'));
+
+            if (rows.length == this.items.length) {
+                clearInterval(interval);
+
+                const focusItem = rows[rows.length -1].children[0].children[0];
+                focusItem.focus();
+            }
+        }.bind(this), 100);
+
         return newParameter;
     }
 

@@ -4,7 +4,6 @@
     <div class="group" id="toolbar">
         <div class="container default-padding-left default-padding-right">
             <h3 class="stretch">Report Data</h3>
-            <button click.delegate="actions.addDataOnKeyFields()" class="action">Add Fields</button>
         </div>
 
         <div id="rdt-composite" class="input-group">
@@ -34,7 +33,7 @@
                 <div class="table-cell"></div>
             </div>
 
-            <div class="table-row" repeat.for="parameter of model.reportData.onKeyFields.items">
+            <div class="table-row" repeat.for="parameter of model.reportData.onKeyFields.items" data-type="data">
                 <div class="table-cell">
                     <input type="text" value.bind="parameter.fieldInOnKey" />
                 </div>
@@ -67,6 +66,8 @@
                 </div>
             </div>
         </div>
+
+        <button click.delegate="actions.addDataOnKeyFields()" class="action">Add Fields</button>
     </div>
 
 </template>
