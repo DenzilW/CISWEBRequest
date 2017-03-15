@@ -60,6 +60,18 @@ export class CisReportDataOnKeyFieldsCollection extends CollectionBase {
         this.items.push(item);
         this.selectItem(item);
 
+        const interval = setInterval(function() {
+            const rows = Array.prototype.slice.call(document.querySelectorAll('[data-type="data"]'));
+
+            if (rows.length == this.items.length) {
+                clearInterval(interval);
+
+                const focusItem = rows[rows.length -1].children[0].children[0];
+                focusItem.focus();
+            }
+        }.bind(this), 100);
+
+
         return item;
     }
 

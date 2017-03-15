@@ -4,7 +4,6 @@
     <div class="group" id="toolbar">
         <div class="container default-padding-left default-padding-right">
             <h3 class="stretch">Parameters</h3>
-            <button click.delegate="actions.addParameter()" class="action">Add Parameter</button>
         </div>
     </div>
 
@@ -22,7 +21,7 @@
                 <div class="table-cell"></div>
             </div>
 
-            <div class="table-row" repeat.for="parameter of model.parameters.items">
+            <div class="table-row" repeat.for="parameter of model.parameters.items" data-type="parameter">
                 <div class="table-cell"><input type="text" value.bind="parameter.value" /></div>
                 <div class="table-cell"><input type="text" value.bind="parameter.onkeyField" /></div>
 
@@ -39,6 +38,8 @@
                     </button>
                 </div>
             </div>
+
+            <button click.delegate="actions.addParameter()" class="action">Add Parameter</button>
         </div>
     </div>
 </template>
