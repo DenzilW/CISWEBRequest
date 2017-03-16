@@ -4,14 +4,9 @@ export class App {
     configureRouter(config, router) {
         config.title = 'Pragma Products';
         config.map([
-            {route: ['', 'welcome'], name: 'welcome',      moduleId: 'views/welcome/welcome',      nav: true, title: 'Welcome'},
-            {route: ['help'], name: 'help',      moduleId: 'views/help/help',      nav: true, title: 'Help'}
+            {route: ['', 'welcome'], name: 'welcome',      moduleId: 'views/welcome/welcome',      nav: true, title: 'Welcome'}
         ]);
 
         this.router = router;
-    }
-
-    help() {
-        this.router.navigateToRoute('help');
     }
 }

@@ -5,6 +5,7 @@
     <require from="./tab-charts.html"></require>
     <require from="./tab-data.html"></require>
     <require from="./tab-preview.html"></require>
+    <require from="./tab-help.html"></require>
 
     <div class="body">
         <pragma-tabsheet>
@@ -27,6 +28,10 @@
 
             <div id="tab-preview" data-tab="Preview">
                 <tab-preview class="tab-preview" model.bind="model" actions.bind="actions"></tab-preview>
+            </div>
+
+            <div id="tab-help" data-tab="Help">
+                <tab-help></tab-help>
             </div>
         </pragma-tabsheet>
     </div>
